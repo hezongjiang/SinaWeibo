@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B117C06381AF0B3855353EF /* Pods_SinaWebo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
-		286EDF921E10E6A200B6BD4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF911E10E6A200B6BD4D /* ViewController.swift */; };
-		286EDF951E10E6A200B6BD4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF931E10E6A200B6BD4D /* Main.storyboard */; };
 		286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF961E10E6A200B6BD4D /* Assets.xcassets */; };
-		286EDF9A1E10E6A200B6BD4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF981E10E6A200B6BD4D /* LaunchScreen.storyboard */; };
 		286EDFA51E10E6A200B6BD4D /* SinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFA41E10E6A200B6BD4D /* SinaWeboTests.swift */; };
 		286EDFB01E10E6A200B6BD4D /* SinaWeboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFAF1E10E6A200B6BD4D /* SinaWeboUITests.swift */; };
 /* End PBXBuildFile section */
@@ -34,12 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWebo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		286EDF911E10E6A200B6BD4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		286EDF941E10E6A200B6BD4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		286EDF961E10E6A200B6BD4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		286EDF991E10E6A200B6BD4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		286EDF9B1E10E6A200B6BD4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		286EDFA01E10E6A200B6BD4D /* SinaWeboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinaWeboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDFA41E10E6A200B6BD4D /* SinaWeboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaWeboTests.swift; sourceTree = "<group>"; };
@@ -47,6 +43,8 @@
 		286EDFAB1E10E6A200B6BD4D /* SinaWeboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinaWeboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDFAF1E10E6A200B6BD4D /* SinaWeboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaWeboUITests.swift; sourceTree = "<group>"; };
 		286EDFB11E10E6A200B6BD4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
+		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B117C06381AF0B3855353EF /* Pods_SinaWebo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +80,8 @@
 				286EDFA31E10E6A200B6BD4D /* SinaWeboTests */,
 				286EDFAE1E10E6A200B6BD4D /* SinaWeboUITests */,
 				286EDF8D1E10E6A200B6BD4D /* Products */,
+				5659684FD7693B9CE9DE8B8A /* Pods */,
+				4BD7959147455B93D7049569 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */,
-				286EDF911E10E6A200B6BD4D /* ViewController.swift */,
-				286EDF931E10E6A200B6BD4D /* Main.storyboard */,
 				286EDF961E10E6A200B6BD4D /* Assets.xcassets */,
-				286EDF981E10E6A200B6BD4D /* LaunchScreen.storyboard */,
 				286EDF9B1E10E6A200B6BD4D /* Info.plist */,
 			);
 			path = SinaWebo;
@@ -125,6 +123,23 @@
 			path = SinaWeboUITests;
 			sourceTree = "<group>";
 		};
+		4BD7959147455B93D7049569 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5659684FD7693B9CE9DE8B8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */,
+				6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 286EDFB41E10E6A200B6BD4D /* Build configuration list for PBXNativeTarget "SinaWebo" */;
 			buildPhases = (
+				6B7A7812DE86D7BDCA6AF5E7 /* [CP] Check Pods Manifest.lock */,
 				286EDF881E10E6A200B6BD4D /* Sources */,
 				286EDF891E10E6A200B6BD4D /* Frameworks */,
 				286EDF8A1E10E6A200B6BD4D /* Resources */,
+				263B9F910BA5F3AD2E788E15 /* [CP] Embed Pods Frameworks */,
+				096CB986F56F1E2518BD8FE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,9 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				286EDF9A1E10E6A200B6BD4D /* LaunchScreen.storyboard in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
-				286EDF951E10E6A200B6BD4D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,12 +271,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		096CB986F56F1E2518BD8FE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		263B9F910BA5F3AD2E788E15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B7A7812DE86D7BDCA6AF5E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		286EDF881E10E6A200B6BD4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				286EDF921E10E6A200B6BD4D /* ViewController.swift in Sources */,
 				286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,25 +358,6 @@
 			targetProxy = 286EDFAC1E10E6A200B6BD4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		286EDF931E10E6A200B6BD4D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				286EDF941E10E6A200B6BD4D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		286EDF981E10E6A200B6BD4D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				286EDF991E10E6A200B6BD4D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		286EDFB21E10E6A200B6BD4D /* Debug */ = {
@@ -411,10 +455,13 @@
 		};
 		286EDFB51E10E6A200B6BD4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = Q4KADKZ3FA;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Chatlink.SinaWebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,10 +471,13 @@
 		};
 		286EDFB61E10E6A200B6BD4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = Q4KADKZ3FA;
 				INFOPLIST_FILE = SinaWebo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Chatlink.SinaWebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +558,7 @@
 				286EDFB61E10E6A200B6BD4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		286EDFB71E10E6A200B6BD4D /* Build configuration list for PBXNativeTarget "SinaWeboTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +567,7 @@
 				286EDFB91E10E6A200B6BD4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		286EDFBA1E10E6A200B6BD4D /* Build configuration list for PBXNativeTarget "SinaWeboUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +576,7 @@
 				286EDFBC1E10E6A200B6BD4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
