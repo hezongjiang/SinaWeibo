@@ -80,12 +80,15 @@ class MainTabBarController: UITabBarController {
         vc.title = title
         vc.tabBarItem.image = UIImage(named: "tabbar_" + image)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + image + "_selected")?.withRenderingMode(.alwaysOriginal)
-        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .highlighted)
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .selected)
         let nav = MainNavViewController(rootViewController: vc)
         
         
         return nav
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
 }

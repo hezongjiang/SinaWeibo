@@ -34,6 +34,7 @@
 		286EDFFD1E10FF3200B6BD4D /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 286EDFFC1E10FF3200B6BD4D /* main.json */; };
 		286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */; };
 		286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */; };
+		287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A532A1E135679006E9BC7 /* VisitorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		286EDFFC1E10FF3200B6BD4D /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		287A532A1E135679006E9BC7 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				286EDFFC1E10FF3200B6BD4D /* main.json */,
-				286EDFC71E10F91F00B6BD4D /* MainTabBarController.swift */,
-				286EDFC91E10F94900B6BD4D /* MainNavViewController.swift */,
+				28CC1D901E125C3F005578EE /* 主控制器 */,
+				287A53291E135622006E9BC7 /* VisitorView */,
 				286EDFCB1E10F97F00B6BD4D /* BaseViewController.swift */,
 			);
 			path = Main;
@@ -311,6 +313,23 @@
 				286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		287A53291E135622006E9BC7 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				287A532A1E135679006E9BC7 /* VisitorView.swift */,
+			);
+			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		28CC1D901E125C3F005578EE /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				286EDFC71E10F91F00B6BD4D /* MainTabBarController.swift */,
+				286EDFC91E10F94900B6BD4D /* MainNavViewController.swift */,
+			);
+			name = "主控制器";
 			sourceTree = "<group>";
 		};
 		4BD7959147455B93D7049569 /* Frameworks */ = {
@@ -519,6 +538,7 @@
 				286EDFEF1E10FABE00B6BD4D /* NSArray+Log.m in Sources */,
 				286EDFCE1E10F9BA00B6BD4D /* HomeViewController.swift in Sources */,
 				286EDFF71E10FABE00B6BD4D /* UILabel+CZAddition.m in Sources */,
+				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
 				286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */,
