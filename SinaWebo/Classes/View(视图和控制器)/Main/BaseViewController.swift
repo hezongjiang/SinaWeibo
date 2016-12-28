@@ -24,7 +24,8 @@ class BaseViewController: UIViewController {
     var isPullup = false
     /// 是否登录
     var userLogin = false
-    
+    /// 访客视图信息字典
+    var visitorInfo: [String : String]?
     
     
     override func viewDidLoad() {
@@ -53,11 +54,15 @@ class BaseViewController: UIViewController {
     /// 访客视图
     private func setupVisitor() {
         
-        let visitorView = VisitorView(frame: view.bounds)
-        
-        visitorView.backgroundColor = UIColor.cz_random()
-        
+        let visitorView = VisitorView()
+        visitorView.translatesAutoresizingMaskIntoConstraints = false
+        visitorView.visitorInfo = visitorInfo
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0))
     }
     
     

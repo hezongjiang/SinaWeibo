@@ -24,6 +24,8 @@ class MainTabBarController: UITabBarController {
     /// 撰写按钮
     private func setupComposeBtn() {
         
+        
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
             
             self.tabBar.addSubview(self.composeBtn)
@@ -72,12 +74,16 @@ class MainTabBarController: UITabBarController {
         guard let className = dict["clsName"] as? String,
             let title = dict["title"] as? String,
             let image = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type else {
+            let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? BaseViewController.Type,
+            let visitorInfo = dict["visitorInfo"] as? [String : String]
+        
+        else {
             return UIViewController()
         }
         
         let vc = cls.init()
         vc.title = title
+        vc.visitorInfo = visitorInfo
         vc.tabBarItem.image = UIImage(named: "tabbar_" + image)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + image + "_selected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .selected)
