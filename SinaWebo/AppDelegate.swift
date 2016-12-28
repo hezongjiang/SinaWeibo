@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        loadAppInfo()
+        
         window = UIWindow()
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
@@ -23,5 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    private func loadAppInfo() {
+        
+        DispatchQueue.global().async {
+            
+            let url = Bundle.main.url(forResource: "main", withExtension: "json")
+            
+            let data = NSData(contentsOf: url!)
+            
+            let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let filePath = (docPath as NSString).appendingPathComponent("main.json")
+            
+            data?.write(toFile: filePath, atomically: true)
+            
+        }
+    }
 }
 
