@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
     /// 是否为上拉加载
     var isPullup = false
     /// 是否登录
-    var userLogin = false
+    var userLogin = true
     /// 访客视图信息字典
     var visitorInfo: [String : String]?
     
@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
     }
     
     /// 设置界面
-    func setupUI() {
+    private func setupUI() {
         
         view.backgroundColor = UIColor.cz_random()
         
@@ -58,11 +58,18 @@ class BaseViewController: UIViewController {
         visitorView.translatesAutoresizingMaskIntoConstraints = false
         visitorView.visitorInfo = visitorInfo
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        visitorView.registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
+        visitorView.loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
         
+        // 自动布局
         view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0))
         view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1, constant: 0))
         view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0))
         view.addConstraint(NSLayoutConstraint(item: visitorView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0))
+        
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
+        navigationBar.tintColor = UIColor.orange
     }
     
     
@@ -74,7 +81,7 @@ class BaseViewController: UIViewController {
     }
     
     /// 设置表格
-    private func setupTableView() {
+    func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView?.dataSource = self

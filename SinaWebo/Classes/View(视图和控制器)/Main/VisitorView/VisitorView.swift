@@ -45,6 +45,7 @@ class VisitorView: UIView {
     /// 图像
     private lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     
+    /// 遮盖
     private lazy var maskIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     
     /// 小房子
@@ -54,10 +55,10 @@ class VisitorView: UIView {
     private lazy var tipLable: UILabel = UILabel.cz_label(withText: "添加一些好友，看看有什么惊喜！", fontSize: 16, color: UIColor.darkGray)
     
     /// 注册按钮
-    private lazy var registerBtn: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.darkGray, backgroundImageName: "common_button_white_disable")
+    lazy var registerBtn: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.darkGray, backgroundImageName: "common_button_white_disable")
     
     /// 登录按钮
-    private lazy var loginBtn: UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.gray, highlightedColor: UIColor.darkGray, backgroundImageName: "common_button_white_disable")
+    lazy var loginBtn: UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.gray, highlightedColor: UIColor.darkGray, backgroundImageName: "common_button_white_disable")
     
     
     /// 旋转动画

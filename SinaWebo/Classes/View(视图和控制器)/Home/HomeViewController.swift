@@ -45,8 +45,9 @@ class HomeViewController: BaseViewController {
     }
     
     
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+        
+        super.setupTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriend))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
