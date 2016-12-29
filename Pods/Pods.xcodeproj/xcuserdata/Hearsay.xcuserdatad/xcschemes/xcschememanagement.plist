@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SinaWebo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,25 +29,50 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>18ED2A3EB2A18C1BDE0F5367FD9134C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A350102FB27FFB0C9046AE6668A7970</key>
+		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9F7A0EF87F0C499A7817EF848907F8F8</key>
+		<key>42D3B2F9235E7C23232F8F5C48ADF1EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0F4EB862711F00E6D9D318343E7C12C</key>
+		<key>45E45616B99B1EC5336CCB55D64C6FC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A25C21CDF8255D4E8027D123C5ED4D3C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CDF349C769D495AD2B6A148F07840BC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

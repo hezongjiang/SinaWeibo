@@ -24,6 +24,10 @@ class HomeViewController: BaseViewController {
     /// 重写父类的“加载数据”
     override func loadData() {
         
+        NetworkManager.shared.statusList { (list, isSuccell) in
+            
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
 
             
