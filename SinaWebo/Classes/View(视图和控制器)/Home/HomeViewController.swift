@@ -25,7 +25,7 @@ class HomeViewController: BaseViewController {
     override func loadData() {
         
         NetworkManager.shared.statusList { (list, isSuccell) in
-            
+            print(list)
         }
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
