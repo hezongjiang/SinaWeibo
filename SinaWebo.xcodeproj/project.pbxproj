@@ -10,6 +10,8 @@
 		1B117C06381AF0B3855353EF /* Pods_SinaWebo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */; };
 		2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2833351E1E149E04003ABD92 /* NetworkManager.swift */; };
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
+		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
+		283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335241E151599003ABD92 /* StatusListViewModel.swift */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
 		286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF961E10E6A200B6BD4D /* Assets.xcassets */; };
 		286EDFA51E10E6A200B6BD4D /* SinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFA41E10E6A200B6BD4D /* SinaWeboTests.swift */; };
@@ -60,6 +62,8 @@
 		22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWebo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2833351E1E149E04003ABD92 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
+		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		283335241E151599003ABD92 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		286EDF961E10E6A200B6BD4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		286EDFBE1E10F8BC00B6BD4D /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				283335221E14F20A003ABD92 /* Status.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 		286EDFC61E10F8BC00B6BD4D /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				283335241E151599003ABD92 /* StatusListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -564,12 +570,14 @@
 				286EDFF51E10FABE00B6BD4D /* UIButton+CZAddition.m in Sources */,
 				286EDFF81E10FABE00B6BD4D /* UIScreen+CZAddition.m in Sources */,
 				286EDFCA1E10F94900B6BD4D /* MainNavViewController.swift in Sources */,
+				283335231E14F20A003ABD92 /* Status.swift in Sources */,
 				286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */,
 				286EDFF11E10FABE00B6BD4D /* NSObject+CZRuntime.m in Sources */,
 				286EDFD01E10F9E600B6BD4D /* MessageViewController.swift in Sources */,
 				283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */,
 				286EDFD41E10F9FE00B6BD4D /* PorfileViewController.swift in Sources */,
 				286EDFF41E10FABE00B6BD4D /* NSString+CZPath.m in Sources */,
+				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,
 				286EDFF31E10FABE00B6BD4D /* NSString+CZHash.m in Sources */,
 				286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */,
