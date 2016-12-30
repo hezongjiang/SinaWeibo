@@ -10,21 +10,39 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    private var timer: Timer?
+    
     lazy var composeBtn:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setupChildController()
         
         setupComposeBtn()
+        
+    }
+    
+    
+    /// 设置定时器，检查微博未读数
+    private func setupTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateUnreadCount), userInfo: nil, repeats: true)
+        
+    }
+    
+    /// 检查微博未读数
+    @objc private func updateUnreadCount() {
+        
+        NetworkManager.shared.unreadCount { (count) in
+            
+            self.tabBar.items?.first?.badgeValue = count > 0 ? "\(count)" : nil
+            print("微博未读数" + "\(count)")
+        }
     }
     
     /// 撰写按钮
     private func setupComposeBtn() {
-        
-        
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
             
@@ -36,6 +54,8 @@ class MainTabBarController: UITabBarController {
         
     }
     
+    
+    /// 发布微博
     @objc private func composeStatus() {
         print("发布微博")
     }
@@ -95,6 +115,10 @@ class MainTabBarController: UITabBarController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
     
 }

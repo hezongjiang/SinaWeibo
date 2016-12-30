@@ -21,7 +21,9 @@ class NetworkManager: AFHTTPSessionManager {
     
     
     /// 访问令牌
-    var accessToken: String? = "2.00lw9LYCXYO3CEd74037ad4bilu2hC"
+    var accessToken: String? = "2.00lw9LYCZ1HVDE6bfc25f95cGLplyC"
+    var uid:String? = ""
+    
     
     /// accessToken的网络请求
     func accessTokenRequest(method: NetworkMethod = .Get, URLString: String, parameters: [String : AnyObject]?, complentionRequest: @escaping (_ json: AnyObject?, _ isSuccess: Bool) -> ()) {
