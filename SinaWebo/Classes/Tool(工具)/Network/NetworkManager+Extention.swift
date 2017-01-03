@@ -12,19 +12,20 @@ import Foundation
 extension NetworkManager {
     
     /// 加载微博数据（字典数组）
-    func statusList(since_id: Int64 = 0, max_id: Int64 = 0, complentionRequest: @escaping (_ list: [[String : AnyObject]]?, _ isSuccess:Bool) -> ()) {
+    func statusList(since_id: Int64 = 0, max_id: Int64 = 0, complentionRequest: @escaping (_ list: [[String : Any]]?, _ isSuccess:Bool) -> ()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
-        let paramet = ["since_id" : "\(since_id)" as AnyObject, "max_id" : "\(max_id > 0 ? max_id - 1 : 0)" as AnyObject]
+        let paramet = ["since_id" : "\(since_id)", "max_id" : "\(max_id > 0 ? max_id - 1 : 0)"]
         
         accessTokenRequest(URLString: urlString, parameters: paramet) { (json, isSuccess)->() in
             
-            let result = json?["statuses"] as? [[String : AnyObject]]
+            let dict = json as? [String : Any]
             
-            complentionRequest(result, isSuccess)
+            let result = dict?["statuses"] as? [[String : Any]]
+            
+            complentionRequest(result , isSuccess)
         }
-
     }
     
     /// 请求微博未读数
@@ -32,13 +33,39 @@ extension NetworkManager {
         
         let url = "https://rm.api.weibo.com/2/remind/unread_count.json"
         
-        
-        accessTokenRequest(URLString: url, parameters: ["uid" : uid as AnyObject]) { (json, isSuccess) -> () in
+        accessTokenRequest(URLString: url, parameters: ["uid" : userAccount.uid ?? ""]) { (json, isSuccess) -> () in
 
-            let count = json?["status"] as? Int ?? 0
+            let dict = json as? [String : Any]
+            
+            let count = dict?["status"] as? Int ?? 0
             
             complention(count)
+        }
+    }
+    
+    /// 获取access_token
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool) -> ()) {
+        
+        let url = "https://api.weibo.com/oauth2/access_token"
+        
+        let paramters = [
+            "client_id"     : AppKey,
+            "client_secret" : AppSecret,
+            "grant_type"    : "authorization_code",
+            "code"          : code,
+            "redirect_uri"  : RedirectUrl
+        ]
+        
+        request(method: .Post, URLString: url, parameters: paramters) { (json, isSuccess) in
             
+            // 设置账号信息
+            self.userAccount.yy_modelSet(with: (json as? [String : Any] ?? [:]))
+            
+//            print(self.userAccount)
+            
+            self.userAccount.savaAccount() // 保存信息
+            
+            completion(isSuccess)
         }
     }
 }

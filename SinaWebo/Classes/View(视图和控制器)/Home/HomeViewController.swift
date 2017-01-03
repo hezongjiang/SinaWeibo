@@ -22,7 +22,9 @@ class HomeViewController: BaseViewController {
     /// 重写父类的“加载数据”
     override func loadData() {
         
-        
+        if !NetworkManager.shared.userLogin {
+            return
+        }
         
         statusListViewModel.loadStatus(isPullup: isPullup) { (isSuccess, shuoleRefresh) in
             
@@ -33,6 +35,7 @@ class HomeViewController: BaseViewController {
                 self.tableView?.reloadData()
             }
         }
+        
         
     }
     

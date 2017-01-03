@@ -23,8 +23,6 @@ class BaseViewController: UIViewController {
     var refreshController: UIRefreshControl?
     /// 是否为上拉加载
     var isPullup = false
-    /// 是否登录
-    var userLogin = true
     /// 访客视图信息字典
     var visitorInfo: [String : String]?
     
@@ -48,7 +46,7 @@ class BaseViewController: UIViewController {
         
         setupNav()
         
-        userLogin ? setupTableView() : setupVisitor()
+        (NetworkManager.shared.userLogin) ? setupTableView() : setupVisitor()
     }
     
     
@@ -100,6 +98,9 @@ class BaseViewController: UIViewController {
     }
     
     @objc private func login() {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
+        
         print("登录")
     }
     

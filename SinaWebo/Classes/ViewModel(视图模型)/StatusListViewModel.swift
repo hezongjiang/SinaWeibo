@@ -46,7 +46,7 @@ class StatusListViewModel: NSObject {
                 self.statusList += array
             } else {
                 
-                self.statusList = self.statusList + array
+                self.statusList = array + self.statusList
             }
             
             if isPullup && array.count == 0 {

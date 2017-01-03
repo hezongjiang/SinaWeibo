@@ -39,6 +39,8 @@
 		286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */; };
 		286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */; };
 		287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A532A1E135679006E9BC7 /* VisitorView.swift */; };
+		28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */; };
+		28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB11E1B5817009548F1 /* UserAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		287A532A1E135679006E9BC7 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		28D18FB11E1B5817009548F1 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +148,7 @@
 		2833351D1E149DDA003ABD92 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				28D18FB01E1B57FB009548F1 /* UserInfoModel */,
 				2833351E1E149E04003ABD92 /* NetworkManager.swift */,
 				283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */,
 			);
@@ -265,6 +270,7 @@
 				286EDFFC1E10FF3200B6BD4D /* main.json */,
 				28CC1D901E125C3F005578EE /* 主控制器 */,
 				287A53291E135622006E9BC7 /* VisitorView */,
+				28D18FAD1E1B3C39009548F1 /* OAuth */,
 				286EDFCB1E10F97F00B6BD4D /* BaseViewController.swift */,
 			);
 			path = Main;
@@ -350,6 +356,22 @@
 				286EDFC91E10F94900B6BD4D /* MainNavViewController.swift */,
 			);
 			name = "主控制器";
+			sourceTree = "<group>";
+		};
+		28D18FAD1E1B3C39009548F1 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		28D18FB01E1B57FB009548F1 /* UserInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				28D18FB11E1B5817009548F1 /* UserAccount.swift */,
+			);
+			path = UserInfoModel;
 			sourceTree = "<group>";
 		};
 		4BD7959147455B93D7049569 /* Frameworks */ = {
@@ -554,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */,
 				286EDFF61E10FABE00B6BD4D /* UIColor+CZAddition.m in Sources */,
 				286EDFEF1E10FABE00B6BD4D /* NSArray+Log.m in Sources */,
 				286EDFCE1E10F9BA00B6BD4D /* HomeViewController.swift in Sources */,
@@ -564,6 +587,7 @@
 				286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */,
 				286EDFF21E10FABE00B6BD4D /* NSString+CZBase64.m in Sources */,
 				286EDFC81E10F91F00B6BD4D /* MainTabBarController.swift in Sources */,
+				28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */,
 				286EDFD21E10F9F100B6BD4D /* DiscoverViewController.swift in Sources */,
 				286EDFCC1E10F97F00B6BD4D /* BaseViewController.swift in Sources */,
 				2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */,

@@ -21,8 +21,19 @@ class MainTabBarController: UITabBarController {
         
         setupComposeBtn()
         
+        delegate = self
+        
+        //setupTimer()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
     }
     
+    @objc private func userLogin() {
+        
+        let nav = UINavigationController(rootViewController: OAuthViewController())
+        
+        present(nav, animated: true, completion: nil)
+    }
     
     /// 设置定时器，检查微博未读数
     private func setupTimer() {
@@ -34,9 +45,18 @@ class MainTabBarController: UITabBarController {
     /// 检查微博未读数
     @objc private func updateUnreadCount() {
         
+        if !NetworkManager.shared.userLogin {
+            return
+        }
+        
         NetworkManager.shared.unreadCount { (count) in
             
+            // 设置首页未读数
             self.tabBar.items?.first?.badgeValue = count > 0 ? "\(count)" : nil
+            
+            // 设置应用程序未读数，iOS8 开始需要授权
+            UIApplication.shared.applicationIconBadgeNumber = count
+            
             print("微博未读数" + "\(count)")
         }
     }
@@ -44,16 +64,10 @@ class MainTabBarController: UITabBarController {
     /// 撰写按钮
     private func setupComposeBtn() {
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
-            
-            self.tabBar.addSubview(self.composeBtn)
-            self.composeBtn.center = CGPoint(x: self.tabBar.bounds.width * 0.5, y: self.tabBar.bounds.height * 0.5)
-            self.composeBtn.addTarget(self, action: #selector(self.composeStatus), for: .touchUpInside)
-            self.tabBar.bringSubview(toFront: self.composeBtn)
-        }
-        
+        self.tabBar.addSubview(self.composeBtn)
+        self.composeBtn.center = CGPoint(x: self.tabBar.bounds.width * 0.5, y: self.tabBar.bounds.height * 0.5)
+        self.composeBtn.addTarget(self, action: #selector(self.composeStatus), for: .touchUpInside)
     }
-    
     
     /// 发布微博
     @objc private func composeStatus() {
@@ -121,4 +135,30 @@ class MainTabBarController: UITabBarController {
         timer?.invalidate()
     }
     
+//    https://api.weibo.com/oauth2/authorize
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        let index = childViewControllers.index(of: viewController)
+        
+        if index == 0 && index == selectedIndex {
+            
+            let nav = childViewControllers.first as? UINavigationController
+            let vc = nav?.childViewControllers.first as? HomeViewController
+            
+            vc?.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                vc?.loadData()
+            })
+            
+            print("重复点击首页")
+        }
+        
+        return true
+    }
 }
