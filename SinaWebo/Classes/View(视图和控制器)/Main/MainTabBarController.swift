@@ -36,7 +36,7 @@ class MainTabBarController: UITabBarController {
         
         if !NetworkManager.shared.userLogin { return }
         
-        let v = isNewFeature ? NewFeatureView() : WelcomeView.welcomeView()
+        let v = isNewFeature ? NewFeatureView.newFeatureView() : WelcomeView.welcomeView()
         
         v.frame = view.bounds
         
@@ -185,14 +185,16 @@ extension MainTabBarController: UITabBarControllerDelegate {
             let nav = childViewControllers.first as? UINavigationController
             let vc = nav?.childViewControllers.first as? HomeViewController
             
+            // 重复点击首页，滚动顶部，刷新数据
             vc?.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
-            
             
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
                 vc?.loadData()
             })
             
             print("重复点击首页")
+            vc?.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         
         return true

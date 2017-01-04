@@ -40,7 +40,7 @@ class WelcomeView: UIView {
         
         bottomCons.constant = bounds.size.height - 200
         
-        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
             
             self.layoutIfNeeded()
             
@@ -50,7 +50,7 @@ class WelcomeView: UIView {
                 self.tipLabel.alpha = 1
             }, completion: { (_) in
                 
-                UIView.animate(withDuration: 1, animations: { self.alpha = 0 }, completion: { (_) in self.removeFromSuperview() })
+                UIView.animate(withDuration: 0.6, animations: { self.alpha = 0 }, completion: { (_) in self.removeFromSuperview() })
                 
             })
         }

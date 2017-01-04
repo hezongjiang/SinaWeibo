@@ -15,10 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hao-UT-ovc">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hao-UT-ovc">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDI-a3-02N">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDI-a3-02N">
                     <rect key="frame" x="132" y="517" width="110" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="FH8-TM-rw8"/>
@@ -39,7 +40,7 @@
                     <color key="currentPageIndicatorTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="bdt-bo-1fD" firstAttribute="centerX" secondItem="RDI-a3-02N" secondAttribute="centerX" id="DtW-Qs-Ahp"/>
                 <constraint firstItem="bdt-bo-1fD" firstAttribute="top" secondItem="RDI-a3-02N" secondAttribute="bottom" constant="8" id="G37-PI-zYg"/>
@@ -51,6 +52,7 @@
                 <constraint firstAttribute="bottom" secondItem="hao-UT-ovc" secondAttribute="bottom" id="rUa-tt-mLh"/>
             </constraints>
             <connections>
+                <outlet property="enterBtn" destination="RDI-a3-02N" id="Y5c-lX-Lh0"/>
                 <outlet property="pageControl" destination="bdt-bo-1fD" id="5Lq-ev-e9U"/>
                 <outlet property="scrollView" destination="hao-UT-ovc" id="hYK-Pw-U6v"/>
             </connections>
