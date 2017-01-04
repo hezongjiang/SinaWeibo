@@ -8,10 +8,11 @@
 
 import UIKit
 
-let cellId = "cellId"
+private let cellId = "cellId"
 
 class HomeViewController: BaseViewController {
 
+    /// 数据模型
     private lazy var statusListViewModel = StatusListViewModel()
     
     override func viewDidLoad() {
@@ -22,9 +23,7 @@ class HomeViewController: BaseViewController {
     /// 重写父类的“加载数据”
     override func loadData() {
         
-        if !NetworkManager.shared.userLogin {
-            return
-        }
+        if !NetworkManager.shared.userLogin { return }
         
         statusListViewModel.loadStatus(isPullup: isPullup) { (isSuccess, shuoleRefresh) in
             
@@ -35,10 +34,7 @@ class HomeViewController: BaseViewController {
                 self.tableView?.reloadData()
             }
         }
-        
-        
     }
-    
     
     override func setupTableView() {
         

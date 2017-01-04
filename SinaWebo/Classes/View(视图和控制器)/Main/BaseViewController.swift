@@ -4,12 +4,9 @@
 //
 //  Created by Hearsay on 2016/12/26.
 //  Copyright © 2016年 Hearsay. All rights reserved.
-//  2.00lw9LYCXYO3CEd74037ad4bilu2hC
 //  
 
 import UIKit
-
-
 
 class BaseViewController: UIViewController {
     
@@ -28,10 +25,31 @@ class BaseViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         automaticallyAdjustsScrollViewInsets = false
+        
         setupUI()
+        
         loadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
+    }
+    
+    
+    /// 登录成功
+    @objc private func loginSuccess() {
+        
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        // 当view == nil 的时候，会重新调用loadView -> viewDidLoad
+        view = nil
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     /// 加载数据
@@ -86,6 +104,7 @@ class BaseViewController: UIViewController {
         tableView?.dataSource = self
         tableView?.delegate = self
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
         refreshController = UIRefreshControl()

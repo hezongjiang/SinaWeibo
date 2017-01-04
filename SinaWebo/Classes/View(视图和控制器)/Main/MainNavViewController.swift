@@ -11,7 +11,10 @@ import UIKit
 class MainNavViewController: UINavigationController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // 影藏系统自带的导航栏，使用基类自定义的导航栏，解决导航栏渐溶
         navigationBar.isHidden = true
     }
     
@@ -29,12 +32,10 @@ class MainNavViewController: UINavigationController {
                 vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, fontSize: 16, target: self, action: #selector(back), isBack: true)
             }
         }
-        
-        
         super.pushViewController(viewController, animated: animated)
     }
 
-    @objc func back() {
+    @objc private func back() {
         popViewController(animated: true)
     }
 }

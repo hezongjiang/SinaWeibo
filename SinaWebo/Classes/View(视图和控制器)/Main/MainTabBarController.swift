@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Hearsay. All rights reserved.
 //
 
-import UIKit
+import SVProgressHUD
 
 class MainTabBarController: UITabBarController {
     
@@ -23,31 +23,45 @@ class MainTabBarController: UITabBarController {
         
         delegate = self
         
-        //setupTimer()
+        // 设置定时器，定时检查微博未读数
+        setupTimer()
         
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
     }
     
-    @objc private func userLogin() {
+    // 登录通知方法
+    @objc private func userLogin(noti: Notification) {
         
-        let nav = UINavigationController(rootViewController: OAuthViewController())
+        var when = DispatchTime.now()
         
-        present(nav, animated: true, completion: nil)
+        if noti.object != nil {
+            
+            when = DispatchTime.now() + 2
+            
+            SVProgressHUD.showInfo(withStatus: "登录过期")
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            
+            let nav = UINavigationController(rootViewController: OAuthViewController())
+            
+            self.present(nav, animated: true, completion: nil)
+        }
+        
     }
     
     /// 设置定时器，检查微博未读数
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateUnreadCount), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(updateUnreadCount), userInfo: nil, repeats: true)
         
     }
     
     /// 检查微博未读数
     @objc private func updateUnreadCount() {
         
-        if !NetworkManager.shared.userLogin {
-            return
-        }
+        // 如果没有登录，不检查未读数
+        if !NetworkManager.shared.userLogin { return }
         
         NetworkManager.shared.unreadCount { (count) in
             
@@ -74,7 +88,7 @@ class MainTabBarController: UITabBarController {
         print("发布微博")
     }
     
-    /// 添加自控制器
+    /// 添加子控制器
     private func setupChildController() {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -87,7 +101,6 @@ class MainTabBarController: UITabBarController {
             let path = Bundle.main.path(forResource: "main", ofType: "json")
             
             data = NSData(contentsOfFile: path!)
-            
         }
         
         guard let dicts = try? JSONSerialization.jsonObject(with: (data as! Data), options: []) as? [[String : AnyObject]] else {
@@ -98,8 +111,6 @@ class MainTabBarController: UITabBarController {
             
             addChildViewController(controller(dict: dict))
         }
-        
-        
     }
     
     /// 通过字典创建导航控制器
@@ -123,7 +134,6 @@ class MainTabBarController: UITabBarController {
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .selected)
         let nav = MainNavViewController(rootViewController: vc)
         
-        
         return nav
     }
     
@@ -134,8 +144,6 @@ class MainTabBarController: UITabBarController {
     deinit {
         timer?.invalidate()
     }
-    
-//    https://api.weibo.com/oauth2/authorize
 }
 
 extension MainTabBarController: UITabBarControllerDelegate {

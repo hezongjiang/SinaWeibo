@@ -11,7 +11,7 @@ import Foundation
 /// 封装新浪微博的请求方法
 extension NetworkManager {
     
-    /// 加载微博数据（字典数组）
+    /// 加载微博首页数据（字典数组）
     func statusList(since_id: Int64 = 0, max_id: Int64 = 0, complentionRequest: @escaping (_ list: [[String : Any]]?, _ isSuccess:Bool) -> ()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
@@ -24,11 +24,11 @@ extension NetworkManager {
             
             let result = dict?["statuses"] as? [[String : Any]]
             
-            complentionRequest(result , isSuccess)
+            complentionRequest(result, isSuccess)
         }
     }
     
-    /// 请求微博未读数
+    /// 获取微博未读数量
     func unreadCount(complention: @escaping (_ unreadCount: Int) -> ()) {
         
         let url = "https://rm.api.weibo.com/2/remind/unread_count.json"
@@ -66,6 +66,19 @@ extension NetworkManager {
             self.userAccount.savaAccount() // 保存信息
             
             completion(isSuccess)
+        }
+    }
+    
+    
+    /// 加载微博个人用户信息
+    func loadUserInfo() {
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        let parameters = ["uid" : userAccount.uid ?? ""]
+        
+        accessTokenRequest(URLString: urlString, parameters: parameters) { (json, isSuccess) -> () in
+            print("用户信息" + "\(json)")
         }
     }
 }

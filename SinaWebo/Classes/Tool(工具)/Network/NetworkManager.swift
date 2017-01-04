@@ -13,7 +13,7 @@ enum NetworkMethod {
     case Post
 }
 
-/// AFN的网络工具类
+/// AFNetworking的网络工具类
 class NetworkManager: AFHTTPSessionManager {
 
     /// 单例
@@ -25,6 +25,7 @@ class NetworkManager: AFHTTPSessionManager {
         return instance
     }()
     
+    /// 用户信息模型
     lazy var userAccount = UserAccount()
     
     /// 判断用户是否登录
@@ -33,11 +34,12 @@ class NetworkManager: AFHTTPSessionManager {
     }
     
     
-    /// accessToken的网络请求
+    /// 根据access_token发起网络请求
     func accessTokenRequest(method: NetworkMethod = .Get, URLString: String, parameters: [String : Any]?, complentionRequest: @escaping (_ json: Any?, _ isSuccess: Bool) -> ()) {
         
+
         guard let token = userAccount.access_token else {
-            // FIXME: 去登录
+            
             print("没有accessToken，需要登录")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
             complentionRequest(nil, false)
@@ -57,7 +59,7 @@ class NetworkManager: AFHTTPSessionManager {
     
     
     
-    /// AFN的网络请求封装
+    /// AFNetworking的网络请求封装
     ///
     /// - Parameters:
     ///   - method: Get or Post
@@ -74,8 +76,7 @@ class NetworkManager: AFHTTPSessionManager {
             
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 
-                // FIXME: 去登录
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: "bad_access_token")
             }
             
             print(error)

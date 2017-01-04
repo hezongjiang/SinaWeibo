@@ -111,7 +111,5 @@ class VisitorView: UIView {
         let viewDict = ["maskIconView" : maskIconView, "registerBtn" : registerBtn] as [String : Any]
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[maskIconView]-0-|", options: [], metrics: nil, views: viewDict))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[maskIconView]-0-[registerBtn]", options: [], metrics: nil, views: viewDict))
-        
-        
     }
 }

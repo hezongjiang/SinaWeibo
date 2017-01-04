@@ -37,8 +37,6 @@ class UserAccount: NSObject {
         
         yy_modelSet(with: dict ?? [:])
         
-//        expiresDate = Date(timeIntervalSinceNow: -3600 * 30)
-        
         if expiresDate?.compare(Date()) == .orderedDescending {
             print("账号正常")
         } else {

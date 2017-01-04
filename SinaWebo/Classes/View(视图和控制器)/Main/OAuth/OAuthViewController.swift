@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Hearsay. All rights reserved.
 //
 
-import UIKit
 import SVProgressHUD
 
 class OAuthViewController: UIViewController {
@@ -51,6 +50,7 @@ class OAuthViewController: UIViewController {
     }
 }
 
+// MARK: - UIWebViewDelegate
 extension OAuthViewController: UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -67,9 +67,18 @@ extension OAuthViewController: UIWebViewDelegate {
                 // 使用授权码换区access_token
                 NetworkManager.shared.loadAccessToken(code: code, completion: { (isSuccess) in
                     
-                    isSuccess ? SVProgressHUD.showSuccess(withStatus: "登录成功！") : SVProgressHUD.showError(withStatus: "网络错误，登录失败！")
+                    if isSuccess {
+                        
+                        SVProgressHUD.showSuccess(withStatus: "登录成功！")
+                        
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
+                        self.close()
+                        
+                    } else {
+                        
+                        SVProgressHUD.showError(withStatus: "网络错误，登录失败！")
+                    }
                 })
-                
             }
             
             return false
