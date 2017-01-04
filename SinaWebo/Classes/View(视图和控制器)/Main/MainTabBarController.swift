@@ -26,8 +26,36 @@ class MainTabBarController: UITabBarController {
         // 设置定时器，定时检查微博未读数
 //        setupTimer()
         
+        setupNewfeatureViews()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
     }
+    
+    /// 设置新特性视图
+    private func setupNewfeatureViews() {
+        
+        if !NetworkManager.shared.userLogin { return }
+        
+        let v = isNewFeature ? NewFeatureView() : WelcomeView.welcomeView()
+        
+        v.frame = view.bounds
+        
+        view.addSubview(v)
+    }
+    
+    private var isNewFeature: Bool {
+        
+        let version = "version"
+        // 当前版本
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        // 沙盒版本
+        let sandboxVersion = UserDefaults.standard.value(forKey: version) as? String
+        
+        UserDefaults.standard.set(currentVersion, forKey: version)
+        
+        return currentVersion != sandboxVersion
+    }
+    
     
     // 登录通知方法
     @objc private func userLogin(noti: Notification) {
@@ -47,7 +75,6 @@ class MainTabBarController: UITabBarController {
             
             self.present(nav, animated: true, completion: nil)
         }
-        
     }
     
     /// 设置定时器，检查微博未读数
@@ -146,6 +173,7 @@ class MainTabBarController: UITabBarController {
     }
 }
 
+// MARK: - UITabBarControllerDelegate
 extension MainTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

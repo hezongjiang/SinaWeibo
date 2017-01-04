@@ -39,6 +39,9 @@ class TitleButton: UIButton {
             return
         }
         
+//        print(titleLabel)
+//        print(imageView)
+        
         if titleLabel.bounds.origin.x < 1 {
             return
         }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewFeatureView" customModule="SinaWebo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hao-UT-ovc">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDI-a3-02N">
+                    <rect key="frame" x="132" y="517" width="110" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FH8-TM-rw8"/>
+                        <constraint firstAttribute="width" constant="110" id="g6K-2e-ykb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="进入微博" backgroundImage="new_feature_finish_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="new_feature_finish_button_highlighted"/>
+                    <connections>
+                        <action selector="enterBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="JsB-fE-T2f"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="bdt-bo-1fD">
+                    <rect key="frame" x="160" y="565" width="55" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bdt-bo-1fD" firstAttribute="centerX" secondItem="RDI-a3-02N" secondAttribute="centerX" id="DtW-Qs-Ahp"/>
+                <constraint firstItem="bdt-bo-1fD" firstAttribute="top" secondItem="RDI-a3-02N" secondAttribute="bottom" constant="8" id="G37-PI-zYg"/>
+                <constraint firstAttribute="trailing" secondItem="hao-UT-ovc" secondAttribute="trailing" id="Iae-1H-gSD"/>
+                <constraint firstAttribute="bottom" secondItem="RDI-a3-02N" secondAttribute="bottom" constant="110" id="ZzB-Im-zfo"/>
+                <constraint firstItem="RDI-a3-02N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bXZ-bq-DfO"/>
+                <constraint firstItem="hao-UT-ovc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="btu-sx-CvB"/>
+                <constraint firstItem="hao-UT-ovc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qyA-cW-mb0"/>
+                <constraint firstAttribute="bottom" secondItem="hao-UT-ovc" secondAttribute="bottom" id="rUa-tt-mLh"/>
+            </constraints>
+            <connections>
+                <outlet property="pageControl" destination="bdt-bo-1fD" id="5Lq-ev-e9U"/>
+                <outlet property="scrollView" destination="hao-UT-ovc" id="hYK-Pw-U6v"/>
+            </connections>
+            <point key="canvasLocation" x="-313" y="58"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_feature_finish_button" width="105" height="36"/>
+        <image name="new_feature_finish_button_highlighted" width="105" height="36"/>
+    </resources>
+</document>

@@ -42,6 +42,10 @@
 		28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */; };
 		28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB11E1B5817009548F1 /* UserAccount.swift */; };
 		28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB41E1C8FD6009548F1 /* TitleButton.swift */; };
+		28D18FB81E1CA6DE009548F1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB71E1CA6DE009548F1 /* WelcomeView.swift */; };
+		28D18FBA1E1CA6F6009548F1 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB91E1CA6F6009548F1 /* NewFeatureView.swift */; };
+		28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */; };
+		28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		28D18FB11E1B5817009548F1 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		28D18FB41E1C8FD6009548F1 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		28D18FB71E1CA6DE009548F1 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		28D18FB91E1CA6F6009548F1 /* NewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
+		28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFeatureView.xib; sourceTree = "<group>"; };
 		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				286EDFFC1E10FF3200B6BD4D /* main.json */,
+				28D18FB61E1CA6B7009548F1 /* NewFeature */,
 				28CC1D901E125C3F005578EE /* 主控制器 */,
 				287A53291E135622006E9BC7 /* VisitorView */,
 				28D18FAD1E1B3C39009548F1 /* OAuth */,
@@ -385,6 +394,17 @@
 			path = TitleButton;
 			sourceTree = "<group>";
 		};
+		28D18FB61E1CA6B7009548F1 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				28D18FB71E1CA6DE009548F1 /* WelcomeView.swift */,
+				28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */,
+				28D18FB91E1CA6F6009548F1 /* NewFeatureView.swift */,
+				28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
 		4BD7959147455B93D7049569 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,7 +513,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 286EDF831E10E6A100B6BD4D;
@@ -513,7 +532,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */,
 				286EDFFD1E10FF3200B6BD4D /* main.json in Resources */,
+				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,11 +608,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D18FBA1E1CA6F6009548F1 /* NewFeatureView.swift in Sources */,
 				28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */,
 				286EDFF61E10FABE00B6BD4D /* UIColor+CZAddition.m in Sources */,
 				286EDFEF1E10FABE00B6BD4D /* NSArray+Log.m in Sources */,
 				286EDFCE1E10F9BA00B6BD4D /* HomeViewController.swift in Sources */,
 				286EDFF71E10FABE00B6BD4D /* UILabel+CZAddition.m in Sources */,
+				28D18FB81E1CA6DE009548F1 /* WelcomeView.swift in Sources */,
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
@@ -670,6 +693,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -692,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -720,6 +744,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -736,7 +761,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -759,6 +784,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SinaWebo/Webo-Bridge.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -776,6 +802,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SinaWebo/Webo-Bridge.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
