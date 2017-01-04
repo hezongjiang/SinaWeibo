@@ -61,24 +61,31 @@ extension NetworkManager {
             // 设置账号信息
             self.userAccount.yy_modelSet(with: (json as? [String : Any] ?? [:]))
             
-//            print(self.userAccount)
-            
-            self.userAccount.savaAccount() // 保存信息
-            
-            completion(isSuccess)
+            // 获取用户个人信息
+            self.loadUserInfo(completion: { (userDict) in
+                
+                self.userAccount.yy_modelSet(with: userDict)
+                
+                self.userAccount.savaAccount() // 保存信息到本地
+                
+                print(self.userAccount)
+                
+                completion(isSuccess)
+            })
         }
     }
     
     
-    /// 加载微博个人用户信息
-    func loadUserInfo() {
+    /// 加载微博用户个人信息
+    private func loadUserInfo(completion: @escaping (_ dict: [String : Any]) -> ()) {
         
         let urlString = "https://api.weibo.com/2/users/show.json"
         
         let parameters = ["uid" : userAccount.uid ?? ""]
         
         accessTokenRequest(URLString: urlString, parameters: parameters) { (json, isSuccess) -> () in
-            print("用户信息" + "\(json)")
+            
+            completion(json as? [String : Any] ?? [:])
         }
     }
 }

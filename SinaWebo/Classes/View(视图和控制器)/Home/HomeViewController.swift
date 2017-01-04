@@ -17,7 +17,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     /// 重写父类的“加载数据”
@@ -41,6 +41,20 @@ class HomeViewController: BaseViewController {
         super.setupTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriend))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        setupNavTitle()
+    }
+    
+    private func setupNavTitle() {
+        
+        let title = NetworkManager.shared.userAccount.screen_name
+        
+        let button = TitleButton(title: title)
+        button.addTarget(self, action: #selector(clickNavTitleButton(btn:)), for: .touchUpInside)
+        navItem.titleView = button
+    }
+    
+    @objc private func clickNavTitleButton(btn: TitleButton) {
+        btn.isSelected = !btn.isSelected
     }
     
     @objc private func showFriend() {

@@ -24,7 +24,7 @@ class MainTabBarController: UITabBarController {
         delegate = self
         
         // 设置定时器，定时检查微博未读数
-        setupTimer()
+//        setupTimer()
         
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
     }

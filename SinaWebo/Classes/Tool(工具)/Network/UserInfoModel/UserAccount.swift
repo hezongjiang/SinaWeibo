@@ -26,6 +26,14 @@ class UserAccount: NSObject {
     /// 过期日期
     var expiresDate: Date?
     
+    /// 用户昵称
+    var screen_name: String?
+    
+    
+    /// 头像
+    var avatar_large: String?
+    
+    
     override init() {
         super.init()
         
@@ -48,7 +56,7 @@ class UserAccount: NSObject {
         }
     }
     
-    /// 存储账号信息
+    /// 存储账号信息到本地
     func savaAccount() {
         
         let data = self.yy_modelToJSONData()
