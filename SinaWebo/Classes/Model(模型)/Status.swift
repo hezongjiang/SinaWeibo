@@ -17,6 +17,10 @@ class Status: NSObject {
     /// 微博正文
     var text: String?
     
+    
+    /// 微博用户
+    var user: User?
+    
     override var description: String {
         return yy_modelDescription()
     }

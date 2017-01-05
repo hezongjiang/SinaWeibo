@@ -13,7 +13,7 @@ private let cellId = "cellId"
 class HomeViewController: BaseViewController {
 
     /// 数据模型
-    private lazy var statusListViewModel = StatusListViewModel()
+    fileprivate lazy var statusListViewModel = StatusListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,12 @@ class HomeViewController: BaseViewController {
         
         super.setupTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriend))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        tableView?.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 300
+        tableView?.separatorStyle = .none
+        
         setupNavTitle()
     }
     
@@ -60,16 +65,22 @@ class HomeViewController: BaseViewController {
     @objc private func showFriend() {
         navigationController?.pushViewController(MessageViewController(), animated: true)
     }
+}
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
+extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusListViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-        cell?.textLabel?.text = statusListViewModel.statusList[indexPath.row].text
-        return cell!
+        
+//        tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! StatusCell
+        cell.statusLabel?.text = statusListViewModel.statusList[indexPath.row].text
+        return cell
     }
 }
 

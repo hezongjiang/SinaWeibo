@@ -10,9 +10,10 @@ import UIKit
 
 private let maxPullupTryTimer = 3
 
-/// 微博数据 视图模型
+/// 微博首页列表数据的视图模型
 class StatusListViewModel: NSObject {
 
+    // 首页数据列表
     lazy var statusList = [Status]()
     
     private var pullupErrorTimer = 0
@@ -39,7 +40,7 @@ class StatusListViewModel: NSObject {
                 return
             }
             
-            print("刷到" + "\(array.count)" + "条数据")
+            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
             
             if isPullup {
                 

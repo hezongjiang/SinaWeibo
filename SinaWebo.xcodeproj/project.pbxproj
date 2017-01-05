@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1B117C06381AF0B3855353EF /* Pods_SinaWebo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */; };
+		283042341E1DF8D30075F319 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042331E1DF8D30075F319 /* StatusCell.swift */; };
+		283042361E1DF9210075F319 /* StatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283042351E1DF9210075F319 /* StatusNormalCell.xib */; };
+		2830423A1E1E27E20075F319 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042391E1E27E20075F319 /* User.swift */; };
+		2830423C1E1E2C000075F319 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830423B1E1E2C000075F319 /* StatusViewModel.swift */; };
 		2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2833351E1E149E04003ABD92 /* NetworkManager.swift */; };
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
 		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
@@ -67,6 +71,10 @@
 
 /* Begin PBXFileReference section */
 		22019E3757A9FCCECEC24A46 /* Pods_SinaWebo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWebo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		283042331E1DF8D30075F319 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		283042351E1DF9210075F319 /* StatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusNormalCell.xib; sourceTree = "<group>"; };
+		283042391E1E27E20075F319 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2830423B1E1E2C000075F319 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		2833351E1E149E04003ABD92 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
 		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -155,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		283042321E1DF8620075F319 /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				283042331E1DF8D30075F319 /* StatusCell.swift */,
+				283042351E1DF9210075F319 /* StatusNormalCell.xib */,
+			);
+			path = StatusCell;
+			sourceTree = "<group>";
+		};
 		2833351D1E149DDA003ABD92 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				283335221E14F20A003ABD92 /* Status.swift */,
+				283042391E1E27E20075F319 /* User.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -269,6 +287,7 @@
 		286EDFC21E10F8BC00B6BD4D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				283042321E1DF8620075F319 /* StatusCell */,
 				28D18FB31E1C8FB2009548F1 /* TitleButton */,
 				286EDFCD1E10F9BA00B6BD4D /* HomeViewController.swift */,
 			);
@@ -308,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				283335241E151599003ABD92 /* StatusListViewModel.swift */,
+				2830423B1E1E2C000075F319 /* StatusViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -536,6 +556,7 @@
 				286EDFFD1E10FF3200B6BD4D /* main.json in Resources */,
 				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
+				283042361E1DF9210075F319 /* StatusNormalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D18FBA1E1CA6F6009548F1 /* NewFeatureView.swift in Sources */,
+				2830423C1E1E2C000075F319 /* StatusViewModel.swift in Sources */,
 				28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */,
 				286EDFF61E10FABE00B6BD4D /* UIColor+CZAddition.m in Sources */,
 				286EDFEF1E10FABE00B6BD4D /* NSArray+Log.m in Sources */,
@@ -632,8 +654,10 @@
 				286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */,
 				286EDFF11E10FABE00B6BD4D /* NSObject+CZRuntime.m in Sources */,
 				286EDFD01E10F9E600B6BD4D /* MessageViewController.swift in Sources */,
+				2830423A1E1E27E20075F319 /* User.swift in Sources */,
 				283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */,
 				286EDFD41E10F9FE00B6BD4D /* PorfileViewController.swift in Sources */,
+				283042341E1DF8D30075F319 /* StatusCell.swift in Sources */,
 				286EDFF41E10FABE00B6BD4D /* NSString+CZPath.m in Sources */,
 				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,
