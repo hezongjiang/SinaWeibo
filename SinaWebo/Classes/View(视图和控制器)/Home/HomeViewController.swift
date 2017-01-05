@@ -79,7 +79,11 @@ extension HomeViewController {
 //        tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! StatusCell
-        cell.statusLabel?.text = statusListViewModel.statusList[indexPath.row].text
+        
+        let viewModel = statusListViewModel.statusList[indexPath.row]
+        
+        cell.viewModel = viewModel
+        
         return cell
     }
 }

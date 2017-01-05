@@ -21,10 +21,10 @@ class User: NSObject {
     var profile_image_url: String?
     
     /// 认证类型
-    var verifier_type: Int = 0
+    var verified_type: Int = 0
     
     /// 会员等级
-    var mbrark: Int = 0
+    var mbrank: Int = 0
     
     override var description: String {
         return yy_modelDescription()

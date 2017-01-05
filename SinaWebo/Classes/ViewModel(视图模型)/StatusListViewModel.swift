@@ -14,7 +14,7 @@ private let maxPullupTryTimer = 3
 class StatusListViewModel: NSObject {
 
     // 首页数据列表
-    lazy var statusList = [Status]()
+    lazy var statusList = [StatusViewModel]()
     
     private var pullupErrorTimer = 0
     
@@ -30,17 +30,30 @@ class StatusListViewModel: NSObject {
             return
         }
         
-        let since_id = isPullup ? 0 : self.statusList.first?.id ?? 0
-        let max_id = !isPullup ? 0 : self.statusList.last?.id ?? 0
+        let since_id = isPullup ? 0 : self.statusList.first?.status.id ?? 0
+        let max_id = !isPullup ? 0 : self.statusList.last?.status.id ?? 0
         
         NetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (json, isSuccess) in
             
-            guard let array = NSArray.yy_modelArray(with: Status.self, json: json ?? []) as? [Status] else {
-                completion(isSuccess, false)
+            if !isSuccess {
+                
+                completion(false, false)
                 return
             }
             
-            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
+            var array = [StatusViewModel]()
+            
+            for dict in json ?? [] {
+                
+                guard let status = Status.yy_model(with: dict) else {
+                    continue
+                }
+                
+                array.append(StatusViewModel(model: status))
+            }
+            
+//            print(json)
+//            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
             
             if isPullup {
                 

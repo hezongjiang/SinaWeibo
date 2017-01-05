@@ -11,6 +11,22 @@ import UIKit
 class StatusCell: UITableViewCell {
 
     
+    /// 微博视图模型
+    var viewModel: StatusViewModel? {
+        didSet {
+            
+            nameLabel.text = viewModel?.status.user?.screen_name
+            
+            statusLabel.text = viewModel?.status.text
+            
+            memberIcon.image = viewModel?.memberIcon
+            
+            vipIcon.image = viewModel?.vipIcon
+            
+            iconView.setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_small"), isAvatar: true)
+        }
+    }
+    
     /// 头像
     @IBOutlet weak var iconView: UIImageView!
     
