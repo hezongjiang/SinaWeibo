@@ -21,10 +21,22 @@ class StatusViewModel: NSObject {
     /// 认证类型：没有认证（-1），认证用户（0），企业认证（2、3、5），达人（220）
     var vipIcon: UIImage?
     
+    /// 转发
+    var retweetString: String?
+    
+    /// 评论
+    var commentString: String?
+    
+    /// 点赞
+    var likeString: String?
+    
+    
     
     init(model: Status) {
         
         status = model
+        
+        super.init()
         
         let rank = model.user?.mbrank ?? 0
         
@@ -43,6 +55,26 @@ class StatusViewModel: NSObject {
         default:
             break
         }
+        
+//        model.reposts_count = Int(arc4random_uniform(100000))
+        
+        retweetString = countString(count: model.reposts_count, defaultString: "转发")
+        commentString = countString(count: model.comments_count, defaultString: "评论")
+        likeString = countString(count: model.attitudes_count, defaultString: "赞")
+        
+        
+    }
+    
+    private func countString(count: Int, defaultString: String) -> String {
+        
+        if count == 0 {
+            return defaultString
+        }
+        if count < 10000 {
+            return count.description
+        }
+        
+        return String(format: "%.2f万", CGFloat(count) / 10000.0)
     }
     
     override var description: String {

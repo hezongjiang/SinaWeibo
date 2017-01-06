@@ -14,6 +14,8 @@
 		2830423C1E1E2C000075F319 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830423B1E1E2C000075F319 /* StatusViewModel.swift */; };
 		283042831E1E47730075F319 /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042821E1E47730075F319 /* UIImageView+WebImage.swift */; };
 		283042851E1E4B720075F319 /* Uimage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042841E1E4B720075F319 /* Uimage+Extention.swift */; };
+		283042871E1F28C10075F319 /* StatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042861E1F28C10075F319 /* StatusToolBar.swift */; };
+		283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042C81E1FA3560075F319 /* StatusPictureView.swift */; };
 		2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2833351E1E149E04003ABD92 /* NetworkManager.swift */; };
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
 		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
@@ -79,6 +81,8 @@
 		2830423B1E1E2C000075F319 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		283042821E1E47730075F319 /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		283042841E1E4B720075F319 /* Uimage+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Uimage+Extention.swift"; sourceTree = "<group>"; };
+		283042861E1F28C10075F319 /* StatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusToolBar.swift; sourceTree = "<group>"; };
+		283042C81E1FA3560075F319 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		2833351E1E149E04003ABD92 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
 		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				283042331E1DF8D30075F319 /* StatusCell.swift */,
+				283042C81E1FA3560075F319 /* StatusPictureView.swift */,
+				283042861E1F28C10075F319 /* StatusToolBar.swift */,
 				283042351E1DF9210075F319 /* StatusNormalCell.xib */,
 			);
 			path = StatusCell;
@@ -643,6 +649,7 @@
 				286EDFCE1E10F9BA00B6BD4D /* HomeViewController.swift in Sources */,
 				286EDFF71E10FABE00B6BD4D /* UILabel+CZAddition.m in Sources */,
 				28D18FB81E1CA6DE009548F1 /* WelcomeView.swift in Sources */,
+				283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */,
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
@@ -666,6 +673,7 @@
 				283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */,
 				286EDFD41E10F9FE00B6BD4D /* PorfileViewController.swift in Sources */,
 				283042341E1DF8D30075F319 /* StatusCell.swift in Sources */,
+				283042871E1F28C10075F319 /* StatusToolBar.swift in Sources */,
 				286EDFF41E10FABE00B6BD4D /* NSString+CZPath.m in Sources */,
 				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,

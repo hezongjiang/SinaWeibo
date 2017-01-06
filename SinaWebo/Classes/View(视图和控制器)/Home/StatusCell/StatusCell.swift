@@ -24,6 +24,12 @@ class StatusCell: UITableViewCell {
             vipIcon.image = viewModel?.vipIcon
             
             iconView.setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_small"), isAvatar: true)
+            
+            sourceLaebl.text = "来自" + (viewModel?.status.source ?? "")
+            
+            timeLabel.text = viewModel?.status.created_at
+            
+            toolBar.viewModel = viewModel
         }
     }
     
@@ -47,6 +53,9 @@ class StatusCell: UITableViewCell {
     
     /// 微博正文
     @IBOutlet weak var statusLabel: UILabel!
+    
+    /// 底部工具栏
+    @IBOutlet weak var toolBar: StatusToolBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()
