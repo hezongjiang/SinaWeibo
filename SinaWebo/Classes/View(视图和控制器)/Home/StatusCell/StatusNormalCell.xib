@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iaQ-Fp-f8E" id="jRD-AJ-VLX">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="358"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glA-DJ-bRW" userLabel="顶部分割视图">
@@ -110,8 +110,8 @@
                             <outlet property="retweetButton" destination="CPP-2n-vf3" id="sz3-N7-GJ7"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="93" width="351" height="230"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
+                        <rect key="frame" x="12" y="81" width="351" height="230"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="229.5" id="IVm-80-URa"/>
@@ -146,13 +146,14 @@
                     <constraint firstItem="Xeh-wf-Rcu" firstAttribute="top" secondItem="glA-DJ-bRW" secondAttribute="bottom" constant="12" id="nKu-fu-xZB"/>
                     <constraint firstItem="glA-DJ-bRW" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" id="sgY-QZ-rQy"/>
                     <constraint firstAttribute="trailing" secondItem="ssZ-By-JU5" secondAttribute="trailing" constant="12" id="xpg-7l-Va1"/>
-                    <constraint firstItem="X7a-W5-udk" firstAttribute="top" secondItem="ssZ-By-JU5" secondAttribute="bottom" constant="12" id="zk7-2g-PJO"/>
+                    <constraint firstItem="X7a-W5-udk" firstAttribute="top" secondItem="ssZ-By-JU5" secondAttribute="bottom" id="zk7-2g-PJO"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="iconView" destination="Xeh-wf-Rcu" id="nVb-61-JC8"/>
                 <outlet property="memberIcon" destination="ODu-tg-Rxe" id="rs4-op-xjs"/>
                 <outlet property="nameLabel" destination="Cog-z1-ko8" id="1r6-ky-kus"/>
+                <outlet property="pictureView" destination="X7a-W5-udk" id="bjL-7g-qKc"/>
                 <outlet property="sourceLaebl" destination="XGb-yw-viW" id="Zas-Nf-Lcz"/>
                 <outlet property="statusLabel" destination="ssZ-By-JU5" id="wpA-KT-QnB"/>
                 <outlet property="timeLabel" destination="3O5-dd-k9F" id="myF-vG-N77"/>

@@ -54,6 +54,9 @@ class StatusCell: UITableViewCell {
     /// 微博正文
     @IBOutlet weak var statusLabel: UILabel!
     
+    /// 配图视图
+    @IBOutlet weak var pictureView: StatusPictureView!
+    
     /// 底部工具栏
     @IBOutlet weak var toolBar: StatusToolBar!
     

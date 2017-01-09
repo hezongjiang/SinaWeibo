@@ -38,9 +38,7 @@ class OAuthViewController: UIViewController {
     
     @objc private func autoFill() {
         
-        let js = "document.getElementById('userId').value = '13250231442'; " +
-        "document.getElementById('passwd').value = 'huyali520';"
-        
+        let js = "document.getElementById('userId').value = '13250231442'; "
         webView.stringByEvaluatingJavaScript(from: js)
     }
 

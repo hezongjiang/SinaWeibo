@@ -23,8 +23,8 @@ class StatusToolBar: UIView {
         didSet {
             
             retweetButton.setTitle(viewModel?.retweetString ?? "转发", for: .normal)
-            commentButton.setTitle(viewModel?.commentString ?? "转发", for: .normal)
-            likeButton.setTitle(viewModel?.likeString ?? "转发", for: .normal)
+            commentButton.setTitle(viewModel?.commentString ?? "评论", for: .normal)
+            likeButton.setTitle(viewModel?.likeString ?? "赞", for: .normal)
         }
     }
     
