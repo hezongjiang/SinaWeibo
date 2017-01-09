@@ -35,6 +35,12 @@ class Status: NSObject {
     /// 微博用户
     var user: User?
     
+    var pic_urls: [StatusPicture]?
+    
+    class func modelContainerPropertyGenericClass() -> [String : AnyClass] {
+        return ["pic_urls" : StatusPicture.self]
+    }
+    
     override var description: String {
         return yy_modelDescription()
     }

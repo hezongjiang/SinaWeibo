@@ -47,6 +47,8 @@
 		286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */; };
 		286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */; };
 		287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A532A1E135679006E9BC7 /* VisitorView.swift */; };
+		28CE51481E232B44004A1FD6 /* StatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE51471E232B44004A1FD6 /* StatusPicture.swift */; };
+		28CE514A1E233994004A1FD6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE51491E233994004A1FD6 /* Common.swift */; };
 		28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */; };
 		28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB11E1B5817009548F1 /* UserAccount.swift */; };
 		28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB41E1C8FD6009548F1 /* TitleButton.swift */; };
@@ -134,6 +136,8 @@
 		286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		287A532A1E135679006E9BC7 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		28CE51471E232B44004A1FD6 /* StatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicture.swift; sourceTree = "<group>"; };
+		28CE51491E233994004A1FD6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		28D18FB11E1B5817009548F1 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		28D18FB41E1C8FD6009548F1 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			children = (
 				283335221E14F20A003ABD92 /* Status.swift */,
 				283042391E1E27E20075F319 /* User.swift */,
+				28CE51471E232B44004A1FD6 /* StatusPicture.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				2833351D1E149DDA003ABD92 /* Network */,
 				286EDFFE1E11005000B6BD4D /* Extensions */,
 				286EDFD51E10FABE00B6BD4D /* Additions */,
+				28CE51491E233994004A1FD6 /* Common.swift */,
 			);
 			path = "Tool(工具)";
 			sourceTree = "<group>";
@@ -652,9 +658,11 @@
 				283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */,
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
+				28CE514A1E233994004A1FD6 /* Common.swift in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
 				286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */,
 				286EDFF21E10FABE00B6BD4D /* NSString+CZBase64.m in Sources */,
+				28CE51481E232B44004A1FD6 /* StatusPicture.swift in Sources */,
 				283042831E1E47730075F319 /* UIImageView+WebImage.swift in Sources */,
 				286EDFC81E10F91F00B6BD4D /* MainTabBarController.swift in Sources */,
 				28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */,

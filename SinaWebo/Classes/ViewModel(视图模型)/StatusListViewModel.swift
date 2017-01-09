@@ -50,9 +50,9 @@ class StatusListViewModel: NSObject {
                 }
                 
                 array.append(StatusViewModel(model: status))
+                
             }
             
-//            print(json)
 //            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
             
             if isPullup {

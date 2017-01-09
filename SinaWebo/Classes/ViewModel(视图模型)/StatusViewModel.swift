@@ -30,6 +30,8 @@ class StatusViewModel: NSObject {
     /// 点赞
     var likeString: String?
     
+    /// 配图视图大小
+    var pictureViewSize = CGSize()
     
     
     init(model: Status) {
@@ -38,33 +40,35 @@ class StatusViewModel: NSObject {
         
         super.init()
         
-        let rank = model.user?.mbrank ?? 0
+        // 设置会员图片
+        setupVipAndMemberIcon(model: model)
         
-        if rank > 0 && rank < 7 {
-            
-            memberIcon = UIImage(named: "common_icon_membership_level\(rank)")
-        }
-        
-        switch model.user?.verified_type ?? -1 {
-        case 0:
-            vipIcon = UIImage(named: "avatar_vip")
-        case 2, 3, 5:
-            vipIcon = UIImage(named: "avatar_enterprise_vip")
-        case 220:
-            vipIcon = UIImage(named: "avatar_grassroot")
-        default:
-            break
-        }
-        
+        // 设置底部工具栏数据
 //        model.reposts_count = Int(arc4random_uniform(100000))
-        
         retweetString = countString(count: model.reposts_count, defaultString: "转发")
         commentString = countString(count: model.comments_count, defaultString: "评论")
         likeString = countString(count: model.attitudes_count, defaultString: "赞")
         
-        
+        pictureViewSize = caculatePictureViewSize(count: model.pic_urls?.count)
     }
     
+    /// 计算配图视图尺寸
+    private func caculatePictureViewSize(count: Int?) -> CGSize {
+        
+        guard let count = count, count != 0 else {
+            return CGSize()
+        }
+        
+        // 行数
+        let row = CGFloat((count - 1) / 3 + 1)
+        // 高度
+        let height = pictureViewOutterMargin + (row - 1) * pictureViewInnerMargin + row * itemWidth
+        
+        
+        return CGSize(width: pictureViewWidth, height: height)
+    }
+    
+    // Cell底部工具栏数字计算
     private func countString(count: Int, defaultString: String) -> String {
         
         if count == 0 {
@@ -75,6 +79,27 @@ class StatusViewModel: NSObject {
         }
         
         return String(format: "%.2f万", CGFloat(count) / 10000.0)
+    }
+    
+    /// 设置会员图片
+    private func setupVipAndMemberIcon(model: Status) {
+        
+        let rank = model.user?.mbrank ?? 0
+        
+        if rank > 0 && rank < 7 {
+            
+            memberIcon = UIImage(named: "common_icon_membership_level\(rank)")
+        }
+        switch model.user?.verified_type ?? -1 {
+        case 0:
+            vipIcon = UIImage(named: "avatar_vip")
+        case 2, 3, 5:
+            vipIcon = UIImage(named: "avatar_enterprise_vip")
+        case 220:
+            vipIcon = UIImage(named: "avatar_grassroot")
+        default:
+            break
+        }
     }
     
     override var description: String {

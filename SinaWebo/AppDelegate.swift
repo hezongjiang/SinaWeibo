@@ -10,12 +10,6 @@ import UserNotifications
 import SVProgressHUD
 import AFNetworking
 
-let UserShouldLoginNotification = "UserShouldLoginNotification"
-/// 用户登录成功通知
-let UserLoginSuccessedNotification = "UserLoginSuccessedNotification"
-let AppKey = "3716276687"
-let RedirectUrl = "https://www.baidu.com/"
-let AppSecret = "eea50bc9928d4c6bdc967816f895368c"
 
 
 @UIApplicationMain

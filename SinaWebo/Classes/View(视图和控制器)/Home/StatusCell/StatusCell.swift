@@ -29,7 +29,11 @@ class StatusCell: UITableViewCell {
             
             timeLabel.text = viewModel?.status.created_at
             
+            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+            
             toolBar.viewModel = viewModel
+            
+            pictureView.pictures = viewModel?.status.pic_urls
         }
     }
     
