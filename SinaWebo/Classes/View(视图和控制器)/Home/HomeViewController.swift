@@ -29,11 +29,10 @@ class HomeViewController: BaseViewController {
         statusListViewModel.loadStatus(isPullup: isPullup) { (isSuccess, shuoleRefresh) in
             
             self.refreshController?.endRefreshing()
+            
             self.isPullup = false
-            if shuoleRefresh {
-                
-                self.tableView?.reloadData()
-            }
+            
+            if shuoleRefresh { self.tableView?.reloadData() }
         }
     }
     

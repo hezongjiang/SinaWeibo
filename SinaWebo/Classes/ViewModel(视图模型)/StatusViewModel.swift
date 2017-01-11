@@ -11,7 +11,6 @@ import UIKit
 /// 首页单条数据视图模型
 class StatusViewModel: NSObject {
 
-    
     /// 微博模型
     var status: Status
     
@@ -77,15 +76,12 @@ class StatusViewModel: NSObject {
     /// 计算配图视图尺寸
     private func caculatePictureViewSize(count: Int?) -> CGSize {
         
-        guard let count = count, count != 0 else {
-            return CGSize()
-        }
+        guard let count = count, count != 0 else { return CGSize() }
         
         // 行数
         let row = CGFloat((count - 1) / 3 + 1)
         // 高度
         let height = pictureViewOutterMargin + (row - 1) * pictureViewInnerMargin + row * itemWidth
-        
         
         return CGSize(width: pictureViewWidth, height: height)
     }
@@ -93,12 +89,9 @@ class StatusViewModel: NSObject {
     // Cell底部工具栏数字计算
     private func countString(count: Int, defaultString: String) -> String {
         
-        if count == 0 {
-            return defaultString
-        }
-        if count < 10000 {
-            return count.description
-        }
+        if count == 0 { return defaultString }
+        
+        if count < 10000 { return count.description }
         
         return String(format: "%.2f万", CGFloat(count) / 10000.0)
     }

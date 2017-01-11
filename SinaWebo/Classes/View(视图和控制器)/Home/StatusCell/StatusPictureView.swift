@@ -11,8 +11,11 @@ import UIKit
 class StatusPictureView: UIView {
     
     var viewModel: StatusViewModel? {
+        
         didSet {
             calculate()
+            
+            pictures = viewModel?.pictureUrl
         }
     }
     
@@ -33,22 +36,20 @@ class StatusPictureView: UIView {
         heightCons.constant = viewModel?.pictureViewSize.height ?? 0
     }
     
-
+    /// 配图高度
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     
-    var pictures: [StatusPicture]? {
+    /// 配图数组，如果被转发的微博有图片，返回被转发微博图片，否则返回原创微博图片
+    private var pictures: [StatusPicture]? {
+        
         didSet {
             
-            for view in subviews {
-                view.isHidden = true
-            }
+            for view in subviews { view.isHidden = true }
             
             var index = 0
             for picture in(pictures ?? []) {
                 
-                if pictures?.count == 4 && index == 2 {
-                    index += 1
-                }
+                if pictures?.count == 4 && index == 2 { index += 1 }
                 
                 let imageView = subviews[index] as? UIImageView
                 
@@ -59,7 +60,6 @@ class StatusPictureView: UIView {
             }
         }
     }
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()

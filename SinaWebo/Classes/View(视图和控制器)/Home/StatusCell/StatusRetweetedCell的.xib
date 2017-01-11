@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="516"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iaQ-Fp-f8E" id="jRD-AJ-VLX">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="515.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glA-DJ-bRW" userLabel="顶部分割视图">
@@ -153,7 +153,7 @@
                     <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" secondItem="29T-C0-fw8" secondAttribute="bottom" id="ZoO-DZ-Q0P"/>
                     <constraint firstItem="X7a-W5-udk" firstAttribute="leading" secondItem="ssZ-By-JU5" secondAttribute="leading" id="caI-lu-QSD"/>
                     <constraint firstItem="ssZ-By-JU5" firstAttribute="top" secondItem="bky-hw-BpK" secondAttribute="bottom" constant="12" id="fbk-Yu-w6s"/>
-                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X7a-W5-udk" secondAttribute="bottom" constant="8" id="gUn-Fq-H2a"/>
+                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X7a-W5-udk" secondAttribute="bottom" priority="750" constant="8" id="gUn-Fq-H2a"/>
                     <constraint firstItem="3O5-dd-k9F" firstAttribute="leading" secondItem="Cog-z1-ko8" secondAttribute="leading" id="iRT-fT-dth"/>
                     <constraint firstAttribute="trailing" secondItem="29T-C0-fw8" secondAttribute="trailing" id="k3G-2E-Imc"/>
                     <constraint firstItem="bky-hw-BpK" firstAttribute="trailing" secondItem="Xeh-wf-Rcu" secondAttribute="trailing" id="khV-oS-thg"/>
@@ -178,7 +178,7 @@
                 <outlet property="toolBar" destination="Q19-Xg-9S2" id="Idb-rz-QW1"/>
                 <outlet property="vipIcon" destination="bky-hw-BpK" id="dqB-g1-ese"/>
             </connections>
-            <point key="canvasLocation" x="-1391" y="379"/>
+            <point key="canvasLocation" x="-1671" y="405"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -57,7 +57,7 @@
                         <rect key="frame" x="29" y="41" width="17" height="17"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssZ-By-JU5" userLabel="正文">
-                        <rect key="frame" x="12" y="70" width="351" height="16"/>
+                        <rect key="frame" x="12" y="70" width="351" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                         </connections>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="86" width="351" height="230"/>
+                        <rect key="frame" x="12" y="88" width="351" height="230"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="229.5" id="IVm-80-URa"/>
@@ -139,7 +139,7 @@
                     <constraint firstItem="bky-hw-BpK" firstAttribute="bottom" secondItem="Xeh-wf-Rcu" secondAttribute="bottom" id="VM1-4Q-qoR"/>
                     <constraint firstItem="X7a-W5-udk" firstAttribute="leading" secondItem="ssZ-By-JU5" secondAttribute="leading" id="caI-lu-QSD"/>
                     <constraint firstItem="ssZ-By-JU5" firstAttribute="top" secondItem="bky-hw-BpK" secondAttribute="bottom" constant="12" id="fbk-Yu-w6s"/>
-                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X7a-W5-udk" secondAttribute="bottom" constant="8" id="gUn-Fq-H2a"/>
+                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X7a-W5-udk" secondAttribute="bottom" priority="750" constant="8" id="gUn-Fq-H2a"/>
                     <constraint firstItem="3O5-dd-k9F" firstAttribute="leading" secondItem="Cog-z1-ko8" secondAttribute="leading" id="iRT-fT-dth"/>
                     <constraint firstItem="bky-hw-BpK" firstAttribute="trailing" secondItem="Xeh-wf-Rcu" secondAttribute="trailing" id="khV-oS-thg"/>
                     <constraint firstAttribute="trailing" secondItem="Q19-Xg-9S2" secondAttribute="trailing" id="mdc-ea-EEf"/>

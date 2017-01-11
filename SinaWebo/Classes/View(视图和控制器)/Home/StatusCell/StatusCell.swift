@@ -10,10 +10,10 @@ import UIKit
 
 class StatusCell: UITableViewCell {
 
-    
     /// 微博视图模型
     var viewModel: StatusViewModel? {
         didSet {
+            
             // 用户名
             nameLabel.text = viewModel?.status.user?.screen_name
             // 微博正文
@@ -28,13 +28,12 @@ class StatusCell: UITableViewCell {
             sourceLaebl.text = "来自" + (viewModel?.status.source ?? "")
             // 时间
             timeLabel.text = viewModel?.status.created_at
-            // 配图视图高度
+            // 配图视图
             pictureView.viewModel = viewModel
             // 配图
             toolBar.viewModel = viewModel
             
-            pictureView.pictures = viewModel?.pictureUrl
-            
+            // 被转发微博文字
             tetweetLabel?.text = viewModel?.retweetText
         }
     }

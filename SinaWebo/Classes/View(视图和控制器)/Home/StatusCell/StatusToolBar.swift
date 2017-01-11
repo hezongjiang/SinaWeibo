@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Cell底部工具栏
 class StatusToolBar: UIView {
 
     /// 转发
@@ -20,8 +21,8 @@ class StatusToolBar: UIView {
     @IBOutlet weak var likeButton: UIButton!
     
     var viewModel: StatusViewModel? {
+        
         didSet {
-            
             retweetButton.setTitle(viewModel?.retweetString ?? "转发", for: .normal)
             commentButton.setTitle(viewModel?.commentString ?? "评论", for: .normal)
             likeButton.setTitle(viewModel?.likeString ?? "赞", for: .normal)

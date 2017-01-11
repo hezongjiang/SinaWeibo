@@ -53,7 +53,7 @@ class StatusListViewModel: NSObject {
                 
             }
             
-            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
+//            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
             
             if isPullup {
                 
@@ -71,6 +71,7 @@ class StatusListViewModel: NSObject {
                 
             } else {
                 
+                // 在完成回调刷新表格之前，下载单张配图，计算单张配图大小，重新计算行高
                 self.cacheSingImage(list: array, completion: completion)
                 
 //                completion(isSuccess, true)
