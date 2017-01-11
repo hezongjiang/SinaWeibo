@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="516" id="iaQ-Fp-f8E" customClass="StatusCell" customModule="SinaWebo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="516"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="409" id="iaQ-Fp-f8E" customClass="StatusCell" customModule="SinaWebo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="409"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iaQ-Fp-f8E" id="jRD-AJ-VLX">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="409"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glA-DJ-bRW" userLabel="顶部分割视图">
@@ -63,11 +63,27 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29T-C0-fw8" userLabel="被转发微博的背景">
-                        <rect key="frame" x="0.0" y="100" width="375" height="381"/>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="0.0" y="100" width="375" height="271"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-vn-2jk">
+                        <rect key="frame" x="12" y="112" width="351" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
+                        <rect key="frame" x="12" y="129" width="351" height="230"/>
+                        <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="229.5" id="IVm-80-URa"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="heightCons" destination="IVm-80-URa" id="8wn-c7-F41"/>
+                        </connections>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q19-Xg-9S2" userLabel="底部工具栏" customClass="StatusToolBar" customModule="SinaWebo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="481" width="375" height="35"/>
+                        <rect key="frame" x="0.0" y="371" width="375" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-2n-vf3">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
@@ -114,22 +130,6 @@
                             <outlet property="retweetButton" destination="CPP-2n-vf3" id="sz3-N7-GJ7"/>
                         </connections>
                     </view>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="129" width="351" height="230"/>
-                        <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="229.5" id="IVm-80-URa"/>
-                        </constraints>
-                        <connections>
-                            <outlet property="heightCons" destination="IVm-80-URa" id="8wn-c7-F41"/>
-                        </connections>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-vn-2jk">
-                        <rect key="frame" x="12" y="112" width="351" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ODu-tg-Rxe" firstAttribute="centerY" secondItem="Cog-z1-ko8" secondAttribute="centerY" id="0Sm-kM-CmM"/>
@@ -144,7 +144,6 @@
                     <constraint firstItem="Cog-z1-ko8" firstAttribute="top" secondItem="Xeh-wf-Rcu" secondAttribute="top" constant="3" id="Fyy-Yv-bUy"/>
                     <constraint firstItem="Cog-z1-ko8" firstAttribute="leading" secondItem="Xeh-wf-Rcu" secondAttribute="trailing" constant="11" id="HaQ-cU-fFF"/>
                     <constraint firstAttribute="trailing" secondItem="glA-DJ-bRW" secondAttribute="trailing" id="LhC-aa-9I9"/>
-                    <constraint firstAttribute="bottom" secondItem="Q19-Xg-9S2" secondAttribute="bottom" id="MbN-SD-zqE"/>
                     <constraint firstItem="ssZ-By-JU5" firstAttribute="leading" secondItem="Xeh-wf-Rcu" secondAttribute="leading" id="OJT-kl-bI5"/>
                     <constraint firstItem="2dk-vn-2jk" firstAttribute="top" secondItem="29T-C0-fw8" secondAttribute="top" constant="12" id="OTF-ky-Cua"/>
                     <constraint firstItem="Q19-Xg-9S2" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" id="Pym-vB-q7R"/>
@@ -153,7 +152,7 @@
                     <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" secondItem="29T-C0-fw8" secondAttribute="bottom" id="ZoO-DZ-Q0P"/>
                     <constraint firstItem="X7a-W5-udk" firstAttribute="leading" secondItem="ssZ-By-JU5" secondAttribute="leading" id="caI-lu-QSD"/>
                     <constraint firstItem="ssZ-By-JU5" firstAttribute="top" secondItem="bky-hw-BpK" secondAttribute="bottom" constant="12" id="fbk-Yu-w6s"/>
-                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="X7a-W5-udk" secondAttribute="bottom" priority="750" constant="8" id="gUn-Fq-H2a"/>
+                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" secondItem="X7a-W5-udk" secondAttribute="bottom" constant="12" id="gUn-Fq-H2a"/>
                     <constraint firstItem="3O5-dd-k9F" firstAttribute="leading" secondItem="Cog-z1-ko8" secondAttribute="leading" id="iRT-fT-dth"/>
                     <constraint firstAttribute="trailing" secondItem="29T-C0-fw8" secondAttribute="trailing" id="k3G-2E-Imc"/>
                     <constraint firstItem="bky-hw-BpK" firstAttribute="trailing" secondItem="Xeh-wf-Rcu" secondAttribute="trailing" id="khV-oS-thg"/>
@@ -178,7 +177,7 @@
                 <outlet property="toolBar" destination="Q19-Xg-9S2" id="Idb-rz-QW1"/>
                 <outlet property="vipIcon" destination="bky-hw-BpK" id="dqB-g1-ese"/>
             </connections>
-            <point key="canvasLocation" x="-1671" y="405"/>
+            <point key="canvasLocation" x="-1433.5" y="375.5"/>
         </tableViewCell>
     </objects>
     <resources>

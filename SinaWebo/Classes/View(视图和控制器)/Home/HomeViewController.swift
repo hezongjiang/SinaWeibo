@@ -43,8 +43,8 @@ class HomeViewController: BaseViewController {
         
         tableView?.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: OriginCellId)
         tableView?.register(UINib(nibName: "StatusRetweetedCell的", bundle: nil), forCellReuseIdentifier: RetweetedCellId)
-        tableView?.rowHeight = UITableViewAutomaticDimension
-        tableView?.estimatedRowHeight = 300
+//        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 100
         tableView?.separatorStyle = .none
         
         setupNavTitle()
@@ -85,10 +85,17 @@ extension HomeViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! StatusCell
         
-        
         cell.viewModel = viewModel
         
         return cell
+    }
+    
+    /// 父类必须实现，子类才能重写
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let viewModel = statusListViewModel.statusList[indexPath.row]
+        
+        return viewModel.rowHeight
     }
 }
 

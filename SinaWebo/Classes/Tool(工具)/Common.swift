@@ -16,11 +16,11 @@ let RedirectUrl = "https://www.baidu.com/"
 let AppSecret = "eea50bc9928d4c6bdc967816f895368c"
 
 
-// 配图外部间距
-let pictureViewOutterMargin = CGFloat(12)
+// 外部间距
+let OutterMargin = CGFloat(12)
 // 配图内部间距
-let pictureViewInnerMargin = CGFloat(3)
+let PictureViewInnerMargin = CGFloat(3)
 // 配图宽度
-let pictureViewWidth = UIScreen.main.bounds.width - 2 * pictureViewOutterMargin
+let PictureViewWidth = UIScreen.main.bounds.width - 2 * OutterMargin
 // item宽度
-let itemWidth = (pictureViewWidth - 2 * pictureViewInnerMargin) / 3
+let PictureViewItemWidth = (PictureViewWidth - 2 * PictureViewInnerMargin) / 3

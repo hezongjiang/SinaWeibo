@@ -26,11 +26,11 @@ class StatusPictureView: UIView {
             
             let size = viewModel?.pictureViewSize ?? CGSize()
             
-            subviews[0].frame = CGRect(x: 0, y: pictureViewOutterMargin, width: size.width, height: size.height - pictureViewOutterMargin)
+            subviews[0].frame = CGRect(x: 0, y: OutterMargin, width: size.width, height: size.height - OutterMargin)
             
         } else { // 其他情况，图片按照正方形显示
             
-            subviews[0].frame = CGRect(x: 0, y: pictureViewOutterMargin, width: itemWidth, height: itemWidth)
+            subviews[0].frame = CGRect(x: 0, y: OutterMargin, width: PictureViewItemWidth, height: PictureViewItemWidth)
         }
         
         heightCons.constant = viewModel?.pictureViewSize.height ?? 0
@@ -73,15 +73,15 @@ class StatusPictureView: UIView {
         
         for i in 0..<9 {
             
-            let imageView = UIImageView(frame: CGRect(x: 0, y: pictureViewOutterMargin, width: itemWidth, height: itemWidth))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: OutterMargin, width: PictureViewItemWidth, height: PictureViewItemWidth))
             imageView.backgroundColor = UIColor.red
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             let row = CGFloat(i / 3)
             let col = CGFloat(i % 3)
             
-            let xOffset = col * (itemWidth + pictureViewInnerMargin)
-            let yOffset = row * (itemWidth + pictureViewInnerMargin)
+            let xOffset = col * (PictureViewItemWidth + PictureViewInnerMargin)
+            let yOffset = row * (PictureViewItemWidth + PictureViewInnerMargin)
             
             imageView.frame = imageView.frame.offsetBy(dx: xOffset, dy: yOffset)
             addSubview(imageView)

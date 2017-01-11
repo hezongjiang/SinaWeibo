@@ -20,13 +20,13 @@ class StatusViewModel: NSObject {
     /// 认证类型：没有认证（-1），认证用户（0），企业认证（2、3、5），达人（220）
     var vipIcon: UIImage?
     
-    /// 转发
+    /// 转发按钮文字
     var retweetString: String?
     
-    /// 评论
+    /// 评论按钮文字
     var commentString: String?
     
-    /// 点赞
+    /// 点赞按钮文字
     var likeString: String?
     
     /// 配图视图大小
@@ -38,9 +38,11 @@ class StatusViewModel: NSObject {
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
-    /// 被转发微博问字
+    /// 被转发微博文字
     var retweetText: String?
     
+    /// 行高
+    var rowHeight: CGFloat = 0
     
     
     init(model: Status) {
@@ -58,9 +60,51 @@ class StatusViewModel: NSObject {
         commentString = countString(count: model.comments_count, defaultString: "评论")
         likeString = countString(count: model.attitudes_count, defaultString: "赞")
         
-        retweetText = model.retweeted_status?.text
+        retweetText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
         
         pictureViewSize = caculatePictureViewSize(count: pictureUrl?.count)
+        
+        updateRowheight()
+    }
+    
+    /// 根据当前视图模型，计算缓存行高
+    private func updateRowheight() {
+        
+        var height:CGFloat = 0
+        
+        let iconHeight: CGFloat = 34
+        
+        let toolBarHeight:CGFloat = 35
+        
+        // 顶部高度
+        height = OutterMargin * 2 + iconHeight + OutterMargin
+        
+        let viewSize = CGSize(width: UIScreen.main.bounds.width - 2 * OutterMargin, height: CGFloat(MAXFLOAT))
+        
+        // 正文高度
+        if let text = status.text {
+            
+            height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15)], context: nil).size.height
+        }
+        
+        // 转发微博高度
+        if status.retweeted_status != nil {
+            
+            height += 2 * OutterMargin
+            
+            if let text = retweetText {
+                height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14)], context: nil).size.height
+            }
+        }
+        
+        height += pictureViewSize.height
+        
+        height += OutterMargin
+        
+        // 底部工具栏高度
+        height += toolBarHeight
+        
+        rowHeight = height
     }
     
     /// 计算单张配图大小
@@ -68,9 +112,11 @@ class StatusViewModel: NSObject {
         
         var size = image.size
         
-        size.height += pictureViewOutterMargin
+        size.height += OutterMargin
         
         pictureViewSize = size
+        
+        updateRowheight()
     }
     
     /// 计算配图视图尺寸
@@ -81,9 +127,9 @@ class StatusViewModel: NSObject {
         // 行数
         let row = CGFloat((count - 1) / 3 + 1)
         // 高度
-        let height = pictureViewOutterMargin + (row - 1) * pictureViewInnerMargin + row * itemWidth
+        let height = OutterMargin + (row - 1) * PictureViewInnerMargin + row * PictureViewItemWidth
         
-        return CGSize(width: pictureViewWidth, height: height)
+        return CGSize(width: PictureViewWidth, height: height)
     }
     
     // Cell底部工具栏数字计算
