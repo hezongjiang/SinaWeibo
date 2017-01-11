@@ -33,6 +33,16 @@ class StatusViewModel: NSObject {
     /// 配图视图大小
     var pictureViewSize = CGSize()
     
+    /// 微博图片数组
+    var pictureUrl: [StatusPicture]? {
+        // 如果有被转发的微博有图片，返回被转发微博图片，否则返回原创微博图片
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
+    /// 被转发微博问字
+    var retweetText: String?
+    
+    
     
     init(model: Status) {
         
@@ -49,7 +59,19 @@ class StatusViewModel: NSObject {
         commentString = countString(count: model.comments_count, defaultString: "评论")
         likeString = countString(count: model.attitudes_count, defaultString: "赞")
         
-        pictureViewSize = caculatePictureViewSize(count: model.pic_urls?.count)
+        retweetText = model.retweeted_status?.text
+        
+        pictureViewSize = caculatePictureViewSize(count: pictureUrl?.count)
+    }
+    
+    /// 计算单张配图大小
+    func calculateSiginPicture(image: UIImage) {
+        
+        var size = image.size
+        
+        size.height += pictureViewOutterMargin
+        
+        pictureViewSize = size
     }
     
     /// 计算配图视图尺寸

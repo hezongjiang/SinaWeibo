@@ -9,6 +9,30 @@
 import UIKit
 
 class StatusPictureView: UIView {
+    
+    var viewModel: StatusViewModel? {
+        didSet {
+            calculate()
+        }
+    }
+    
+    private func calculate() {
+        
+        
+        if viewModel?.pictureUrl?.count == 1 { // 处理单张图片，按图片原始宽高比显示
+            
+            let size = viewModel?.pictureViewSize ?? CGSize()
+            
+            subviews[0].frame = CGRect(x: 0, y: pictureViewOutterMargin, width: size.width, height: size.height - pictureViewOutterMargin)
+            
+        } else { // 其他情况，图片按照正方形显示
+            
+            subviews[0].frame = CGRect(x: 0, y: pictureViewOutterMargin, width: itemWidth, height: itemWidth)
+        }
+        
+        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+    }
+    
 
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     

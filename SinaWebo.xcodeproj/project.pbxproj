@@ -49,6 +49,7 @@
 		287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A532A1E135679006E9BC7 /* VisitorView.swift */; };
 		28CE51481E232B44004A1FD6 /* StatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE51471E232B44004A1FD6 /* StatusPicture.swift */; };
 		28CE514A1E233994004A1FD6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE51491E233994004A1FD6 /* Common.swift */; };
+		28CE514C1E236717004A1FD6 /* StatusRetweetedCell的.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28CE514B1E236717004A1FD6 /* StatusRetweetedCell的.xib */; };
 		28D18FAF1E1B3C62009548F1 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */; };
 		28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB11E1B5817009548F1 /* UserAccount.swift */; };
 		28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB41E1C8FD6009548F1 /* TitleButton.swift */; };
@@ -138,6 +139,7 @@
 		287A532A1E135679006E9BC7 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		28CE51471E232B44004A1FD6 /* StatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicture.swift; sourceTree = "<group>"; };
 		28CE51491E233994004A1FD6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		28CE514B1E236717004A1FD6 /* StatusRetweetedCell的.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatusRetweetedCell的.xib"; sourceTree = "<group>"; };
 		28D18FAE1E1B3C62009548F1 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		28D18FB11E1B5817009548F1 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		28D18FB41E1C8FD6009548F1 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				283042C81E1FA3560075F319 /* StatusPictureView.swift */,
 				283042861E1F28C10075F319 /* StatusToolBar.swift */,
 				283042351E1DF9210075F319 /* StatusNormalCell.xib */,
+				28CE514B1E236717004A1FD6 /* StatusRetweetedCell的.xib */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CE514C1E236717004A1FD6 /* StatusRetweetedCell的.xib in Resources */,
 				28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */,
 				286EDFFD1E10FF3200B6BD4D /* main.json in Resources */,
 				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,

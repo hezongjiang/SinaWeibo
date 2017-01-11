@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Hearsay. All rights reserved.
 //
 
-import UIKit
+import SDWebImage.SDWebImageManager
 
 private let maxPullupTryTimer = 3
 
@@ -53,7 +53,7 @@ class StatusListViewModel: NSObject {
                 
             }
             
-//            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
+            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
             
             if isPullup {
                 
@@ -64,13 +64,54 @@ class StatusListViewModel: NSObject {
             }
             
             if isPullup && array.count == 0 {
+                
                 self.pullupErrorTimer += 1
+                
                 completion(isSuccess, false)
+                
             } else {
                 
-                completion(isSuccess, true)
+                self.cacheSingImage(list: array, completion: completion)
+                
+//                completion(isSuccess, true)
             }
             
         }
     }
+    
+    /// 缓存单张图片
+    private func cacheSingImage(list: [StatusViewModel], completion: @escaping (_ isSuccess: Bool, _ shuoleRefresh: Bool) -> ()) {
+        
+        // 调度组
+        let group = DispatchGroup()
+        
+        for vm in list {
+            
+            if vm.pictureUrl?.count != 1 { continue }
+            
+            guard let urlString = vm.pictureUrl?.first?.thumbnail_pic, let url = URL(string: urlString) else {
+                continue
+            }
+            
+            // 入组
+            group.enter()
+            
+            SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
+                
+                if let image = image {
+                    vm.calculateSiginPicture(image: image)
+                }
+                
+                // 出组
+                group.leave()
+            })
+            
+        }
+        
+        // 完成通知
+        group.notify(queue: DispatchQueue.main) {
+            completion(true, true)
+        }
+    }
+    
 }

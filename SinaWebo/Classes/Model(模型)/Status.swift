@@ -35,7 +35,12 @@ class Status: NSObject {
     /// 微博用户
     var user: User?
     
+    /// 配图视图数组
     var pic_urls: [StatusPicture]?
+    
+    /// 被转发微博
+    var retweeted_status: Status?
+    
     
     class func modelContainerPropertyGenericClass() -> [String : AnyClass] {
         return ["pic_urls" : StatusPicture.self]

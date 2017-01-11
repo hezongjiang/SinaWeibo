@@ -8,7 +8,8 @@
 
 import UIKit
 
-private let cellId = "cellId"
+private let OriginCellId = "OriginCellId"
+private let RetweetedCellId = "RetweetedCellId"
 
 class HomeViewController: BaseViewController {
 
@@ -41,7 +42,8 @@ class HomeViewController: BaseViewController {
         super.setupTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriend))
         
-        tableView?.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: OriginCellId)
+        tableView?.register(UINib(nibName: "StatusRetweetedCell的", bundle: nil), forCellReuseIdentifier: RetweetedCellId)
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
         tableView?.separatorStyle = .none
@@ -78,9 +80,12 @@ extension HomeViewController {
         
 //        tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
         
+        let viewModel = statusListViewModel.statusList[indexPath.row]
+        
+        let cellId = viewModel.status.retweeted_status == nil ? OriginCellId : RetweetedCellId
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! StatusCell
         
-        let viewModel = statusListViewModel.statusList[indexPath.row]
         
         cell.viewModel = viewModel
         
