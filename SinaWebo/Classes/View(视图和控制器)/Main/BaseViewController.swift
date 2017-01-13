@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     /// 表格视图
     var tableView: UITableView?
     /// 刷新控件
-    var refreshController: UIRefreshControl?
+    var refreshController: RefreshControl?
     /// 是否为上拉加载
     var isPullup = false
     /// 访客视图信息字典
@@ -107,7 +107,7 @@ class BaseViewController: UIViewController {
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
-        refreshController = UIRefreshControl()
+        refreshController = RefreshControl()
         refreshController?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         tableView?.addSubview(refreshController!)
     }

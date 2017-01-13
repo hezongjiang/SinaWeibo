@@ -26,6 +26,8 @@ class HomeViewController: BaseViewController {
         
         if !NetworkManager.shared.userLogin { return }
         
+        refreshController?.beginRefreshing()
+        
         statusListViewModel.loadStatus(isPullup: isPullup) { (isSuccess, shuoleRefresh) in
             
             self.refreshController?.endRefreshing()

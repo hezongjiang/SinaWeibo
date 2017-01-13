@@ -70,7 +70,15 @@ class StatusCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        /*
+         当你设置drawsAsynchronously为true时，发生了什么？你的drawRect()/drawInContext()方法仍然会被在主线程上调用。但是所有调用Core Graphics的操作都不会被执行。取而代之的是，绘制命令被推迟，并且在后台线程中异步执行。
+         
+         这种方式就是先记录绘图命令，然后在后台线程中重现。为了这个过程的顺利进行，更多的工作需要被做，更多的内存需要被申请。但是主队列中的一些工作便被移出来了(大概意思就是让我们把一些能在后台实现的工作放到后台实现，让主线程更顺畅)。
+         */
+        //layer.drawsAsynchronously = true
+        
+        //layer.shouldRasterize = true
+        
     }
 
 }

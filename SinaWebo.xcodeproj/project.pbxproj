@@ -47,6 +47,9 @@
 		286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */; };
 		286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */; };
 		287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A532A1E135679006E9BC7 /* VisitorView.swift */; };
+		28B0D9621E26396800632BE2 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B0D9611E26396800632BE2 /* RefreshControl.swift */; };
+		28B0D9641E27616700632BE2 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B0D9631E27616700632BE2 /* RefreshView.xib */; };
+		28B0D9661E27655900632BE2 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B0D9651E27655900632BE2 /* RefreshView.swift */; };
 		28CE51481E232B44004A1FD6 /* StatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE51471E232B44004A1FD6 /* StatusPicture.swift */; };
 		28CE514A1E233994004A1FD6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE51491E233994004A1FD6 /* Common.swift */; };
 		28CE514C1E236717004A1FD6 /* StatusRetweetedCell的.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28CE514B1E236717004A1FD6 /* StatusRetweetedCell的.xib */; };
@@ -137,6 +140,9 @@
 		286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		287A532A1E135679006E9BC7 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		28B0D9611E26396800632BE2 /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		28B0D9631E27616700632BE2 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
+		28B0D9651E27655900632BE2 /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		28CE51471E232B44004A1FD6 /* StatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicture.swift; sourceTree = "<group>"; };
 		28CE51491E233994004A1FD6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		28CE514B1E236717004A1FD6 /* StatusRetweetedCell的.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "StatusRetweetedCell的.xib"; sourceTree = "<group>"; };
@@ -275,6 +281,7 @@
 		286EDFBF1E10F8BC00B6BD4D /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				28B0D95D1E2638E100632BE2 /* RefreshController */,
 				2833351D1E149DDA003ABD92 /* Network */,
 				286EDFFE1E11005000B6BD4D /* Extensions */,
 				286EDFD51E10FABE00B6BD4D /* Additions */,
@@ -400,6 +407,16 @@
 				287A532A1E135679006E9BC7 /* VisitorView.swift */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		28B0D95D1E2638E100632BE2 /* RefreshController */ = {
+			isa = PBXGroup;
+			children = (
+				28B0D9611E26396800632BE2 /* RefreshControl.swift */,
+				28B0D9651E27655900632BE2 /* RefreshView.swift */,
+				28B0D9631E27616700632BE2 /* RefreshView.xib */,
+			);
+			path = RefreshController;
 			sourceTree = "<group>";
 		};
 		28CC1D901E125C3F005578EE /* 主控制器 */ = {
@@ -576,6 +593,7 @@
 				28CE514C1E236717004A1FD6 /* StatusRetweetedCell的.xib in Resources */,
 				28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */,
 				286EDFFD1E10FF3200B6BD4D /* main.json in Resources */,
+				28B0D9641E27616700632BE2 /* RefreshView.xib in Resources */,
 				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
 				283042361E1DF9210075F319 /* StatusNormalCell.xib in Resources */,
@@ -672,6 +690,7 @@
 				28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */,
 				286EDFD21E10F9F100B6BD4D /* DiscoverViewController.swift in Sources */,
 				286EDFCC1E10F97F00B6BD4D /* BaseViewController.swift in Sources */,
+				28B0D9621E26396800632BE2 /* RefreshControl.swift in Sources */,
 				2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */,
 				286EDFF51E10FABE00B6BD4D /* UIButton+CZAddition.m in Sources */,
 				286EDFF81E10FABE00B6BD4D /* UIScreen+CZAddition.m in Sources */,
@@ -688,6 +707,7 @@
 				283042871E1F28C10075F319 /* StatusToolBar.swift in Sources */,
 				286EDFF41E10FABE00B6BD4D /* NSString+CZPath.m in Sources */,
 				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
+				28B0D9661E27655900632BE2 /* RefreshView.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,
 				286EDFF31E10FABE00B6BD4D /* NSString+CZHash.m in Sources */,
 				28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */,
