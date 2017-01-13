@@ -8,7 +8,19 @@
 
 import UIKit
 
-private let refreshOffset = 60
+private let refreshOffset: CGFloat = 60
+
+
+/// 刷新状态
+///
+/// - Normal: 普通状态
+/// - Pulling: 超过临界点，但还没放手
+/// - WillRefresh: 超过临界点，且已经放手
+enum RefreshState {
+    case Normal
+    case Pulling
+    case WillRefresh
+}
 
 /// 自定义刷新控件
 class RefreshControl: UIControl {
@@ -45,11 +57,29 @@ class RefreshControl: UIControl {
         
         guard let sv = scrollView else { return }
         
-        let height = sv.contentOffset.y + sv.contentInset.top
+        let height = -(sv.contentOffset.y + sv.contentInset.top)
         
-        if height > 0 { return }
+        if height < 0 { return }
         
-        frame = CGRect(x: 0, y: height, width: sv.bounds.width, height: -height)
+        frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
+        
+        if sv.isDragging { // 表格正在拖拽
+            
+            if height > refreshOffset && refreshView.refreshState == .Normal {
+                
+                refreshView.refreshState = .Pulling
+                
+            } else if height < refreshOffset && refreshView.refreshState == .Pulling {
+                
+                refreshView.refreshState = .Normal
+            }
+        } else if refreshView.refreshState == .Pulling { // 表格松手拖拽，并且松手的位置超过刷新临界点
+            
+            beginRefreshing()
+            
+            sendActions(for: .valueChanged)
+        }
+        
     }
     
     // 移除KVO监听
@@ -62,6 +92,15 @@ class RefreshControl: UIControl {
     
     /// 开始刷新
     func beginRefreshing() {
+        
+        guard let sv = scrollView, refreshView.refreshState != .WillRefresh else { return }
+        
+//        if refreshView.refreshState == .WillRefresh { return }
+        
+        refreshView.refreshState = .WillRefresh
+        
+        sv.contentInset.top += refreshOffset
+        
         print("开始刷新")
     }
     
@@ -69,14 +108,19 @@ class RefreshControl: UIControl {
     func endRefreshing() {
         
         print("结束刷新")
+        
+        if refreshView.refreshState != .WillRefresh { return }
+        
+        refreshView.refreshState = .Normal
+        
+        scrollView?.contentInset.top -= refreshOffset
+        
     }
 }
 
 extension RefreshControl {
     
     fileprivate func setupUI() {
-        
-        clipsToBounds = true
         
         refreshView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -91,6 +135,6 @@ extension RefreshControl {
         
         addConstraint(NSLayoutConstraint(item: refreshView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: refreshView.bounds.height))
         
-        backgroundColor = UIColor.orange
+        backgroundColor = superview?.backgroundColor
     }
 }
