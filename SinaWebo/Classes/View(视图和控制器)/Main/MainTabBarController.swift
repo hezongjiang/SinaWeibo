@@ -105,14 +105,20 @@ class MainTabBarController: UITabBarController {
     /// 撰写按钮
     private func setupComposeBtn() {
         
-        self.tabBar.addSubview(self.composeBtn)
-        self.composeBtn.center = CGPoint(x: self.tabBar.bounds.width * 0.5, y: self.tabBar.bounds.height * 0.5)
-        self.composeBtn.addTarget(self, action: #selector(self.composeStatus), for: .touchUpInside)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+            
+            self.tabBar.addSubview(self.composeBtn)
+            self.composeBtn.center = CGPoint(x: self.tabBar.bounds.width * 0.5, y: self.tabBar.bounds.height * 0.5)
+            self.composeBtn.addTarget(self, action: #selector(self.composeStatus), for: .touchUpInside)
+        }
     }
     
     /// 发布微博
     @objc private func composeStatus() {
         print("发布微博")
+        
+        let compose = ComposeTypeView.composeTypeView()
+        compose.show()
     }
     
     /// 添加子控制器
@@ -179,6 +185,10 @@ extension MainTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         let index = childViewControllers.index(of: viewController)
+        
+        if index == 2 {
+            return false
+        }
         
         if index == 0 && index == selectedIndex {
             

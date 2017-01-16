@@ -20,6 +20,8 @@
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
 		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
 		283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335241E151599003ABD92 /* StatusListViewModel.swift */; };
+		28537F441E2C694900B5AAC0 /* ComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */; };
+		28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
 		286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF961E10E6A200B6BD4D /* Assets.xcassets */; };
 		286EDFA51E10E6A200B6BD4D /* SinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFA41E10E6A200B6BD4D /* SinaWeboTests.swift */; };
@@ -93,6 +95,8 @@
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
 		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		283335241E151599003ABD92 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
+		28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeView.swift; sourceTree = "<group>"; };
+		28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		286EDF961E10E6A200B6BD4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +207,23 @@
 				283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		28537F3D1E2C68DC00B5AAC0 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				28537F421E2C693600B5AAC0 /* ComposeView */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		28537F421E2C693600B5AAC0 /* ComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */,
+				28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */,
+			);
+			path = ComposeView;
 			sourceTree = "<group>";
 		};
 		286EDF831E10E6A100B6BD4D = {
@@ -323,9 +344,9 @@
 		286EDFC31E10F8BC00B6BD4D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				286EDFFC1E10FF3200B6BD4D /* main.json */,
-				28D18FB61E1CA6B7009548F1 /* NewFeature */,
+				28537F3D1E2C68DC00B5AAC0 /* Compose */,
 				28CC1D901E125C3F005578EE /* 主控制器 */,
+				28D18FB61E1CA6B7009548F1 /* NewFeature */,
 				287A53291E135622006E9BC7 /* VisitorView */,
 				28D18FAD1E1B3C39009548F1 /* OAuth */,
 				286EDFCB1E10F97F00B6BD4D /* BaseViewController.swift */,
@@ -424,6 +445,7 @@
 			children = (
 				286EDFC71E10F91F00B6BD4D /* MainTabBarController.swift */,
 				286EDFC91E10F94900B6BD4D /* MainNavViewController.swift */,
+				286EDFFC1E10FF3200B6BD4D /* main.json */,
 			);
 			name = "主控制器";
 			sourceTree = "<group>";
@@ -597,6 +619,7 @@
 				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
 				283042361E1DF9210075F319 /* StatusNormalCell.xib in Resources */,
+				28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +719,7 @@
 				286EDFF81E10FABE00B6BD4D /* UIScreen+CZAddition.m in Sources */,
 				286EDFCA1E10F94900B6BD4D /* MainNavViewController.swift in Sources */,
 				283335231E14F20A003ABD92 /* Status.swift in Sources */,
+				28537F441E2C694900B5AAC0 /* ComposeTypeView.swift in Sources */,
 				286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */,
 				286EDFF11E10FABE00B6BD4D /* NSObject+CZRuntime.m in Sources */,
 				286EDFD01E10F9E600B6BD4D /* MessageViewController.swift in Sources */,
