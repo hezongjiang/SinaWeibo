@@ -22,29 +22,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="dvC-HY-rFF">
-                                <rect key="frame" x="110" y="100" width="154" height="48"/>
+                                <rect key="frame" x="111" y="100" width="154" height="48"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-hi-LNF">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-EN-ntB">
-                                        <rect key="frame" x="175.5" y="9" width="25" height="25"/>
-                                        <state key="normal" image="tabbar_compose_background_icon_close"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="v7r-EN-ntB" firstAttribute="centerY" secondItem="vIg-hi-LNF" secondAttribute="centerY" id="BQe-4Y-oBk"/>
-                                    <constraint firstItem="v7r-EN-ntB" firstAttribute="centerX" secondItem="vIg-hi-LNF" secondAttribute="centerX" id="LwC-8F-7mu"/>
-                                    <constraint firstAttribute="height" constant="44" id="XoD-hK-42p"/>
-                                </constraints>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-IY-BDz">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-IY-BDz">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="xPN-p4-KF1"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-hi-LNF">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-EN-ntB" userLabel="关闭按钮">
+                                        <rect key="frame" x="175" y="9" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                        <connections>
+                                            <action selector="close" destination="iN0-l3-epB" eventType="touchUpInside" id="gg7-z4-sit"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFM-Vr-amK" userLabel="返回按钮">
+                                        <rect key="frame" x="175" y="10" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="returenClick" destination="iN0-l3-epB" eventType="touchUpInside" id="59h-tE-MRh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="EFM-Vr-amK" firstAttribute="centerX" secondItem="vIg-hi-LNF" secondAttribute="centerX" id="7Em-TP-blU"/>
+                                    <constraint firstItem="v7r-EN-ntB" firstAttribute="centerY" secondItem="vIg-hi-LNF" secondAttribute="centerY" id="BQe-4Y-oBk"/>
+                                    <constraint firstItem="v7r-EN-ntB" firstAttribute="centerX" secondItem="vIg-hi-LNF" secondAttribute="centerX" id="LwC-8F-7mu"/>
+                                    <constraint firstAttribute="height" constant="44" id="XoD-hK-42p"/>
+                                    <constraint firstItem="EFM-Vr-amK" firstAttribute="centerY" secondItem="vIg-hi-LNF" secondAttribute="centerY" id="miI-Er-i7z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="vIg-hi-LNF" firstAttribute="top" secondItem="ZBW-IY-BDz" secondAttribute="bottom" constant="56" id="H1x-Dt-MEG"/>
@@ -67,11 +79,18 @@
                 <constraint firstItem="YEP-Lu-ctk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aII-bB-1rH"/>
                 <constraint firstAttribute="bottom" secondItem="YEP-Lu-ctk" secondAttribute="bottom" id="dYF-SQ-dUh"/>
             </constraints>
+            <connections>
+                <outlet property="closeBtnCenterXCons" destination="LwC-8F-7mu" id="8L7-dj-2JN"/>
+                <outlet property="returenBtnCenterXCons" destination="7Em-TP-blU" id="Yty-au-M38"/>
+                <outlet property="returenButton" destination="EFM-Vr-amK" id="RJI-J9-JR9"/>
+                <outlet property="scrollView" destination="ZBW-IY-BDz" id="5QR-xl-BdY"/>
+            </connections>
             <point key="canvasLocation" x="-69.5" y="-6.5"/>
         </view>
     </objects>
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
     </resources>
 </document>

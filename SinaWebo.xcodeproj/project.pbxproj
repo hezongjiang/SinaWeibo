@@ -22,6 +22,8 @@
 		283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335241E151599003ABD92 /* StatusListViewModel.swift */; };
 		28537F441E2C694900B5AAC0 /* ComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */; };
 		28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */; };
+		28537F481E2C74EF00B5AAC0 /* ComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */; };
+		28537F4A1E2C74F900B5AAC0 /* ComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
 		286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF961E10E6A200B6BD4D /* Assets.xcassets */; };
 		286EDFA51E10E6A200B6BD4D /* SinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFA41E10E6A200B6BD4D /* SinaWeboTests.swift */; };
@@ -97,6 +99,8 @@
 		283335241E151599003ABD92 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeView.swift; sourceTree = "<group>"; };
 		28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
+		28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeButton.swift; sourceTree = "<group>"; };
+		28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeButton.xib; sourceTree = "<group>"; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		286EDF961E10E6A200B6BD4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 			children = (
 				28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */,
 				28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */,
+				28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */,
+				28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */,
 			);
 			path = ComposeView;
 			sourceTree = "<group>";
@@ -620,6 +626,7 @@
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
 				283042361E1DF9210075F319 /* StatusNormalCell.xib in Resources */,
 				28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */,
+				28537F4A1E2C74F900B5AAC0 /* ComposeTypeButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +710,7 @@
 				283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */,
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
+				28537F481E2C74EF00B5AAC0 /* ComposeTypeButton.swift in Sources */,
 				28CE514A1E233994004A1FD6 /* Common.swift in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
 				286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */,
