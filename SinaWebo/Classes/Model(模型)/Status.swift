@@ -27,7 +27,11 @@ class Status: NSObject {
     var attitudes_count: Int = 0
     
     /// 微博来源
-    var source: String?
+    var source: String? {
+        didSet {
+            source = source?.wb_source()?.text ?? ""
+        }
+    }
     
     /// 微博创建时间
     var created_at: String?
