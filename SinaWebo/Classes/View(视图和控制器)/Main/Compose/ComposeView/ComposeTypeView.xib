@@ -24,7 +24,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="dvC-HY-rFF">
                                 <rect key="frame" x="111" y="100" width="154" height="48"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-IY-BDz">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-IY-BDz">
                                 <rect key="frame" x="0.0" y="343" width="375" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="xPN-p4-KF1"/>

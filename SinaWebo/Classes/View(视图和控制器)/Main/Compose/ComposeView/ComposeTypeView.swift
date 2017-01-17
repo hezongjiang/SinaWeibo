@@ -6,11 +6,10 @@
 //  Copyright © 2017年 Hearsay. All rights reserved.
 //
 
-import UIKit
+import pop
 
 class ComposeTypeView: UIView {
 
-    
     /// 滚动视图
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -24,7 +23,7 @@ class ComposeTypeView: UIView {
     @IBOutlet weak var returenBtnCenterXCons: NSLayoutConstraint!
     
     fileprivate let scrollViewInfo = [
-        [["title" : "文字",    "image" : "tabbar_compose_idea"],
+        [["title" : "文字",    "image" : "tabbar_compose_idea", "className" : "ComposeViewController"],
          ["title" : "照片/视频","image" : "tabbar_compose_photo"],
          ["title" : "长微博",  "image" : "tabbar_compose_weibo"],
          ["title" : "签到",    "image" : "tabbar_compose_lbs"],
@@ -40,7 +39,8 @@ class ComposeTypeView: UIView {
     
     /// 关闭界面
     @IBAction func close() {
-        removeFromSuperview()
+//        removeFromSuperview()
+        hidenButtons()
     }
     
     /// 返回第一页
@@ -62,6 +62,8 @@ class ComposeTypeView: UIView {
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else { return }
         
         vc.view.addSubview(self)
+        
+        showView()
     }
     
     override func awakeFromNib() {
@@ -71,6 +73,88 @@ class ComposeTypeView: UIView {
     }
 }
 
+
+// MARK: - 动画
+private extension ComposeTypeView {
+    
+    /// 视图显示动画
+    func showView() {
+        
+        let anim: POPBasicAnimation =  POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        
+        anim.fromValue = 0
+        anim.toValue   = 1
+        anim.duration  = 0.3
+        
+        pop_add(anim, forKey: nil)
+        
+        showButtons()
+    }
+    
+    /// 按钮显示动画
+    func showButtons() {
+        
+        guard let view = scrollView.subviews.first else { return }
+        
+        for (i, button) in view.subviews.enumerated() {
+            
+            let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            anim.fromValue = button.center.y + 350
+            anim.toValue   = button.center.y
+            anim.springBounciness = 10
+            anim.beginTime = CFTimeInterval(i) * 0.025 + CACurrentMediaTime()
+            button.pop_add(anim, forKey: nil)
+        }
+    }
+    
+    /// 按钮隐藏动画
+    func hidenButtons() {
+        
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        
+        if page > scrollViewInfo.count || page < 0 { return }
+        
+        let view = scrollView.subviews[page]
+        
+        for (i, button) in view.subviews.enumerated().reversed() {
+            
+            let anim = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            anim?.fromValue = button.center.y
+            anim?.toValue   = button.center.y + 350
+            anim?.beginTime = CACurrentMediaTime() + CFTimeInterval(view.subviews.count - i) * 0.025
+            
+            button.pop_add(anim, forKey: nil)
+            
+            if i == 1 {
+                anim?.completionBlock = {(_, _) in
+                    self.hidenView()
+                }
+            }
+        }
+    }
+    
+    
+    /// 隐藏视图，然后移除
+    func hidenView() {
+        
+        let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        
+        anim?.fromValue = 1
+        anim?.toValue   = 0
+        anim?.duration  = 0.3
+        
+        pop_add(anim, forKey: nil)
+        
+        anim?.completionBlock = { (_, _) in
+            self.removeFromSuperview()
+        }
+    }
+    
+}
+
+// MARK: - 向scrollview中添加按钮
 private extension ComposeTypeView {
     
     func setupUI() {
@@ -82,7 +166,7 @@ private extension ComposeTypeView {
         scrollView.contentSize = CGSize(width: rect.width * CGFloat(scrollViewInfo.count), height: 0)
         scrollView.delegate = self
         
-        // 向scrollview中添加两个view，每个view上添加按钮
+        // 先向scrollview中添加两个view，再在每个view上添加按钮
         for (i, viewInfo) in scrollViewInfo.enumerated() {
             
             let view = UIView(frame: CGRect(x: CGFloat(i) * rect.width, y: 0, width: rect.width, height: rect.height))
@@ -108,7 +192,11 @@ private extension ComposeTypeView {
                 if let clickMore = buttonInfo["actionName"] {
                     
                     btn.addTarget(self, action: Selector(clickMore), for: .touchUpInside)
+                    
+                } else {
+                    btn.addTarget(self, action: #selector(btnClick), for: .touchDown)
                 }
+                btn.className = buttonInfo["className"]
                 view.addSubview(btn)
             }
         }
@@ -122,8 +210,49 @@ private extension ComposeTypeView {
         print("更多")
     }
     
-    @objc func btnClick() {
-        print("按钮被点击")
+    
+    /// 按钮点击事件，展现出相应的控制器
+    @objc func btnClick(selectedBtn: ComposeTypeButton) {
+        
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        
+        if page < 0 || page > 1 { return }
+        
+        let view = scrollView.subviews[page]
+        
+        for (i, button) in view.subviews.enumerated() {
+            
+            // 缩放动画
+            let scaleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            
+            let scale = selectedBtn == button ? 1.8 : 0.5
+            scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            scaleAnim.duration = 0.8
+            
+            button.pop_add(scaleAnim, forKey: nil)
+            
+            
+            // 透明度变化动画
+            let alphaAnim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            
+            alphaAnim?.toValue = 0.2
+            alphaAnim?.duration = 0.4
+            
+            button.pop_add(alphaAnim, forKey: nil)
+            
+            if i == 0 {
+                alphaAnim?.completionBlock = { _, _ in
+                    
+                    guard let className = selectedBtn.className,
+                        let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type else { return }
+                    
+                    let nav = UINavigationController(rootViewController: cls.init())
+                    UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: true, completion: {
+                        self.removeFromSuperview()
+                    })
+                }
+            }
+        }
     }
 }
 

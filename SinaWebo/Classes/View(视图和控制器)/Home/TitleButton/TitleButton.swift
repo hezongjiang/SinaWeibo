@@ -39,16 +39,13 @@ class TitleButton: UIButton {
             return
         }
         
-//        print(titleLabel)
-//        print(imageView)
+        titleLabel.frame.origin.x = 0
         
-        if titleLabel.bounds.origin.x < 1 {
-            return
-        }
+        imageView.frame.origin.x = titleLabel.bounds.width
         
-        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
-        
-        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width, dy: 0)
+//        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
+//        
+//        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width, dy: 0)
     }
 
 }

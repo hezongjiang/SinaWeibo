@@ -24,6 +24,7 @@
 		28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */; };
 		28537F481E2C74EF00B5AAC0 /* ComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */; };
 		28537F4A1E2C74F900B5AAC0 /* ComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */; };
+		28537F4C1E2CCF6200B5AAC0 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F4B1E2CCF6200B5AAC0 /* ComposeViewController.swift */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
 		286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF961E10E6A200B6BD4D /* Assets.xcassets */; };
 		286EDFA51E10E6A200B6BD4D /* SinaWeboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFA41E10E6A200B6BD4D /* SinaWeboTests.swift */; };
@@ -101,6 +102,7 @@
 		28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
 		28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeButton.swift; sourceTree = "<group>"; };
 		28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeButton.xib; sourceTree = "<group>"; };
+		28537F4B1E2CCF6200B5AAC0 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		286EDF961E10E6A200B6BD4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				28537F421E2C693600B5AAC0 /* ComposeView */,
+				28537F4B1E2CCF6200B5AAC0 /* ComposeViewController.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				286EDFF51E10FABE00B6BD4D /* UIButton+CZAddition.m in Sources */,
 				286EDFF81E10FABE00B6BD4D /* UIScreen+CZAddition.m in Sources */,
 				286EDFCA1E10F94900B6BD4D /* MainNavViewController.swift in Sources */,
+				28537F4C1E2CCF6200B5AAC0 /* ComposeViewController.swift in Sources */,
 				283335231E14F20A003ABD92 /* Status.swift in Sources */,
 				28537F441E2C694900B5AAC0 /* ComposeTypeView.swift in Sources */,
 				286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */,
