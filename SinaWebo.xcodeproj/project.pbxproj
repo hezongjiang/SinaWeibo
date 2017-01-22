@@ -20,11 +20,6 @@
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
 		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
 		283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335241E151599003ABD92 /* StatusListViewModel.swift */; };
-		28537F441E2C694900B5AAC0 /* ComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */; };
-		28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */; };
-		28537F481E2C74EF00B5AAC0 /* ComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */; };
-		28537F4A1E2C74F900B5AAC0 /* ComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */; };
-		28537F4C1E2CCF6200B5AAC0 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28537F4B1E2CCF6200B5AAC0 /* ComposeViewController.swift */; };
 		2859AFA81E2DFB0700B19F3E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859AFA71E2DFB0700B19F3E /* String+Extension.swift */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
 		286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286EDF961E10E6A200B6BD4D /* Assets.xcassets */; };
@@ -72,6 +67,12 @@
 		28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */; };
 		28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */; };
 		28EC38F71E34946C002EF1CE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC38F61E34946C002EF1CE /* WebViewController.swift */; };
+		28EC38FF1E34A1CB002EF1CE /* ComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC38FA1E34A1CB002EF1CE /* ComposeTypeButton.swift */; };
+		28EC39001E34A1CB002EF1CE /* ComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC38FB1E34A1CB002EF1CE /* ComposeTypeButton.xib */; };
+		28EC39011E34A1CB002EF1CE /* ComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC38FC1E34A1CB002EF1CE /* ComposeTypeView.swift */; };
+		28EC39021E34A1CB002EF1CE /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC38FD1E34A1CB002EF1CE /* ComposeTypeView.xib */; };
+		28EC39061E34A26A002EF1CE /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC39041E34A26A002EF1CE /* ComposeViewController.swift */; };
+		28EC39071E34A26A002EF1CE /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC39051E34A26A002EF1CE /* ComposeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,11 +106,6 @@
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
 		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		283335241E151599003ABD92 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
-		28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeView.swift; sourceTree = "<group>"; };
-		28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
-		28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeButton.swift; sourceTree = "<group>"; };
-		28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeButton.xib; sourceTree = "<group>"; };
-		28537F4B1E2CCF6200B5AAC0 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		2859AFA71E2DFB0700B19F3E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +173,12 @@
 		28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFeatureView.xib; sourceTree = "<group>"; };
 		28EC38F61E34946C002EF1CE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		28EC38FA1E34A1CB002EF1CE /* ComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeButton.swift; sourceTree = "<group>"; };
+		28EC38FB1E34A1CB002EF1CE /* ComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeButton.xib; sourceTree = "<group>"; };
+		28EC38FC1E34A1CB002EF1CE /* ComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeView.swift; sourceTree = "<group>"; };
+		28EC38FD1E34A1CB002EF1CE /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
+		28EC39041E34A26A002EF1CE /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		28EC39051E34A26A002EF1CE /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,26 +229,6 @@
 				283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		28537F3D1E2C68DC00B5AAC0 /* Compose */ = {
-			isa = PBXGroup;
-			children = (
-				28537F421E2C693600B5AAC0 /* ComposeView */,
-				28537F4B1E2CCF6200B5AAC0 /* ComposeViewController.swift */,
-			);
-			path = Compose;
-			sourceTree = "<group>";
-		};
-		28537F421E2C693600B5AAC0 /* ComposeView */ = {
-			isa = PBXGroup;
-			children = (
-				28537F431E2C694900B5AAC0 /* ComposeTypeView.swift */,
-				28537F451E2C6BDB00B5AAC0 /* ComposeTypeView.xib */,
-				28537F471E2C74EF00B5AAC0 /* ComposeTypeButton.swift */,
-				28537F491E2C74F900B5AAC0 /* ComposeTypeButton.xib */,
-			);
-			path = ComposeView;
 			sourceTree = "<group>";
 		};
 		286EDF831E10E6A100B6BD4D = {
@@ -339,6 +321,7 @@
 		286EDFC01E10F8BC00B6BD4D /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				28EC38F81E34A1CB002EF1CE /* Compose */,
 				286EDFC31E10F8BC00B6BD4D /* Main */,
 				286EDFC21E10F8BC00B6BD4D /* Home */,
 				286EDFC41E10F8BC00B6BD4D /* Message */,
@@ -370,7 +353,6 @@
 		286EDFC31E10F8BC00B6BD4D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				28537F3D1E2C68DC00B5AAC0 /* Compose */,
 				28CC1D901E125C3F005578EE /* 主控制器 */,
 				28D18FB61E1CA6B7009548F1 /* NewFeature */,
 				287A53291E135622006E9BC7 /* VisitorView */,
@@ -531,6 +513,27 @@
 			path = NewFeature;
 			sourceTree = "<group>";
 		};
+		28EC38F81E34A1CB002EF1CE /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				28EC38F91E34A1CB002EF1CE /* ComposeView */,
+				28EC39041E34A26A002EF1CE /* ComposeViewController.swift */,
+				28EC39051E34A26A002EF1CE /* ComposeViewController.xib */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		28EC38F91E34A1CB002EF1CE /* ComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				28EC38FA1E34A1CB002EF1CE /* ComposeTypeButton.swift */,
+				28EC38FB1E34A1CB002EF1CE /* ComposeTypeButton.xib */,
+				28EC38FC1E34A1CB002EF1CE /* ComposeTypeView.swift */,
+				28EC38FD1E34A1CB002EF1CE /* ComposeTypeView.xib */,
+			);
+			path = ComposeView;
+			sourceTree = "<group>";
+		};
 		4BD7959147455B93D7049569 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,9 +667,10 @@
 				28B0D9641E27616700632BE2 /* RefreshView.xib in Resources */,
 				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
+				28EC39001E34A1CB002EF1CE /* ComposeTypeButton.xib in Resources */,
+				28EC39021E34A1CB002EF1CE /* ComposeTypeView.xib in Resources */,
+				28EC39071E34A26A002EF1CE /* ComposeViewController.xib in Resources */,
 				283042361E1DF9210075F319 /* StatusNormalCell.xib in Resources */,
-				28537F461E2C6BDB00B5AAC0 /* ComposeTypeView.xib in Resources */,
-				28537F4A1E2C74F900B5AAC0 /* ComposeTypeButton.xib in Resources */,
 				2899A2181E30BBD200467D06 /* Emoticons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +752,7 @@
 				286EDFCE1E10F9BA00B6BD4D /* HomeViewController.swift in Sources */,
 				28A9E81D1E34514D0030124A /* TextLabel.swift in Sources */,
 				286EDFF71E10FABE00B6BD4D /* UILabel+CZAddition.m in Sources */,
+				28EC38FF1E34A1CB002EF1CE /* ComposeTypeButton.swift in Sources */,
 				2899A2151E30BBD200467D06 /* Emoticon.swift in Sources */,
 				28D18FB81E1CA6DE009548F1 /* WelcomeView.swift in Sources */,
 				283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */,
@@ -755,7 +760,6 @@
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
 				2899A2171E30BBD200467D06 /* EmoticonPackage.swift in Sources */,
-				28537F481E2C74EF00B5AAC0 /* ComposeTypeButton.swift in Sources */,
 				28CE514A1E233994004A1FD6 /* Common.swift in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
 				286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */,
@@ -771,9 +775,8 @@
 				286EDFF51E10FABE00B6BD4D /* UIButton+CZAddition.m in Sources */,
 				286EDFF81E10FABE00B6BD4D /* UIScreen+CZAddition.m in Sources */,
 				286EDFCA1E10F94900B6BD4D /* MainNavViewController.swift in Sources */,
-				28537F4C1E2CCF6200B5AAC0 /* ComposeViewController.swift in Sources */,
+				28EC39061E34A26A002EF1CE /* ComposeViewController.swift in Sources */,
 				283335231E14F20A003ABD92 /* Status.swift in Sources */,
-				28537F441E2C694900B5AAC0 /* ComposeTypeView.swift in Sources */,
 				286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */,
 				286EDFF11E10FABE00B6BD4D /* NSObject+CZRuntime.m in Sources */,
 				286EDFD01E10F9E600B6BD4D /* MessageViewController.swift in Sources */,
@@ -786,6 +789,7 @@
 				2859AFA81E2DFB0700B19F3E /* String+Extension.swift in Sources */,
 				2899A2161E30BBD200467D06 /* EmoticonManager.swift in Sources */,
 				286EDFF41E10FABE00B6BD4D /* NSString+CZPath.m in Sources */,
+				28EC39011E34A1CB002EF1CE /* ComposeTypeView.swift in Sources */,
 				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
 				28B0D9661E27655900632BE2 /* RefreshView.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,
