@@ -27,7 +27,6 @@ extension UIBarButtonItem {
             
             btn.setImage(UIImage(named: imageName), for: .normal)
             btn.setImage(UIImage(named: imageName + "_highlighted"), for: .highlighted)
-            
             btn.sizeToFit()
         }
         

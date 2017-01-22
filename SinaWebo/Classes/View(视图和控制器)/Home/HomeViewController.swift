@@ -89,6 +89,8 @@ extension HomeViewController {
         
         cell.viewModel = viewModel
         
+        cell.delegate = self
+        
         return cell
     }
     
@@ -98,6 +100,18 @@ extension HomeViewController {
         let viewModel = statusListViewModel.statusList[indexPath.row]
         
         return viewModel.rowHeight
+    }
+}
+
+extension HomeViewController: StatusCellDelegate {
+    
+    func statusCell(_ statusCell: StatusCell, didSelectedURLString string: String) {
+        
+        let vc = WebViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        vc.urlString = string
+        vc.navItem.title = "加载中..."
+        
     }
 }
 

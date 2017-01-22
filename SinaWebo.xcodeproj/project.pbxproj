@@ -71,6 +71,7 @@
 		28D18FBA1E1CA6F6009548F1 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D18FB91E1CA6F6009548F1 /* NewFeatureView.swift */; };
 		28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */; };
 		28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */; };
+		28EC38F71E34946C002EF1CE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC38F61E34946C002EF1CE /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		28D18FB91E1CA6F6009548F1 /* NewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
 		28D18FBB1E1CC3D6009548F1 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		28D18FFF1E1CE0D6009548F1 /* NewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFeatureView.xib; sourceTree = "<group>"; };
+		28EC38F61E34946C002EF1CE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -360,6 +362,7 @@
 				283042321E1DF8620075F319 /* StatusCell */,
 				28D18FB31E1C8FB2009548F1 /* TitleButton */,
 				286EDFCD1E10F9BA00B6BD4D /* HomeViewController.swift */,
+				28EC38F61E34946C002EF1CE /* WebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -457,9 +460,9 @@
 		2899A2101E30BBD200467D06 /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
-				2899A2111E30BBD200467D06 /* Emoticon.swift */,
 				2899A2121E30BBD200467D06 /* EmoticonManager.swift */,
 				2899A2131E30BBD200467D06 /* EmoticonPackage.swift */,
+				2899A2111E30BBD200467D06 /* Emoticon.swift */,
 				2899A2141E30BBD200467D06 /* Emoticons.bundle */,
 			);
 			path = Emoticon;
@@ -748,6 +751,7 @@
 				2899A2151E30BBD200467D06 /* Emoticon.swift in Sources */,
 				28D18FB81E1CA6DE009548F1 /* WelcomeView.swift in Sources */,
 				283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */,
+				28EC38F71E34946C002EF1CE /* WebViewController.swift in Sources */,
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
 				2899A2171E30BBD200467D06 /* EmoticonPackage.swift in Sources */,

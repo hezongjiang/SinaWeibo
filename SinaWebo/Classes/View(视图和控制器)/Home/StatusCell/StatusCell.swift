@@ -8,8 +8,22 @@
 
 import UIKit
 
+//enum SelectedStringType {
+//    case url
+//    case topic
+//    case at
+//}
+
+@objc protocol StatusCellDelegate: NSObjectProtocol {
+    
+    @objc optional func statusCell(_ statusCell: StatusCell, didSelectedURLString string: String)
+}
+
+/// 微博首页Cell
 class StatusCell: UITableViewCell {
 
+    weak var delegate: StatusCellDelegate?
+    
     /// 微博视图模型
     var viewModel: StatusViewModel? {
         didSet {
@@ -25,7 +39,7 @@ class StatusCell: UITableViewCell {
             // 头像
             iconView.setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_small"), isAvatar: true)
             // 来源
-            sourceLaebl.text = "来自" + (viewModel?.status.source ?? "")
+            sourceLaebl.text = "来自 " + (viewModel?.status.source ?? "")
             // 时间
             timeLabel.text = viewModel?.status.created_at
             // 配图视图
@@ -57,7 +71,7 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var vipIcon: UIImageView!
     
     /// 微博正文
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: TextLabel!
     
     /// 配图视图
     @IBOutlet weak var pictureView: StatusPictureView!
@@ -66,7 +80,7 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var toolBar: StatusToolBar!
     
     /// 被转发微博文字
-    @IBOutlet weak var retweetLabel: UILabel?
+    @IBOutlet weak var retweetLabel: TextLabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -78,7 +92,19 @@ class StatusCell: UITableViewCell {
         //layer.drawsAsynchronously = true
         
         //layer.shouldRasterize = true
+        statusLabel.delegate = self
+        retweetLabel?.delegate = self
         
     }
 
+}
+
+extension StatusCell: TextLabelDelegate {
+    
+    func label(_ label: TextLabel, didSelectedLinkText text: String) {
+        
+        if text.hasPrefix("http") {
+            delegate?.statusCell?(self, didSelectedURLString: text)
+        }
+    }
 }

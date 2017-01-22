@@ -53,7 +53,7 @@ class StatusListViewModel: NSObject {
                 
             }
             
-            //print("刷到" + "\(array.count)" + "条数据" + "\(array)")
+            print("刷到" + "\(array.count)" + "条数据" + "\(array)")
             
             if isPullup {
                 

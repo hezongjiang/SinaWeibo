@@ -8,8 +8,20 @@
 
 import UIKit
 
+protocol TextLabelDelegate: NSObjectProtocol {
+    
+    /// 点击了特殊文字（URL，#话题#，@好友）
+    ///
+    /// - Parameters:
+    ///   - label: TextLabel
+    ///   - text: 点击的具体文字
+    func label(_ label: TextLabel, didSelectedLinkText text:String)
+}
+
 /// attributedText富文本
 class TextLabel: UILabel {
+    
+    weak var delegate: TextLabelDelegate?
     
     // MARK:2.重写属性text方法,可以在ViewController里给文本赋值
     // 一旦label里的内容发生变化,就可以让textStorage相应变化
@@ -162,15 +174,16 @@ class TextLabel: UILabel {
     // MARK:5.用户点击事件交互--处理不同匹配内容天转到不同界面
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        set(touches: touches, textAttributes: [NSBackgroundColorAttributeName : UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)])
+        set(touches: touches, textAttributes: [NSBackgroundColorAttributeName : UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)], isTouchesEnded: false)
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let color = superview?.backgroundColor ?? UIColor.white
-        set(touches: touches, textAttributes: [NSBackgroundColorAttributeName : color])
+        set(touches: touches, textAttributes: [NSBackgroundColorAttributeName : color], isTouchesEnded: true)
     }
     
-    private func set(touches: Set<UITouch>, textAttributes attrs: [String : Any]) {
+    private func set(touches: Set<UITouch>, textAttributes attrs: [String : Any], isTouchesEnded ended: Bool) {
         // 获取用户点击的位置
         guard let point = touches.first?.location(in: self) else { return }
         
@@ -178,31 +191,35 @@ class TextLabel: UILabel {
         let index = layoutManager.glyphIndex(for: point, in: textContainer)
         
         // 找出@谁
+        
+        var subString = ""
+        
         for range in atRange {
             if NSLocationInRange(index, range) {
-                let strSub = (textStorage.string as NSString).substring(with: range)
+                subString = (textStorage.string as NSString).substring(with: range)
                 textStorage.addAttributes(attrs, range: range)
                 setNeedsDisplay()
-                print(strSub)
             }
         }
         // 找出URL,#话题#,@好友
         for range in linkRanges {
             if NSLocationInRange(index, range) {
-                let strSub = (textStorage.string as NSString).substring(with: range)
+                subString = (textStorage.string as NSString).substring(with: range)
                 textStorage.addAttributes(attrs, range: range)
                 setNeedsDisplay()
-                print(strSub)
             }
         }
         // 找出URL
         for range in urlRange {
             if NSLocationInRange(index, range) {
-                let strSub = (textStorage.string as NSString).substring(with: range)
+                subString = (textStorage.string as NSString).substring(with: range)
                 textStorage.addAttributes(attrs, range: range)
                 setNeedsDisplay()
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "webView"), object: self, userInfo: ["urlString" : strSub])
             }
+        }
+        
+        if subString.characters.count > 0 && ended {
+            delegate?.label(self, didSelectedLinkText: subString)
         }
     }
 }
