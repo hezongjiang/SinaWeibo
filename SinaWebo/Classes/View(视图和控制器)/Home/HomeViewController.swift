@@ -44,7 +44,7 @@ class HomeViewController: BaseViewController {
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriend))
         
         tableView?.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: OriginCellId)
-        tableView?.register(UINib(nibName: "StatusRetweetedCell的", bundle: nil), forCellReuseIdentifier: RetweetedCellId)
+        tableView?.register(UINib(nibName: "StatusRetweetedCell", bundle: nil), forCellReuseIdentifier: RetweetedCellId)
 //        tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 100
         tableView?.separatorStyle = .none

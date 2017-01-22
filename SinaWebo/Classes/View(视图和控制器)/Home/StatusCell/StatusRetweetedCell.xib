@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="409"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iaQ-Fp-f8E" id="jRD-AJ-VLX">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="409"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glA-DJ-bRW" userLabel="顶部分割视图">
@@ -56,7 +56,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="bky-hw-BpK" userLabel="认证图标">
                         <rect key="frame" x="29" y="41" width="17" height="17"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssZ-By-JU5" userLabel="正文">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssZ-By-JU5" userLabel="正文" customClass="TextLabel" customModule="SinaWebo" customModuleProvider="target">
                         <rect key="frame" x="12" y="70" width="351" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="100" width="375" height="271"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-vn-2jk">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-vn-2jk" customClass="TextLabel" customModule="SinaWebo" customModuleProvider="target">
                         <rect key="frame" x="12" y="112" width="351" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,9 +170,9 @@
                 <outlet property="memberIcon" destination="ODu-tg-Rxe" id="rs4-op-xjs"/>
                 <outlet property="nameLabel" destination="Cog-z1-ko8" id="1r6-ky-kus"/>
                 <outlet property="pictureView" destination="X7a-W5-udk" id="bjL-7g-qKc"/>
+                <outlet property="retweetLabel" destination="2dk-vn-2jk" id="DDe-II-RMh"/>
                 <outlet property="sourceLaebl" destination="XGb-yw-viW" id="Zas-Nf-Lcz"/>
                 <outlet property="statusLabel" destination="ssZ-By-JU5" id="wpA-KT-QnB"/>
-                <outlet property="tetweetLabel" destination="2dk-vn-2jk" id="fr7-gd-QOe"/>
                 <outlet property="timeLabel" destination="3O5-dd-k9F" id="myF-vG-N77"/>
                 <outlet property="toolBar" destination="Q19-Xg-9S2" id="Idb-rz-QW1"/>
                 <outlet property="vipIcon" destination="bky-hw-BpK" id="dqB-g1-ese"/>

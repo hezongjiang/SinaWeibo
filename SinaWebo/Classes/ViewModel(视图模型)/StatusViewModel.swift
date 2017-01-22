@@ -14,6 +14,12 @@ class StatusViewModel: NSObject {
     /// 微博模型
     var status: Status
     
+    /// 微博正文属性文本
+    var statusAttrText: NSAttributedString?
+    
+    /// 转发微博属性文本
+    var retweetAttrText: NSAttributedString?
+    
     /// 会员图标
     var memberIcon: UIImage?
     
@@ -38,9 +44,6 @@ class StatusViewModel: NSObject {
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
-    /// 被转发微博文字
-    var retweetText: String?
-    
     /// 行高
     var rowHeight: CGFloat = 0
     
@@ -60,7 +63,11 @@ class StatusViewModel: NSObject {
         commentString = countString(count: model.comments_count, defaultString: "评论")
         likeString = countString(count: model.attitudes_count, defaultString: "赞")
         
-        retweetText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
+        let retweetText = "@" + (status.retweeted_status?.user?.screen_name ?? "") + "：" + (model.retweeted_status?.text ?? "")
+        // 转发微博属性文本
+        retweetAttrText = EmoticonManager.manager.emoticonString(string: retweetText, font: UIFont.systemFont(ofSize: 14))
+        
+        statusAttrText = EmoticonManager.manager.emoticonString(string: model.text ?? "", font: UIFont.systemFont(ofSize: 15))
         
         pictureViewSize = caculatePictureViewSize(count: pictureUrl?.count)
         
@@ -82,9 +89,9 @@ class StatusViewModel: NSObject {
         let viewSize = CGSize(width: UIScreen.main.bounds.width - 2 * OutterMargin, height: CGFloat(MAXFLOAT))
         
         // 正文高度
-        if let text = status.text {
+        if let text = statusAttrText {
             
-            height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15)], context: nil).size.height
+            height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
         }
         
         // 转发微博高度
@@ -92,8 +99,8 @@ class StatusViewModel: NSObject {
             
             height += 2 * OutterMargin
             
-            if let text = retweetText {
-                height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14)], context: nil).size.height
+            if let text = retweetAttrText {
+                height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
             }
         }
         

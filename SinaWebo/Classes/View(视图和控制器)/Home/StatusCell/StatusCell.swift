@@ -17,7 +17,7 @@ class StatusCell: UITableViewCell {
             // 用户名
             nameLabel.text = viewModel?.status.user?.screen_name
             // 微博正文
-            statusLabel.text = viewModel?.status.text
+            statusLabel.attributedText = viewModel?.statusAttrText
             // 会员图标
             memberIcon.image = viewModel?.memberIcon
             // VIP图标
@@ -34,7 +34,7 @@ class StatusCell: UITableViewCell {
             toolBar.viewModel = viewModel
             
             // 被转发微博文字
-            tetweetLabel?.text = viewModel?.retweetText
+            retweetLabel?.attributedText = viewModel?.retweetAttrText
         }
     }
     
@@ -66,7 +66,7 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var toolBar: StatusToolBar!
     
     /// 被转发微博文字
-    @IBOutlet weak var tetweetLabel: UILabel?
+    @IBOutlet weak var retweetLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
