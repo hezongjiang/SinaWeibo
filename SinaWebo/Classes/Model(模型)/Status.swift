@@ -29,7 +29,8 @@ class Status: NSObject {
     /// 微博来源
     var source: String? {
         didSet {
-            source = source?.wb_source()?.text ?? ""
+            guard let sour = source?.wb_source()?.text else { return }
+            source = "来自 " + sour
         }
     }
     

@@ -10,7 +10,12 @@ import UIKit
 
 class WebViewController: BaseViewController {
 
-    private lazy var webView = UIWebView(frame: UIScreen.main.bounds)
+    private lazy var webView: UIWebView = {
+        let wb = UIWebView(frame: UIScreen.main.bounds)
+        wb.delegate = self
+        wb.scrollView.subviews.first?.backgroundColor = UIColor.white
+        return wb
+    }()
     
     var urlString: String? {
         didSet {
@@ -19,8 +24,6 @@ class WebViewController: BaseViewController {
             }
             
             webView.loadRequest(URLRequest(url: url))
-            webView.delegate = self
-            webView.scrollView.contentInset.top = navigationBar.bounds.height
             view.insertSubview(webView, belowSubview: navigationBar)
         }
     }
@@ -35,13 +38,16 @@ class WebViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    deinit {
+        print("xiaohui")
+    }
 }
 
 extension BaseViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
-        navItem.title = webView.stringByEvaluatingJavaScript(from: "doucment.title")
+        navItem.title = webView.stringByEvaluatingJavaScript(from: "document.title")
         
     }
 }

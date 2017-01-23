@@ -29,10 +29,13 @@ class UserAccount: NSObject {
     /// 用户昵称
     var screen_name: String?
     
-    
     /// 头像
     var avatar_large: String?
     
+    /// 判断用户是否登录
+    var userLogin: Bool {
+        return access_token != nil
+    }
     
     override init() {
         super.init()

@@ -18,7 +18,7 @@ extension NetworkManager {
         
         let paramet = ["since_id" : "\(since_id)", "max_id" : "\(max_id > 0 ? max_id - 1 : 0)"]
         
-        accessTokenRequest(URLString: urlString, parameters: paramet) { (json, isSuccess)->() in
+        accessTokenRequest(urlString: urlString, parameters: paramet) { (json, isSuccess)->() in
             
             let dict = json as? [String : Any]
             
@@ -33,7 +33,7 @@ extension NetworkManager {
         
         let url = "https://rm.api.weibo.com/2/remind/unread_count.json"
         
-        accessTokenRequest(URLString: url, parameters: ["uid" : userAccount.uid ?? ""]) { (json, isSuccess) -> () in
+        accessTokenRequest(urlString: url, parameters: ["uid" : userAccount.uid ?? ""]) { (json, isSuccess) -> () in
 
             let dict = json as? [String : Any]
             
@@ -75,6 +75,35 @@ extension NetworkManager {
         }
     }
     
+
+    /// 发布一条微博信息
+    ///
+    /// - Parameters:
+    ///   - text: 需要发送的微博文本
+    ///   - image: 需要发送的微博图片，若为nil，则发送纯文本微博
+    ///   - completion: 完成回调
+    func postStatus(text: String, image: UIImage? = nil, completion: @escaping (_ json: [String : Any]?, _ isSuccess: Bool) -> ()) {
+        
+        let params = ["status" : text]
+        
+        let urlString: String
+        var name: String? = nil
+        var data: Data? = nil
+        
+        if image == nil {
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        } else {
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+            name = "pic"
+            data = UIImagePNGRepresentation(image!)
+        }
+        
+        
+        accessTokenRequest(method: .Post, urlString: urlString, parameters: params, name: name, data: data) { (json, isSuccess) in
+            completion(json as? [String : Any], isSuccess)
+        }
+        
+    }
     
     /// 加载微博用户个人信息
     private func loadUserInfo(completion: @escaping (_ dict: [String : Any]) -> ()) {
@@ -83,7 +112,7 @@ extension NetworkManager {
         
         let parameters = ["uid" : userAccount.uid ?? ""]
         
-        accessTokenRequest(URLString: urlString, parameters: parameters) { (json, isSuccess) -> () in
+        accessTokenRequest(urlString: urlString, parameters: parameters) { (json, isSuccess) -> () in
             
             completion(json as? [String : Any] ?? [:])
         }

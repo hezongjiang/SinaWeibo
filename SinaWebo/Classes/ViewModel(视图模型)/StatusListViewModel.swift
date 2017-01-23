@@ -45,12 +45,9 @@ class StatusListViewModel: NSObject {
             
             for dict in json ?? [] {
                 
-                guard let status = Status.yy_model(with: dict) else {
-                    continue
-                }
+                guard let status = Status.yy_model(with: dict) else { continue }
                 
                 array.append(StatusViewModel(model: status))
-                
             }
             
             print("刷到" + "\(array.count)" + "条数据" + "\(array)")
@@ -73,12 +70,11 @@ class StatusListViewModel: NSObject {
                 
                 // 在完成回调刷新表格之前，下载单张配图，计算单张配图大小，重新计算行高
                 self.cacheSingImage(list: array, completion: completion)
-                
-//                completion(isSuccess, true)
             }
-            
         }
     }
+    
+    
     
     /// 缓存单张图片
     private func cacheSingImage(list: [StatusViewModel], completion: @escaping (_ isSuccess: Bool, _ shuoleRefresh: Bool) -> ()) {
@@ -90,29 +86,22 @@ class StatusListViewModel: NSObject {
             
             if vm.pictureUrl?.count != 1 { continue }
             
-            guard let urlString = vm.pictureUrl?.first?.thumbnail_pic, let url = URL(string: urlString) else {
-                continue
-            }
+            guard let urlString = vm.pictureUrl?.first?.thumbnail_pic, let url = URL(string: urlString) else { continue }
             
             // 入组
             group.enter()
             
             SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
                 
-                if let image = image {
-                    vm.calculateSiginPicture(image: image)
-                }
+                if let image = image { vm.calculateSiginPicture(image: image) }
                 
                 // 出组
                 group.leave()
             })
-            
         }
         
         // 完成通知
-        group.notify(queue: DispatchQueue.main) {
-            completion(true, true)
-        }
+        group.notify(queue: DispatchQueue.main) { completion(true, true) }
     }
     
 }

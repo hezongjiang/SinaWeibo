@@ -64,7 +64,7 @@ class BaseViewController: UIViewController {
         
         setupNav()
         
-        (NetworkManager.shared.userLogin) ? setupTableView() : setupVisitor()
+        (NetworkManager.shared.userAccount.userLogin) ? setupTableView() : setupVisitor()
     }
     
     

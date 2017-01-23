@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
     /// 重写父类的“加载数据”
     override func loadData() {
         
-        if !NetworkManager.shared.userLogin { return }
+        if !NetworkManager.shared.userAccount.userLogin { return }
         
         refreshController?.beginRefreshing()
         

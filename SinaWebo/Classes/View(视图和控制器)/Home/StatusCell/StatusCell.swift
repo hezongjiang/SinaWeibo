@@ -39,7 +39,7 @@ class StatusCell: UITableViewCell {
             // 头像
             iconView.setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_small"), isAvatar: true)
             // 来源
-            sourceLaebl.text = "来自 " + (viewModel?.status.source ?? "")
+            sourceLaebl.text = (viewModel?.status.source ?? "")
             // 时间
             timeLabel.text = viewModel?.status.created_at
             // 配图视图

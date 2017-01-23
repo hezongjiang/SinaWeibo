@@ -34,7 +34,7 @@ class MainTabBarController: UITabBarController {
     /// 设置新特性视图
     private func setupNewfeatureViews() {
         
-        if !NetworkManager.shared.userLogin { return }
+        if !NetworkManager.shared.userAccount.userLogin { return }
         
         let v = isNewFeature ? NewFeatureView.newFeatureView() : WelcomeView.welcomeView()
         
@@ -88,7 +88,7 @@ class MainTabBarController: UITabBarController {
     @objc private func updateUnreadCount() {
         
         // 如果没有登录，不检查未读数
-        if !NetworkManager.shared.userLogin { return }
+        if !NetworkManager.shared.userAccount.userLogin { return }
         
         NetworkManager.shared.unreadCount { (count) in
             
