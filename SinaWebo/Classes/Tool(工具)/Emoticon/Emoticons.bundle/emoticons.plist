@@ -6,7 +6,7 @@
 		<key>groupName</key>
 		<string>最近</string>
 		<key>bgImageName</key>
-		<string>letf</string>
+		<string>left</string>
 	</dict>
 	<dict>
 		<key>directory</key>

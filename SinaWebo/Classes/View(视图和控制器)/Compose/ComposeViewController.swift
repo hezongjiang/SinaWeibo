@@ -46,41 +46,64 @@ class ComposeViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: textView)
-        updataButtonState()
-    }
-    
-    @objc private func textViewTextDidChange(n: Notification) {
-        updataButtonState()
-    }
-    
-    private func updataButtonState() {
         
+        textViewTextDidChange()
+    }
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+    }
+    
+    /// 切换表情键盘
+    @IBAction func emoticonKeyboard(_ sender: UIButton) {
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 200))
+        textView.inputView = v
+        textView.reloadInputViews()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
+// MARK: - 事件处理
+private extension ComposeViewController {
+    
+    @objc func textViewTextDidChange() {
         textView.placeholderLabel.isHidden = textView.hasText
         composeButton.isHidden = !textView.hasText
     }
     
     /// 键盘通知事件
-    @objc private func keyboardChange(n: Notification) {
+    @objc func keyboardChange(n: Notification) {
         
         guard let rect = (n.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.cgRectValue,
             let time = (n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? NSNumber)?.doubleValue else {
-            return
+                return
         }
         
         toolbarBottomCons.constant = view.bounds.height - rect.origin.y
         
-        UIView.animate(withDuration: time) { 
+        UIView.animate(withDuration: time) {
             self.view.layoutIfNeeded()
         }
     }
     
     /// 返回
-    @objc private func back() {
+    @objc func back() {
         dismiss(animated: true, completion: nil)
     }
     
     /// 发微博
-    @objc private func composeStatus() {
+    @objc func composeStatus() {
         
         SVProgressHUD.show()
         
@@ -96,21 +119,8 @@ class ComposeViewController: UIViewController {
                 
                 SVProgressHUD.showSuccess(withStatus: "发布失败！")
             }
-
+            
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        textView.becomeFirstResponder()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        view.endEditing(true)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 }

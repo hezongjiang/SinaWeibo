@@ -74,6 +74,12 @@
 		28EC39021E34A1CB002EF1CE /* ComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC38FD1E34A1CB002EF1CE /* ComposeTypeView.xib */; };
 		28EC39061E34A26A002EF1CE /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC39041E34A26A002EF1CE /* ComposeViewController.swift */; };
 		28EC39071E34A26A002EF1CE /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC39051E34A26A002EF1CE /* ComposeViewController.xib */; };
+		28F54F681E3855BF006BA76C /* EmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F54F621E3855BF006BA76C /* EmoticonCell.swift */; };
+		28F54F691E3855BF006BA76C /* EmoticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F54F631E3855BF006BA76C /* EmoticonCell.xib */; };
+		28F54F6A1E3855BF006BA76C /* EmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F54F641E3855BF006BA76C /* EmoticonInputView.swift */; };
+		28F54F6B1E3855BF006BA76C /* EmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F54F651E3855BF006BA76C /* EmoticonInputView.xib */; };
+		28F54F6C1E3855C0006BA76C /* EmoticonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F54F661E3855BF006BA76C /* EmoticonLayout.swift */; };
+		28F54F6D1E3855C0006BA76C /* EmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F54F671E3855BF006BA76C /* EmoticonToolBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +187,12 @@
 		28EC38FD1E34A1CB002EF1CE /* ComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeView.xib; sourceTree = "<group>"; };
 		28EC39041E34A26A002EF1CE /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		28EC39051E34A26A002EF1CE /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		28F54F621E3855BF006BA76C /* EmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonCell.swift; sourceTree = "<group>"; };
+		28F54F631E3855BF006BA76C /* EmoticonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonCell.xib; sourceTree = "<group>"; };
+		28F54F641E3855BF006BA76C /* EmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonInputView.swift; sourceTree = "<group>"; };
+		28F54F651E3855BF006BA76C /* EmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonInputView.xib; sourceTree = "<group>"; };
+		28F54F661E3855BF006BA76C /* EmoticonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonLayout.swift; sourceTree = "<group>"; };
+		28F54F671E3855BF006BA76C /* EmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonToolBar.swift; sourceTree = "<group>"; };
 		34EDEA84CC70A9D1A99BEE9F /* Pods-SinaWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.debug.xcconfig"; sourceTree = "<group>"; };
 		6C17BA3DE1E89925BD22EB12 /* Pods-SinaWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWebo/Pods-SinaWebo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -444,6 +456,7 @@
 		2899A2101E30BBD200467D06 /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
+				28F54F611E3855BF006BA76C /* View */,
 				2899A2121E30BBD200467D06 /* EmoticonManager.swift */,
 				2899A2131E30BBD200467D06 /* EmoticonPackage.swift */,
 				2899A2111E30BBD200467D06 /* Emoticon.swift */,
@@ -535,6 +548,19 @@
 				28618F711E35DAED00D3B01E /* ComposeTextView.swift */,
 			);
 			path = ComposeView;
+			sourceTree = "<group>";
+		};
+		28F54F611E3855BF006BA76C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28F54F621E3855BF006BA76C /* EmoticonCell.swift */,
+				28F54F631E3855BF006BA76C /* EmoticonCell.xib */,
+				28F54F641E3855BF006BA76C /* EmoticonInputView.swift */,
+				28F54F651E3855BF006BA76C /* EmoticonInputView.xib */,
+				28F54F661E3855BF006BA76C /* EmoticonLayout.swift */,
+				28F54F671E3855BF006BA76C /* EmoticonToolBar.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4BD7959147455B93D7049569 /* Frameworks */ = {
@@ -667,7 +693,9 @@
 				28CE514C1E236717004A1FD6 /* StatusRetweetedCell.xib in Resources */,
 				28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */,
 				286EDFFD1E10FF3200B6BD4D /* main.json in Resources */,
+				28F54F691E3855BF006BA76C /* EmoticonCell.xib in Resources */,
 				28B0D9641E27616700632BE2 /* RefreshView.xib in Resources */,
+				28F54F6B1E3855BF006BA76C /* EmoticonInputView.xib in Resources */,
 				28D18FBC1E1CC3D6009548F1 /* WelcomeView.xib in Resources */,
 				286EDF971E10E6A200B6BD4D /* Assets.xcassets in Resources */,
 				28EC39001E34A1CB002EF1CE /* ComposeTypeButton.xib in Resources */,
@@ -763,6 +791,7 @@
 				28EC38F71E34946C002EF1CE /* WebViewController.swift in Sources */,
 				287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */,
 				286EDFF01E10FABE00B6BD4D /* NSAttributedString+CZAdditon.m in Sources */,
+				28F54F6D1E3855C0006BA76C /* EmoticonToolBar.swift in Sources */,
 				2899A2171E30BBD200467D06 /* EmoticonPackage.swift in Sources */,
 				28CE514A1E233994004A1FD6 /* Common.swift in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
@@ -783,9 +812,11 @@
 				283335231E14F20A003ABD92 /* Status.swift in Sources */,
 				286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */,
 				286EDFF11E10FABE00B6BD4D /* NSObject+CZRuntime.m in Sources */,
+				28F54F6A1E3855BF006BA76C /* EmoticonInputView.swift in Sources */,
 				286EDFD01E10F9E600B6BD4D /* MessageViewController.swift in Sources */,
 				283042851E1E4B720075F319 /* Uimage+Extention.swift in Sources */,
 				2830423A1E1E27E20075F319 /* User.swift in Sources */,
+				28F54F681E3855BF006BA76C /* EmoticonCell.swift in Sources */,
 				283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */,
 				286EDFD41E10F9FE00B6BD4D /* PorfileViewController.swift in Sources */,
 				283042341E1DF8D30075F319 /* StatusCell.swift in Sources */,
@@ -796,6 +827,7 @@
 				28EC39011E34A1CB002EF1CE /* ComposeTypeView.swift in Sources */,
 				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
 				28B0D9661E27655900632BE2 /* RefreshView.swift in Sources */,
+				28F54F6C1E3855C0006BA76C /* EmoticonLayout.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,
 				286EDFF31E10FABE00B6BD4D /* NSString+CZHash.m in Sources */,
 				28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */,

@@ -14,8 +14,23 @@ class Emoticon: NSObject {
     /// 是否为emoji表情，emoji->true
     var type: Bool = false
     
-    /// emogi的十六进制编码
-    var code: String?
+    /// emoji的十六进制编码
+    var code: String? {
+        didSet {
+            guard let code = code else { return }
+            
+            let scanner = Scanner(string: code)
+            
+            var result: UInt32 = 0
+            
+            scanner.scanHexInt32(&result)
+            
+            emoji = String(Character(UnicodeScalar(result)!))
+        }
+    }
+    
+    /// emoji字符串
+    var emoji: String?
     
     /// 表情字符串（简体）
     var chs: String?

@@ -64,9 +64,7 @@ class EmoticonManager: NSObject {
             
             attrString.replaceCharacters(in: range, with: emoticon.imageAttributedString(font: font))
         }
-        
         attrString.addAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.black], range: NSRange(location: 0, length: attrString.length))
-        
         return attrString
     }
 }
@@ -82,6 +80,4 @@ private extension EmoticonManager {
         
         emotiPackages += model
     }
-    
-    
 }

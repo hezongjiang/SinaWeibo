@@ -13,6 +13,7 @@ class WebViewController: BaseViewController {
     private lazy var webView: UIWebView = {
         let wb = UIWebView(frame: UIScreen.main.bounds)
         wb.delegate = self
+        wb.scrollView.contentInset.top = 64
         wb.scrollView.subviews.first?.backgroundColor = UIColor.white
         return wb
     }()
