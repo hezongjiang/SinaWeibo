@@ -19,10 +19,16 @@ class EmoticonInputView: UIView {
     /// 底部工具栏
     @IBOutlet weak var toolBar: UIView!
     
-    class func inputView() -> EmoticonInputView {
+    fileprivate var selectedEmotion: ((_ emotion: Emoticon?)->())?
+    
+    class func inputView(selectedEmotion: @escaping (_ emotion: Emoticon?)->()) -> EmoticonInputView {
         
         let nib = UINib(nibName: "EmoticonInputView", bundle: nil)
+        
         let v = nib.instantiate(withOwner: nil, options: nil).first as! EmoticonInputView
+        
+        v.selectedEmotion = selectedEmotion
+        
         return v
     }
 
@@ -47,6 +53,14 @@ extension EmoticonInputView: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EmoticonCell
         cell.emoticons = EmoticonManager.manager.emotiPackages[indexPath.section].emoticon(page: indexPath.item)
+        cell.delegate = self
         return cell
+    }
+}
+
+extension EmoticonInputView: EmoticonCellDelegate {
+    
+    func emoticonCell(_ cell: EmoticonCell, didSelectedEmotion emotion: Emoticon?) {
+        selectedEmotion?(emotion)
     }
 }

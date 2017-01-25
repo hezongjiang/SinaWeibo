@@ -553,12 +553,12 @@
 		28F54F611E3855BF006BA76C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				28F54F621E3855BF006BA76C /* EmoticonCell.swift */,
-				28F54F631E3855BF006BA76C /* EmoticonCell.xib */,
 				28F54F641E3855BF006BA76C /* EmoticonInputView.swift */,
 				28F54F651E3855BF006BA76C /* EmoticonInputView.xib */,
-				28F54F661E3855BF006BA76C /* EmoticonLayout.swift */,
 				28F54F671E3855BF006BA76C /* EmoticonToolBar.swift */,
+				28F54F621E3855BF006BA76C /* EmoticonCell.swift */,
+				28F54F631E3855BF006BA76C /* EmoticonCell.xib */,
+				28F54F661E3855BF006BA76C /* EmoticonLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

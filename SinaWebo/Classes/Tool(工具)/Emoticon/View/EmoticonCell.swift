@@ -17,6 +17,15 @@ private let maxColCount = 7
 /// 每一页表情的最大数量
 let maxCount = maxRowCount * maxColCount - 1
 
+@objc protocol EmoticonCellDelegate {
+    
+    /// 点击表情代理监听方法
+    ///
+    /// - Parameters:
+    ///   - cell: 选中的Cell
+    ///   - emotion: 点击的表情模型。若为nil，则为点击了删除按钮。
+    func emoticonCell(_ cell: EmoticonCell, didSelectedEmotion emotion: Emoticon?)
+}
 
 /// 表情键盘每一页的Cell，一个Cell上添加20个表情
 class EmoticonCell: UICollectionViewCell {
@@ -32,15 +41,14 @@ class EmoticonCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    weak var delegate: EmoticonCellDelegate?
+    
     var emoticons: [Emoticon]? {
         
         didSet {
             
-            for view in contentView.subviews {
-                view.isHidden = true
-            }
-            
-            
+            for view in contentView.subviews { view.isHidden = true }
+            contentView.subviews.last?.isHidden = false
             for (idx, emoticon) in (emoticons ?? []).enumerated() {
                 
                 if let btn = contentView.subviews[idx] as? UIButton {
@@ -55,13 +63,23 @@ class EmoticonCell: UICollectionViewCell {
     }
     
 
+    @objc fileprivate func selectedEmoticon(button: UIButton) {
+        
+        var em: Emoticon?
+        
+        if button.tag < emoticons?.count ?? 0 {
+            em = emoticons?[button.tag]
+        }
+        
+        delegate?.emoticonCell(self, didSelectedEmotion: em)
+    }
 }
 
 private extension EmoticonCell {
     
     func setupUI() {
         
-        for i in 0..<(maxRowCount * maxColCount) {
+        for i in 0...maxCount {
             
             let leftMargin: CGFloat = 8
             let bottomMargin: CGFloat = 16
@@ -73,9 +91,14 @@ private extension EmoticonCell {
             let col = i % maxColCount
             
             let btn = UIButton(frame: CGRect(x: leftMargin + CGFloat(col) * width, y: CGFloat(row) * height, width: width, height: height))
-            
+            btn.tag = i
+            btn.addTarget(self, action: #selector(selectedEmoticon), for: .touchUpInside)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 32)
             contentView.addSubview(btn)
         }
+        
+        let btn = contentView.subviews.last as? UIButton
+        
+        btn?.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
     }
 }

@@ -27,9 +27,5 @@ class ComposeTextView: UITextView {
         super.awakeFromNib()
         addSubview(placeholderLabel)
     }
-    
-    deinit {
-        print("被销毁")
-    }
 
 }

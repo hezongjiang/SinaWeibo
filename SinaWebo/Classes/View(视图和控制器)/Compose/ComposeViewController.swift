@@ -64,12 +64,30 @@ class ComposeViewController: UIViewController {
     
     /// 切换表情键盘
     @IBAction func emoticonKeyboard(_ sender: UIButton) {
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 200))
+        
+        let v = EmoticonInputView.inputView { [weak self] (emotion) in
+            
+            emotion == nil ? self?.textView.deleteBackward() : self?.insert(emotion: emotion!)
+            
+        }
+        
         textView.inputView = v
         textView.reloadInputViews()
     }
     
+    /// 插入表情
+    private func insert(emotion: Emoticon) {
+        
+        if let emoji = emotion.emoji, let textRange = textView.selectedTextRange {
+            textView.replace(textRange, withText: emoji)
+            return
+        }
+        
+        
+    }
+    
     deinit {
+        print("销毁")
         NotificationCenter.default.removeObserver(self)
     }
 }

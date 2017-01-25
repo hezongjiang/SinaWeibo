@@ -62,30 +62,36 @@
                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpO-eg-nNz">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpO-eg-nNz" userLabel="被转发的微博">
                         <rect key="frame" x="0.0" y="100" width="375" height="271"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29T-C0-fw8" userLabel="被转发微博的背景">
-                        <rect key="frame" x="0.0" y="100" width="375" height="271"/>
-                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-vn-2jk" customClass="TextLabel" customModule="SinaWebo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="112" width="351" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="129" width="351" height="230"/>
-                        <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-vn-2jk" customClass="TextLabel" customModule="SinaWebo" customModuleProvider="target">
+                                <rect key="frame" x="12" y="12" width="351" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-W5-udk" userLabel="配图视图" customClass="StatusPictureView" customModule="SinaWebo" customModuleProvider="target">
+                                <rect key="frame" x="12" y="29" width="351" height="230"/>
+                                <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="229.5" id="IVm-80-URa"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="heightCons" destination="IVm-80-URa" id="8wn-c7-F41"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="229.5" id="IVm-80-URa"/>
+                            <constraint firstAttribute="trailing" secondItem="X7a-W5-udk" secondAttribute="trailing" constant="12" id="2tV-wc-EdZ"/>
+                            <constraint firstItem="2dk-vn-2jk" firstAttribute="top" secondItem="vpO-eg-nNz" secondAttribute="top" constant="12" id="HEu-wB-OMh"/>
+                            <constraint firstAttribute="bottom" secondItem="X7a-W5-udk" secondAttribute="bottom" constant="12" id="QUf-Nm-BIF"/>
+                            <constraint firstItem="2dk-vn-2jk" firstAttribute="leading" secondItem="vpO-eg-nNz" secondAttribute="leading" constant="12" id="b3z-ya-Bge"/>
+                            <constraint firstItem="X7a-W5-udk" firstAttribute="top" secondItem="2dk-vn-2jk" secondAttribute="bottom" id="fbM-iz-deg"/>
+                            <constraint firstItem="X7a-W5-udk" firstAttribute="leading" secondItem="vpO-eg-nNz" secondAttribute="leading" constant="12" id="y6A-MU-GV0"/>
+                            <constraint firstAttribute="trailing" secondItem="2dk-vn-2jk" secondAttribute="trailing" constant="12" id="yqn-nf-a21"/>
                         </constraints>
-                        <connections>
-                            <outlet property="heightCons" destination="IVm-80-URa" id="8wn-c7-F41"/>
-                        </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q19-Xg-9S2" userLabel="底部工具栏" customClass="StatusToolBar" customModule="SinaWebo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="371" width="375" height="35"/>
@@ -139,34 +145,27 @@
                 <constraints>
                     <constraint firstItem="ODu-tg-Rxe" firstAttribute="centerY" secondItem="Cog-z1-ko8" secondAttribute="centerY" id="0Sm-kM-CmM"/>
                     <constraint firstItem="3O5-dd-k9F" firstAttribute="bottom" secondItem="Xeh-wf-Rcu" secondAttribute="bottom" id="30e-78-tNS"/>
-                    <constraint firstItem="29T-C0-fw8" firstAttribute="top" secondItem="ssZ-By-JU5" secondAttribute="bottom" constant="12" id="5rF-Qa-TTl"/>
                     <constraint firstItem="ODu-tg-Rxe" firstAttribute="leading" secondItem="Cog-z1-ko8" secondAttribute="trailing" constant="5" id="65Z-6g-kEs"/>
                     <constraint firstItem="glA-DJ-bRW" firstAttribute="top" secondItem="jRD-AJ-VLX" secondAttribute="top" id="6Jq-9s-2zd"/>
                     <constraint firstItem="XGb-yw-viW" firstAttribute="leading" secondItem="3O5-dd-k9F" secondAttribute="trailing" constant="10" id="8te-7n-DGd"/>
-                    <constraint firstItem="2dk-vn-2jk" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" constant="12" id="9In-AZ-flB"/>
-                    <constraint firstAttribute="trailing" secondItem="X7a-W5-udk" secondAttribute="trailing" constant="12" id="9gM-rx-31T"/>
                     <constraint firstItem="XGb-yw-viW" firstAttribute="bottom" secondItem="3O5-dd-k9F" secondAttribute="bottom" id="A9S-Iv-pAc"/>
                     <constraint firstItem="Cog-z1-ko8" firstAttribute="top" secondItem="Xeh-wf-Rcu" secondAttribute="top" constant="3" id="Fyy-Yv-bUy"/>
+                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" secondItem="vpO-eg-nNz" secondAttribute="bottom" id="H7r-cb-oDK"/>
                     <constraint firstItem="Cog-z1-ko8" firstAttribute="leading" secondItem="Xeh-wf-Rcu" secondAttribute="trailing" constant="11" id="HaQ-cU-fFF"/>
                     <constraint firstAttribute="trailing" secondItem="glA-DJ-bRW" secondAttribute="trailing" id="LhC-aa-9I9"/>
                     <constraint firstItem="ssZ-By-JU5" firstAttribute="leading" secondItem="Xeh-wf-Rcu" secondAttribute="leading" id="OJT-kl-bI5"/>
-                    <constraint firstItem="2dk-vn-2jk" firstAttribute="top" secondItem="29T-C0-fw8" secondAttribute="top" constant="12" id="OTF-ky-Cua"/>
                     <constraint firstItem="Q19-Xg-9S2" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" id="Pym-vB-q7R"/>
                     <constraint firstItem="Xeh-wf-Rcu" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" constant="12" id="UGC-6b-knX"/>
+                    <constraint firstAttribute="trailing" secondItem="vpO-eg-nNz" secondAttribute="trailing" id="UXL-pJ-7U9"/>
                     <constraint firstItem="bky-hw-BpK" firstAttribute="bottom" secondItem="Xeh-wf-Rcu" secondAttribute="bottom" id="VM1-4Q-qoR"/>
-                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" secondItem="29T-C0-fw8" secondAttribute="bottom" id="ZoO-DZ-Q0P"/>
-                    <constraint firstItem="X7a-W5-udk" firstAttribute="leading" secondItem="ssZ-By-JU5" secondAttribute="leading" id="caI-lu-QSD"/>
                     <constraint firstItem="ssZ-By-JU5" firstAttribute="top" secondItem="bky-hw-BpK" secondAttribute="bottom" constant="12" id="fbk-Yu-w6s"/>
-                    <constraint firstItem="Q19-Xg-9S2" firstAttribute="top" secondItem="X7a-W5-udk" secondAttribute="bottom" constant="12" id="gUn-Fq-H2a"/>
                     <constraint firstItem="3O5-dd-k9F" firstAttribute="leading" secondItem="Cog-z1-ko8" secondAttribute="leading" id="iRT-fT-dth"/>
-                    <constraint firstAttribute="trailing" secondItem="29T-C0-fw8" secondAttribute="trailing" id="k3G-2E-Imc"/>
                     <constraint firstItem="bky-hw-BpK" firstAttribute="trailing" secondItem="Xeh-wf-Rcu" secondAttribute="trailing" id="khV-oS-thg"/>
-                    <constraint firstItem="X7a-W5-udk" firstAttribute="top" secondItem="2dk-vn-2jk" secondAttribute="bottom" id="lfT-XO-4AQ"/>
+                    <constraint firstItem="vpO-eg-nNz" firstAttribute="top" secondItem="ssZ-By-JU5" secondAttribute="bottom" constant="12" id="mC7-dG-8Kd"/>
                     <constraint firstAttribute="trailing" secondItem="Q19-Xg-9S2" secondAttribute="trailing" id="mdc-ea-EEf"/>
                     <constraint firstItem="Xeh-wf-Rcu" firstAttribute="top" secondItem="glA-DJ-bRW" secondAttribute="bottom" constant="12" id="nKu-fu-xZB"/>
-                    <constraint firstAttribute="trailing" secondItem="2dk-vn-2jk" secondAttribute="trailing" constant="12" id="oU0-KP-Yfh"/>
-                    <constraint firstItem="29T-C0-fw8" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" id="oo2-hw-AVH"/>
                     <constraint firstItem="glA-DJ-bRW" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" id="sgY-QZ-rQy"/>
+                    <constraint firstItem="vpO-eg-nNz" firstAttribute="leading" secondItem="jRD-AJ-VLX" secondAttribute="leading" id="v8I-MC-NBN"/>
                     <constraint firstAttribute="trailing" secondItem="ssZ-By-JU5" secondAttribute="trailing" constant="12" id="xpg-7l-Va1"/>
                 </constraints>
             </tableViewCellContentView>
