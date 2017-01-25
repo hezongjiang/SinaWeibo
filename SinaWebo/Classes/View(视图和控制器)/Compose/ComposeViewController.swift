@@ -34,6 +34,16 @@ class ComposeViewController: UIViewController {
         return btn
     }()
     
+    /// 发送给服务器的文本
+    fileprivate var emotionText: String? {
+        
+        textView.attributedText.enumerateAttributes(in: NSRange(location: 0, length: textView.attributedText.length), options: []) { (dict, range, _) in
+            
+        }
+        
+        return ""
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -65,6 +75,8 @@ class ComposeViewController: UIViewController {
     /// 切换表情键盘
     @IBAction func emoticonKeyboard(_ sender: UIButton) {
         
+        if !textView.isFirstResponder { textView.becomeFirstResponder() }
+        
         let v = EmoticonInputView.inputView { [weak self] (emotion) in
             
             emotion == nil ? self?.textView.deleteBackward() : self?.insert(emotion: emotion!)
@@ -83,7 +95,15 @@ class ComposeViewController: UIViewController {
             return
         }
         
+        let attrString = NSMutableAttributedString(attributedString: textView.attributedText)
         
+        attrString.replaceCharacters(in: textView.selectedRange, with: emotion.imageAttributedString(font: textView.font!))
+        
+        let range = textView.selectedRange
+        
+        textView.attributedText = attrString
+        
+        textView.selectedRange = NSRange(location: range.location + 1, length: 0)
     }
     
     deinit {

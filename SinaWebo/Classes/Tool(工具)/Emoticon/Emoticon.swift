@@ -67,8 +67,8 @@ class Emoticon: NSObject {
         attachment.bounds = CGRect(x: 0, y: -3, width: height, height: height)
         attachment.image = image
         
-        let attr = NSAttributedString(attachment: attachment)
-        
+        let attr = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        attr.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: 1))
         return attr
     }
     

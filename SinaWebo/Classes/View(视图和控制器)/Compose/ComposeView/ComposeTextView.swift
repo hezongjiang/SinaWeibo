@@ -10,7 +10,6 @@ import UIKit
 
 class ComposeTextView: UITextView {
 
-    
     /// 占位标签
     lazy var placeholderLabel: UILabel = { //[weak self] in
         
@@ -28,4 +27,15 @@ class ComposeTextView: UITextView {
         addSubview(placeholderLabel)
     }
 
+    override var text: String! {
+        didSet {
+            placeholderLabel.isHidden = hasText
+        }
+    }
+    
+    override var attributedText: NSAttributedString! {
+        didSet {
+            placeholderLabel.isHidden = hasText
+        }
+    }
 }
