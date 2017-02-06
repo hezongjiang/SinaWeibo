@@ -62,8 +62,9 @@ class Emoticon: NSObject {
     /// 返回当前模型对应的“图片属性字符串”
     func imageAttributedString(font: UIFont = UIFont.systemFont(ofSize: 17)) -> NSAttributedString {
         
-        let attachment = NSTextAttachment()
+        let attachment = EmoticonTextAttachment()
         let height = font.lineHeight
+        attachment.chs = chs
         attachment.bounds = CGRect(x: 0, y: -3, width: height, height: height)
         attachment.image = image
         

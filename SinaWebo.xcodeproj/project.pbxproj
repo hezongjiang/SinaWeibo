@@ -53,6 +53,7 @@
 		2899A2161E30BBD200467D06 /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899A2121E30BBD200467D06 /* EmoticonManager.swift */; };
 		2899A2171E30BBD200467D06 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899A2131E30BBD200467D06 /* EmoticonPackage.swift */; };
 		2899A2181E30BBD200467D06 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2899A2141E30BBD200467D06 /* Emoticons.bundle */; };
+		289AC0071E484FB00094F299 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289AC0061E484FB00094F299 /* EmoticonTextAttachment.swift */; };
 		28A9E81D1E34514D0030124A /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A9E81C1E34514D0030124A /* TextLabel.swift */; };
 		28B0D9621E26396800632BE2 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B0D9611E26396800632BE2 /* RefreshControl.swift */; };
 		28B0D9641E27616700632BE2 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B0D9631E27616700632BE2 /* RefreshView.xib */; };
@@ -166,6 +167,7 @@
 		2899A2121E30BBD200467D06 /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		2899A2131E30BBD200467D06 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		2899A2141E30BBD200467D06 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		289AC0061E484FB00094F299 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
 		28A9E81C1E34514D0030124A /* TextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		28B0D9611E26396800632BE2 /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		28B0D9631E27616700632BE2 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				2899A2121E30BBD200467D06 /* EmoticonManager.swift */,
 				2899A2131E30BBD200467D06 /* EmoticonPackage.swift */,
 				2899A2111E30BBD200467D06 /* Emoticon.swift */,
+				289AC0061E484FB00094F299 /* EmoticonTextAttachment.swift */,
 				2899A2141E30BBD200467D06 /* Emoticons.bundle */,
 			);
 			path = Emoticon;
@@ -806,6 +809,7 @@
 				28B0D9621E26396800632BE2 /* RefreshControl.swift in Sources */,
 				2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */,
 				286EDFF51E10FABE00B6BD4D /* UIButton+CZAddition.m in Sources */,
+				289AC0071E484FB00094F299 /* EmoticonTextAttachment.swift in Sources */,
 				286EDFF81E10FABE00B6BD4D /* UIScreen+CZAddition.m in Sources */,
 				286EDFCA1E10F94900B6BD4D /* MainNavViewController.swift in Sources */,
 				28EC39061E34A26A002EF1CE /* ComposeViewController.swift in Sources */,

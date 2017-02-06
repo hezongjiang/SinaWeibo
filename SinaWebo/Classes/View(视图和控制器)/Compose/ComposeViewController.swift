@@ -33,17 +33,24 @@ class ComposeViewController: UIViewController {
         btn.sizeToFit()
         return btn
     }()
-    
+    /*
     /// 发送给服务器的文本
     fileprivate var emotionText: String? {
         
-        textView.attributedText.enumerateAttributes(in: NSRange(location: 0, length: textView.attributedText.length), options: []) { (dict, range, _) in
-            
-        }
+        var result = ""
         
-        return ""
+        // 遍历输入视图的属性字符串
+        textView.attributedText.enumerateAttributes(in: NSRange(location: 0, length: textView.attributedText.length), options: []) { (dict, range, _) in
+            print(dict)
+            if let attachment = dict["NSAttachment"] as? EmoticonTextAttachment {
+                result += attachment.chs ?? ""
+            } else {
+                result += (textView.attributedText.string as NSString).substring(with: range)
+            }
+        }
+        return result
     }
-    
+    */
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -60,8 +67,6 @@ class ComposeViewController: UIViewController {
         textViewTextDidChange()
     }
     
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         textView.becomeFirstResponder()
@@ -75,42 +80,34 @@ class ComposeViewController: UIViewController {
     /// 切换表情键盘
     @IBAction func emoticonKeyboard(_ sender: UIButton) {
         
-        if !textView.isFirstResponder { textView.becomeFirstResponder() }
-        
-        let v = EmoticonInputView.inputView { [weak self] (emotion) in
+        if textView.inputView == nil {
             
-            emotion == nil ? self?.textView.deleteBackward() : self?.insert(emotion: emotion!)
+            let v = EmoticonInputView.inputView { [weak self] (emotion) in
+                
+                emotion == nil ? self?.textView.deleteBackward() : self?.textView.insert(emotion: emotion!)
+            }
             
+            textView.inputView = v
+        } else {
+            textView.inputView = nil
         }
-        
-        textView.inputView = v
         textView.reloadInputViews()
     }
     
-    /// 插入表情
-    private func insert(emotion: Emoticon) {
-        
-        if let emoji = emotion.emoji, let textRange = textView.selectedTextRange {
-            textView.replace(textRange, withText: emoji)
-            return
-        }
-        
-        let attrString = NSMutableAttributedString(attributedString: textView.attributedText)
-        
-        attrString.replaceCharacters(in: textView.selectedRange, with: emotion.imageAttributedString(font: textView.font!))
-        
-        let range = textView.selectedRange
-        
-        textView.attributedText = attrString
-        
-        textView.selectedRange = NSRange(location: range.location + 1, length: 0)
-    }
     
     deinit {
         print("销毁")
         NotificationCenter.default.removeObserver(self)
     }
 }
+
+extension ComposeViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        textViewTextDidChange()
+    }
+}
+
 
 // MARK: - 事件处理
 private extension ComposeViewController {
@@ -143,9 +140,10 @@ private extension ComposeViewController {
     /// 发微博
     @objc func composeStatus() {
         
+        
         SVProgressHUD.show()
         
-        NetworkManager.shared.postStatus(text: textView.text) { (json, isSuccess) in
+        NetworkManager.shared.postStatus(text: textView.emotionText) { (json, isSuccess) in
             
             if isSuccess {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
@@ -157,7 +155,6 @@ private extension ComposeViewController {
                 
                 SVProgressHUD.showSuccess(withStatus: "发布失败！")
             }
-            
         }
     }
     
