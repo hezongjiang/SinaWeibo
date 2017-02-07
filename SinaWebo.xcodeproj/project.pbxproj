@@ -16,6 +16,8 @@
 		283042851E1E4B720075F319 /* Uimage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042841E1E4B720075F319 /* Uimage+Extention.swift */; };
 		283042871E1F28C10075F319 /* StatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042861E1F28C10075F319 /* StatusToolBar.swift */; };
 		283042C91E1FA3560075F319 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283042C81E1FA3560075F319 /* StatusPictureView.swift */; };
+		283285401E49A97E00A5AB25 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832853F1E49A97E00A5AB25 /* SQLiteManager.swift */; };
+		283285421E49AA2A00A5AB25 /* StatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283285411E49AA2A00A5AB25 /* StatusListDAL.swift */; };
 		2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2833351E1E149E04003ABD92 /* NetworkManager.swift */; };
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
 		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
@@ -110,6 +112,8 @@
 		283042841E1E4B720075F319 /* Uimage+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Uimage+Extention.swift"; sourceTree = "<group>"; };
 		283042861E1F28C10075F319 /* StatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusToolBar.swift; sourceTree = "<group>"; };
 		283042C81E1FA3560075F319 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		2832853F1E49A97E00A5AB25 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		283285411E49AA2A00A5AB25 /* StatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListDAL.swift; sourceTree = "<group>"; };
 		2833351E1E149E04003ABD92 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
 		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -237,6 +241,14 @@
 			path = StatusCell;
 			sourceTree = "<group>";
 		};
+		2832853E1E49A97E00A5AB25 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				2832853F1E49A97E00A5AB25 /* SQLiteManager.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		2833351D1E149DDA003ABD92 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,10 +335,11 @@
 		286EDFBF1E10F8BC00B6BD4D /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				2833351D1E149DDA003ABD92 /* Network */,
+				2832853E1E49A97E00A5AB25 /* SQLite */,
 				28A9E8191E3451110030124A /* TextLabel */,
 				2899A2101E30BBD200467D06 /* Emoticon */,
 				28B0D95D1E2638E100632BE2 /* RefreshController */,
-				2833351D1E149DDA003ABD92 /* Network */,
 				286EDFFE1E11005000B6BD4D /* Extensions */,
 				286EDFD51E10FABE00B6BD4D /* Additions */,
 				28CE51491E233994004A1FD6 /* Common.swift */,
@@ -398,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				283335241E151599003ABD92 /* StatusListViewModel.swift */,
+				283285411E49AA2A00A5AB25 /* StatusListDAL.swift */,
 				2830423B1E1E2C000075F319 /* StatusViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
@@ -797,6 +811,7 @@
 				28F54F6D1E3855C0006BA76C /* EmoticonToolBar.swift in Sources */,
 				2899A2171E30BBD200467D06 /* EmoticonPackage.swift in Sources */,
 				28CE514A1E233994004A1FD6 /* Common.swift in Sources */,
+				283285401E49A97E00A5AB25 /* SQLiteManager.swift in Sources */,
 				286EDFFA1E10FABE00B6BD4D /* UIViewController+CZAddition.m in Sources */,
 				286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */,
 				286EDFF21E10FABE00B6BD4D /* NSString+CZBase64.m in Sources */,
@@ -836,6 +851,7 @@
 				286EDFF31E10FABE00B6BD4D /* NSString+CZHash.m in Sources */,
 				28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */,
 				286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */,
+				283285421E49AA2A00A5AB25 /* StatusListDAL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

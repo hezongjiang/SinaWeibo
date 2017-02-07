@@ -33,7 +33,8 @@ class StatusListViewModel: NSObject {
         let since_id = isPullup ? 0 : self.statusList.first?.status.id ?? 0
         let max_id = !isPullup ? 0 : self.statusList.last?.status.id ?? 0
         
-        NetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (json, isSuccess) in
+        // 从本地数据库或者网络加载微博数据
+        StatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (json, isSuccess) in
             
             if !isSuccess {
                 

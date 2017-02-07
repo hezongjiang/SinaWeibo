@@ -66,7 +66,7 @@ class HomeViewController: BaseViewController {
     }
     
     @objc private func showFriend() {
-        navigationController?.pushViewController(MessageViewController(), animated: true)
+        tableView?.reloadData()
     }
 }
 
@@ -80,7 +80,7 @@ extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
 //        tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
-        
+        //print(indexPath.row)
         let viewModel = statusListViewModel.statusList[indexPath.row]
         
         let cellId = viewModel.status.retweeted_status == nil ? OriginCellId : RetweetedCellId
