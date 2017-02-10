@@ -59,6 +59,7 @@ class Emoticon: NSObject {
         return UIImage(named: path + imageName)
     }
     
+    
     /// 返回当前模型对应的“图片属性字符串”
     func imageAttributedString(font: UIFont = UIFont.systemFont(ofSize: 17)) -> NSAttributedString {
         

@@ -24,7 +24,7 @@ let maxCount = maxRowCount * maxColCount - 1
     /// - Parameters:
     ///   - cell: 选中的Cell
     ///   - emotion: 点击的表情模型。若为nil，则为点击了删除按钮。
-    func emoticonCell(_ cell: EmoticonCell, didSelectedEmotion emotion: Emoticon?)
+    func emoticonCell(_ cell: EmoticonCell, didSelectedEmotion emoticon: Emoticon?)
 }
 
 /// 表情键盘每一页的Cell，一个Cell上添加20个表情

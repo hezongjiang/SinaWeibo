@@ -23,6 +23,25 @@ class EmoticonManager: NSObject {
         loadPackage()
     }
     
+    /// 最近使用的表情
+    ///
+    /// - Parameter em: 选中的表情
+    func recentEmoticon(em: Emoticon) {
+        
+        if emotiPackages[0].emoticons.contains(em) {
+            
+            emotiPackages[0].emoticons.remove(at: emotiPackages[0].emoticons.index(of: em)!)
+        }
+        
+        emotiPackages[0].emoticons.insert(em, at: 0)
+        
+        
+        
+        if emotiPackages[0].emoticons.count > 20 {
+            emotiPackages[0].emoticons.removeLast()
+        }
+    }
+    
     /// 根据字符串，查找表情模型
     func stringToEmoticon(string: String) -> Emoticon? {
         

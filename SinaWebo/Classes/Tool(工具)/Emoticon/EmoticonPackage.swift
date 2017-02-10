@@ -12,7 +12,7 @@ class EmoticonPackage: NSObject {
 
     
     /// 表情数组，里面装每个表情模型
-    private(set) var emoticons = [Emoticon]()
+    var emoticons = [Emoticon]()
     
     
     /// 表情包分组名

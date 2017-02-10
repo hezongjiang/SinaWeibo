@@ -60,7 +60,17 @@ extension EmoticonInputView: UICollectionViewDataSource {
 
 extension EmoticonInputView: EmoticonCellDelegate {
     
-    func emoticonCell(_ cell: EmoticonCell, didSelectedEmotion emotion: Emoticon?) {
-        selectedEmotion?(emotion)
+    func emoticonCell(_ cell: EmoticonCell, didSelectedEmotion emoticon: Emoticon?) {
+        selectedEmotion?(emoticon)
+        
+        if emoticon != nil && collectionView.indexPathsForVisibleItems[0].section != 0 {
+            
+            // 添加到最近表情页
+            EmoticonManager.manager.recentEmoticon(em: emoticon!)
+            // 刷新最近表情页
+            var indexSet = IndexSet()
+            indexSet.insert(0)
+            collectionView.reloadSections(indexSet)
+        }
     }
 }
