@@ -9,6 +9,9 @@
 import UIKit
 import FMDB
 
+/// 最大缓存时间
+private let maxDBcacheTime: TimeInterval = -5 * 60 * 60 * 24
+
 /// 数据库管理者
 class SQLiteManager: NSObject {
     
@@ -32,6 +35,27 @@ class SQLiteManager: NSObject {
         super.init()
         
         createTable()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(clearCache), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    @objc private func clearCache() {
+        
+        let dateString = Date.dateString(dalte: maxDBcacheTime)
+        
+        print("清理缓存\(dateString)")
+        
+        let sql = "DELETE FROM T_Status WHERE create_time < '\(dateString)'"
+        
+        queue.inDatabase { (db) in
+            if db?.executeUpdate(sql, withArgumentsIn: []) == true {
+                print("delete success")
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -46,10 +70,11 @@ extension SQLiteManager {
                  statusId INTEGER NOT NULL,
                  userId INTEGER NOT NULL,
                  status TEXT,
+                 create_time TEXT DEFAULT (datetime('now', 'localtime')),
                  PRIMARY KEY(statusId, userId)
              );
              */
-            if db?.executeStatements("CREATE TABLE IF NOT EXISTS \"T_Status\" (\"statusId\" INTEGER NOT NULL, \"userId\" INTEGER NOT NULL, \"status\" TEXT, PRIMARY KEY(\"statusId\", \"userId\"));") == true {
+            if db?.executeStatements("CREATE TABLE IF NOT EXISTS \"T_Status\" (\"statusId\" INTEGER NOT NULL, \"userId\" INTEGER NOT NULL, \"status\" TEXT, \"create_time\" TEXT DEFAULT (datetime('now', 'localtime')), PRIMARY KEY(\"statusId\", \"userId\"));") == true {
                 print("创表成功")
             } else {
                 print("创表失败")

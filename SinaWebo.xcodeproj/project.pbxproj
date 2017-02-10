@@ -22,6 +22,7 @@
 		283335211E14BE91003ABD92 /* NetworkManager+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */; };
 		283335231E14F20A003ABD92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335221E14F20A003ABD92 /* Status.swift */; };
 		283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283335241E151599003ABD92 /* StatusListViewModel.swift */; };
+		2850A9461E4D4F1500D09BD7 /* Date+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850A9451E4D4F1500D09BD7 /* Date+Extention.swift */; };
 		2859AFA81E2DFB0700B19F3E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859AFA71E2DFB0700B19F3E /* String+Extension.swift */; };
 		28618F721E35DAED00D3B01E /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28618F711E35DAED00D3B01E /* ComposeTextView.swift */; };
 		286EDF901E10E6A200B6BD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDF8F1E10E6A200B6BD4D /* AppDelegate.swift */; };
@@ -118,6 +119,7 @@
 		283335201E14BE91003ABD92 /* NetworkManager+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extention.swift"; sourceTree = "<group>"; };
 		283335221E14F20A003ABD92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		283335241E151599003ABD92 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
+		2850A9451E4D4F1500D09BD7 /* Date+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extention.swift"; sourceTree = "<group>"; };
 		2859AFA71E2DFB0700B19F3E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		28618F711E35DAED00D3B01E /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		286EDF8C1E10E6A200B6BD4D /* SinaWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -457,6 +459,7 @@
 				286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */,
 				283042821E1E47730075F319 /* UIImageView+WebImage.swift */,
 				283042841E1E4B720075F319 /* Uimage+Extention.swift */,
+				2850A9451E4D4F1500D09BD7 /* Date+Extention.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				28D18FB21E1B5817009548F1 /* UserAccount.swift in Sources */,
 				286EDFD21E10F9F100B6BD4D /* DiscoverViewController.swift in Sources */,
 				286EDFCC1E10F97F00B6BD4D /* BaseViewController.swift in Sources */,
+				2850A9461E4D4F1500D09BD7 /* Date+Extention.swift in Sources */,
 				28B0D9621E26396800632BE2 /* RefreshControl.swift in Sources */,
 				2833351F1E149E04003ABD92 /* NetworkManager.swift in Sources */,
 				286EDFF51E10FABE00B6BD4D /* UIButton+CZAddition.m in Sources */,
