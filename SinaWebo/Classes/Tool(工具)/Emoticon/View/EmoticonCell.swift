@@ -30,6 +30,9 @@ let maxCount = maxRowCount * maxColCount - 1
 /// 表情键盘每一页的Cell，一个Cell上添加20个表情
 class EmoticonCell: UICollectionViewCell {
     
+    /// 表情选择提示视图
+    private lazy var tipView: EmoticonTipView = EmoticonTipView()
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -58,11 +61,19 @@ class EmoticonCell: UICollectionViewCell {
                     btn.isHidden = false
                 }
             }
-            
         }
     }
     
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        
+        guard let window = newWindow else { return }
+        tipView.isHidden = true
+        window.addSubview(tipView)
+    }
+    
 
+    /// 表情按钮点击
     @objc fileprivate func selectedEmoticon(button: UIButton) {
         
         var em: Emoticon?
@@ -72,6 +83,56 @@ class EmoticonCell: UICollectionViewCell {
         }
         
         delegate?.emoticonCell(self, didSelectedEmotion: em)
+    }
+    
+    /// 表情按钮长按
+    @objc fileprivate func longGesture(gesture: UILongPressGestureRecognizer) {
+        
+        guard let btn = buttonWithLocation(gesture.location(in: self)) else {
+            tipView.isHidden = true
+            return
+        }
+        
+        switch gesture.state {
+            
+        case .began, .changed:
+            
+            tipView.isHidden = false
+            
+            tipView.center = convert(btn.center, to: nil)
+            
+            if btn.tag < emoticons?.count ?? 0 {
+                
+                tipView.emotion = emoticons?[btn.tag]
+            }
+            
+        case .ended:
+            
+            tipView.isHidden = true
+            selectedEmoticon(button: btn)
+            
+        case .cancelled, .failed:
+            tipView.isHidden = true
+            
+        default: break
+            
+        }
+    }
+    
+    /// 获取触摸位置的按钮
+    ///
+    /// - Parameter location: 手指触摸的位置
+    /// - Returns: 按钮
+    private func buttonWithLocation(_ location: CGPoint) -> UIButton? {
+        
+        for btn in contentView.subviews {
+            
+            if !btn.isHidden && btn.frame.contains(location) && btn != contentView.subviews.last {
+                return btn as? UIButton
+            }
+        }
+        
+        return nil
     }
 }
 
@@ -100,5 +161,7 @@ private extension EmoticonCell {
         let btn = contentView.subviews.last as? UIButton
         
         btn?.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
+        
+        addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longGesture(gesture:))))
     }
 }
