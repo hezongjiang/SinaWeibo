@@ -36,8 +36,11 @@ class EmoticonInputView: UIView {
     }
 
     override func awakeFromNib() {
+        
         super.awakeFromNib()
+        
         toolBar.delegate = self
+        
         collectionView.register(EmoticonCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
@@ -45,12 +48,14 @@ class EmoticonInputView: UIView {
 extension EmoticonInputView: EmoticonToolBarDalegate {
     
     func emoticonToolBar(_ toolBar: EmoticonToolBar, didSelectedIndex index: Int) {
+        
         let indexPath = IndexPath(item: 0, section: index)
+        
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
 
-extension EmoticonInputView: UICollectionViewDataSource {
+extension EmoticonInputView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -67,6 +72,33 @@ extension EmoticonInputView: UICollectionViewDataSource {
         cell.emoticons = EmoticonManager.manager.emotiPackages[indexPath.section].emoticon(page: indexPath.item)
         cell.delegate = self
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let centerX = scrollView.center.x + scrollView.contentOffset.x
+        
+        let indexPaths = collectionView.indexPathsForVisibleItems
+        
+        var targetIndexPath: IndexPath?
+        
+        // 遍历当前显示的cell
+        for indexPath in indexPaths {
+            
+            let cell = collectionView.cellForItem(at: indexPath)
+            // 判断当前显示的cell在哪个分组
+            if cell?.frame.contains(CGPoint(x: centerX, y: scrollView.center.y)) == true { targetIndexPath = indexPath }
+        }
+        
+        if targetIndexPath != nil {
+            // 根据当前显示的cell，选中底部工具条的选中状态
+            toolBar.selectedIndex = targetIndexPath!.section
+            
+            // 设置分页控件
+            pageControl.currentPage = targetIndexPath!.item
+            pageControl.numberOfPages = collectionView.numberOfItems(inSection: targetIndexPath!.section)
+        }
+        
     }
 }
 

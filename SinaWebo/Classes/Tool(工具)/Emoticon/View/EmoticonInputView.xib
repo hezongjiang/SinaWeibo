@@ -26,6 +26,7 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="guu-U4-RtI" id="7Ue-FL-i1P"/>
+                        <outlet property="delegate" destination="guu-U4-RtI" id="RxQ-ff-ElZ"/>
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxw-wa-iMK" customClass="EmoticonToolBar" customModule="SinaWebo" customModuleProvider="target">
@@ -34,8 +35,8 @@
                         <constraint firstAttribute="height" constant="37" id="36P-Td-suA"/>
                     </constraints>
                 </view>
-                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-ze-oZ9">
-                    <rect key="frame" x="160" y="176" width="55" height="37"/>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-ze-oZ9">
+                    <rect key="frame" x="187.5" y="213" width="0.0" height="0.0"/>
                     <color key="pageIndicatorTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
