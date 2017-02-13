@@ -42,6 +42,9 @@ class EmoticonInputView: UIView {
         toolBar.delegate = self
         
         collectionView.register(EmoticonCell.self, forCellWithReuseIdentifier: cellId)
+        
+        pageControl.setValue(UIImage(named: "compose_keyboard_dot_selected"), forKey: "_currentPageImage")
+        pageControl.setValue(UIImage(named: "compose_keyboard_dot_normal"), forKey: "_pageImage")
     }
 }
 

@@ -119,6 +119,13 @@ class StatusViewModel: NSObject {
         
         var size = image.size
         
+        let scale = size.height / size.width
+        
+        if size.width > 300 {
+            size.width = 220
+            size.height = size.width * scale
+        }
+        
         size.height += OutterMargin
         
         pictureViewSize = size
