@@ -34,11 +34,18 @@
                         <constraint firstAttribute="height" constant="37" id="36P-Td-suA"/>
                     </constraints>
                 </view>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-ze-oZ9">
+                    <rect key="frame" x="160" y="176" width="55" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
             </subviews>
             <constraints>
                 <constraint firstItem="Shw-xb-jdJ" firstAttribute="leading" secondItem="guu-U4-RtI" secondAttribute="leading" id="0uJ-lc-JDC"/>
                 <constraint firstAttribute="trailing" secondItem="xxw-wa-iMK" secondAttribute="trailing" id="1AA-KS-Ig5"/>
+                <constraint firstItem="xxw-wa-iMK" firstAttribute="top" secondItem="DHW-ze-oZ9" secondAttribute="bottom" id="3gY-wE-des"/>
                 <constraint firstItem="xxw-wa-iMK" firstAttribute="leading" secondItem="guu-U4-RtI" secondAttribute="leading" id="KUb-uc-v6G"/>
+                <constraint firstItem="DHW-ze-oZ9" firstAttribute="centerX" secondItem="guu-U4-RtI" secondAttribute="centerX" id="P0v-6V-zHm"/>
                 <constraint firstAttribute="bottom" secondItem="xxw-wa-iMK" secondAttribute="bottom" id="Sxn-nP-YFJ"/>
                 <constraint firstItem="Shw-xb-jdJ" firstAttribute="top" secondItem="guu-U4-RtI" secondAttribute="top" id="Y1l-ca-X8y"/>
                 <constraint firstAttribute="trailing" secondItem="Shw-xb-jdJ" secondAttribute="trailing" id="YaK-ZS-uOj"/>
@@ -48,6 +55,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="Shw-xb-jdJ" id="jlW-Fw-Ky7"/>
+                <outlet property="pageControl" destination="DHW-ze-oZ9" id="izK-32-OO1"/>
                 <outlet property="toolBar" destination="xxw-wa-iMK" id="RSy-kO-mMe"/>
             </connections>
             <point key="canvasLocation" x="-299" y="-41"/>

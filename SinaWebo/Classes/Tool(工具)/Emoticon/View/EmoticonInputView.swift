@@ -17,7 +17,10 @@ class EmoticonInputView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
 
     /// 底部工具栏
-    @IBOutlet weak var toolBar: UIView!
+    @IBOutlet weak var toolBar: EmoticonToolBar!
+    
+    /// 分页控件
+    @IBOutlet weak var pageControl: UIPageControl!
     
     fileprivate var selectedEmotion: ((_ emotion: Emoticon?)->())?
     
@@ -34,7 +37,16 @@ class EmoticonInputView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        toolBar.delegate = self
         collectionView.register(EmoticonCell.self, forCellWithReuseIdentifier: cellId)
+    }
+}
+
+extension EmoticonInputView: EmoticonToolBarDalegate {
+    
+    func emoticonToolBar(_ toolBar: EmoticonToolBar, didSelectedIndex index: Int) {
+        let indexPath = IndexPath(item: 0, section: index)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
 
