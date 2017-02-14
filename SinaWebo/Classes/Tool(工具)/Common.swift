@@ -14,7 +14,8 @@ let UserLoginSuccessedNotification = "UserLoginSuccessedNotification"
 let AppKey = "3716276687"
 let RedirectUrl = "https://www.baidu.com/"
 let AppSecret = "eea50bc9928d4c6bdc967816f895368c"
-
+// 照片浏览器的通知常量
+let ShowPhotoBrowserNotification = "ShowPhotoBrowserNotification"
 
 // 外部间距
 let OutterMargin = CGFloat(12)

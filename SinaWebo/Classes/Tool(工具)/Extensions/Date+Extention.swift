@@ -21,4 +21,11 @@ extension Date {
         return dateFormatter.string(from: date)
     }
     
+    static func stringToData(string: String) -> Date? {
+        
+        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyy"
+        
+        return dateFormatter.date(from: string)
+    }
+    
 }

@@ -17,7 +17,15 @@ class HomeViewController: BaseViewController {
     fileprivate lazy var statusListViewModel = StatusListViewModel()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser), name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil)
+    }
+    
+    @objc private func showPhotoBrowser(noti: Notification) {
+        
+        guard let urls = noti.userInfo?["urls"] as? [URL] else { return }
         
     }
     
@@ -67,6 +75,7 @@ class HomeViewController: BaseViewController {
     
     @objc private func showFriend() {
         tableView?.reloadData()
+        
     }
 }
 

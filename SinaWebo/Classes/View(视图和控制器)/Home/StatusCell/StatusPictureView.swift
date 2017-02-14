@@ -56,6 +56,7 @@ class StatusPictureView: UIView {
                 imageView?.setImage(urlString: picture.thumbnail_pic, placeholderImage: nil)
                 imageView?.isHidden = false
                 
+                imageView?.subviews.first?.isHidden = ((picture.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif"
                 index += 1
             }
         }
@@ -75,8 +76,11 @@ class StatusPictureView: UIView {
             
             let imageView = UIImageView(frame: CGRect(x: 0, y: OutterMargin, width: PictureViewItemWidth, height: PictureViewItemWidth))
             imageView.backgroundColor = UIColor.red
+            imageView.isUserInteractionEnabled = true
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
+            imageView.tag = i
+            
             let row = CGFloat(i / 3)
             let col = CGFloat(i % 3)
             
@@ -86,6 +90,37 @@ class StatusPictureView: UIView {
             imageView.frame = imageView.frame.offsetBy(dx: xOffset, dy: yOffset)
             addSubview(imageView)
             
+            imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapImageView)))
+            
+            
+            let label = UILabel()
+            label.text = "GIF"
+            label.textColor = UIColor.white
+            label.backgroundColor = UIColor.lightGray
+            label.font = UIFont.systemFont(ofSize: 11)
+            label.textAlignment = .center
+            label.isHidden = true
+            imageView.addSubview(label)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            imageView.addConstraint(NSLayoutConstraint(item: label, attribute: .right, relatedBy: .equal, toItem: imageView, attribute: .right, multiplier: 1, constant: 0))
+            imageView.addConstraint(NSLayoutConstraint(item: label, attribute: .bottom, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 0))
+            imageView.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 22))
+            imageView.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 12))
         }
+    }
+    
+    /// 点击图片
+    func tapImageView(tap: UITapGestureRecognizer) {
+        
+        var urls = [URL]()
+        
+        for statusPicture in pictures ?? [] {
+            
+            guard let urlString = statusPicture.large_pic, let url = URL(string: urlString) else { continue }
+            
+            urls.append(url)
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil, userInfo: ["urls" : urls])
     }
 }
