@@ -53,8 +53,6 @@
 		286EE0011E11005000B6BD4D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */; };
 		286EE0021E11005000B6BD4D /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */; };
 		287A532B1E135679006E9BC7 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A532A1E135679006E9BC7 /* VisitorView.swift */; };
-		2889466C1E529A28000E5A75 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889466A1E529A28000E5A75 /* PhotoBrowserViewController.swift */; };
-		2889466D1E529A28000E5A75 /* PhotoBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2889466B1E529A28000E5A75 /* PhotoBrowserViewController.xib */; };
 		2899A2151E30BBD200467D06 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899A2111E30BBD200467D06 /* Emoticon.swift */; };
 		2899A2161E30BBD200467D06 /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899A2121E30BBD200467D06 /* EmoticonManager.swift */; };
 		2899A2171E30BBD200467D06 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899A2131E30BBD200467D06 /* EmoticonPackage.swift */; };
@@ -173,8 +171,6 @@
 		286EDFFF1E11005000B6BD4D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		286EE0001E11005000B6BD4D /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		287A532A1E135679006E9BC7 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
-		2889466A1E529A28000E5A75 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
-		2889466B1E529A28000E5A75 /* PhotoBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoBrowserViewController.xib; sourceTree = "<group>"; };
 		2899A2111E30BBD200467D06 /* Emoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		2899A2121E30BBD200467D06 /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		2899A2131E30BBD200467D06 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
@@ -482,8 +478,6 @@
 		2889465C1E52985C000E5A75 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				2889466A1E529A28000E5A75 /* PhotoBrowserViewController.swift */,
-				2889466B1E529A28000E5A75 /* PhotoBrowserViewController.xib */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -727,7 +721,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2889466D1E529A28000E5A75 /* PhotoBrowserViewController.xib in Resources */,
 				28CE514C1E236717004A1FD6 /* StatusRetweetedCell.xib in Resources */,
 				28D190001E1CE0D6009548F1 /* NewFeatureView.xib in Resources */,
 				286EDFFD1E10FF3200B6BD4D /* main.json in Resources */,
@@ -870,7 +863,6 @@
 				283335251E151599003ABD92 /* StatusListViewModel.swift in Sources */,
 				28B0D9661E27655900632BE2 /* RefreshView.swift in Sources */,
 				28F54F6C1E3855C0006BA76C /* EmoticonLayout.swift in Sources */,
-				2889466C1E529A28000E5A75 /* PhotoBrowserViewController.swift in Sources */,
 				286EDFF91E10FABE00B6BD4D /* UIView+CZAddition.m in Sources */,
 				286EDFF31E10FABE00B6BD4D /* NSString+CZHash.m in Sources */,
 				28D18FB51E1C8FD6009548F1 /* TitleButton.swift in Sources */,

@@ -35,7 +35,14 @@ class Status: NSObject {
     }
     
     /// 微博创建时间
-    var created_at: String?
+    var created_at: String? {
+        didSet {
+            created_date = Date.stringToData(string: created_at ?? "")
+        }
+    }
+    
+    /// 微博创建日期
+    var created_date: Date?
     
     /// 微博用户
     var user: User?

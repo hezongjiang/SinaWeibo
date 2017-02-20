@@ -41,7 +41,7 @@ class StatusCell: UITableViewCell {
             // 来源
             sourceLaebl.text = (viewModel?.status.source ?? "")
             // 时间
-            timeLabel.text = viewModel?.status.created_at
+            timeLabel.text = viewModel?.status.created_date?.dateDescription
             // 配图视图
             pictureView.viewModel = viewModel
             // 配图
