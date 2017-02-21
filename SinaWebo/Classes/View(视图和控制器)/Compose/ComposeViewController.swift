@@ -22,6 +22,12 @@ class ComposeViewController: UIViewController {
     /// 工具条底部约束
     @IBOutlet weak var toolbarBottomCons: NSLayoutConstraint!
     
+    fileprivate lazy var photoView: ComposePhotosView = {
+        let view = ComposePhotosView(frame: CGRect(x: 10, y: 200, width: UIScreen.main.bounds.width - 20, height: 200))
+        view.backgroundColor = UIColor.red
+        return view
+    }()
+    
     /// 发布按钮
     fileprivate lazy var composeButton: UIButton = {
         
@@ -57,6 +63,8 @@ class ComposeViewController: UIViewController {
         
         view.backgroundColor = UIColor.white
         
+        view.addSubview(photoView)
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", target: self, action: #selector(back))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: composeButton)
         navigationItem.titleView = titlelabel
@@ -75,6 +83,13 @@ class ComposeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         view.endEditing(true)
+    }
+    
+    @IBAction func choosePhoto() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
     }
     
     /// 切换表情键盘
@@ -96,8 +111,19 @@ class ComposeViewController: UIViewController {
     
     
     deinit {
-        print("销毁")
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension ComposeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        
+        photoView.addPhoto(photo: image)
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -121,9 +147,7 @@ private extension ComposeViewController {
     @objc func keyboardChange(n: Notification) {
         
         guard let rect = (n.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.cgRectValue,
-            let time = (n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? NSNumber)?.doubleValue else {
-                return
-        }
+            let time = (n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? NSNumber)?.doubleValue else { return }
         
         toolbarBottomCons.constant = view.bounds.height - rect.origin.y
         
@@ -140,10 +164,9 @@ private extension ComposeViewController {
     /// 发微博
     @objc func composeStatus() {
         
-        
         SVProgressHUD.show()
         
-        NetworkManager.shared.postStatus(text: textView.emotionText) { (json, isSuccess) in
+        NetworkManager.shared.postStatus(text: textView.emotionText, image: photoView.photos.first) { (json, isSuccess) in
             
             if isSuccess {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
@@ -157,5 +180,4 @@ private extension ComposeViewController {
             }
         }
     }
-    
 }
