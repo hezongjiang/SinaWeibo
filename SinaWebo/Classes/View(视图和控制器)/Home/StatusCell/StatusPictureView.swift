@@ -112,15 +112,23 @@ class StatusPictureView: UIView {
     /// 点击图片
     func tapImageView(tap: UITapGestureRecognizer) {
         
-        var urls = [URL]()
+        var imageUrl = [String]()
+        var imageViews = [UIImageView]()
         
         for statusPicture in pictures ?? [] {
             
-            guard let urlString = statusPicture.large_pic, let url = URL(string: urlString) else { continue }
+            guard let urlString = statusPicture.large_pic else { continue }
             
-            urls.append(url)
+            imageUrl.append(urlString)
         }
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil, userInfo: ["urls" : urls])
+        for imageView in subviews {
+            
+            guard let iv = imageView as? UIImageView else { continue }
+            
+            if !iv.isHidden { imageViews.append(iv) }
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil, userInfo: ["urls" : imageUrl, "imageViews" : imageViews, "selectedIndex" : tap.view?.tag ?? 0])
     }
 }

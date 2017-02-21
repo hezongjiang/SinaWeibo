@@ -25,8 +25,10 @@ class HomeViewController: BaseViewController {
     
     @objc private func showPhotoBrowser(noti: Notification) {
         
-        guard let urls = noti.userInfo?["urls"] as? [URL] else { return }
+        guard let urlString = noti.userInfo?["urls"] as? [String], let ivs = noti.userInfo?["imageViews"] as? [UIImageView], let index = noti.userInfo?["selectedIndex"] as? Int else { return }
         
+        let vc = PhotoBrowserController(selectedIndex: index, urls: urlString, parentImageViews: ivs)
+        present(vc, animated: true, completion: nil)
     }
     
     /// 重写父类的“加载数据”
