@@ -40,7 +40,7 @@ class StatusPictureView: UIView {
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     
     /// 配图数组，如果被转发的微博有图片，返回被转发微博图片，否则返回原创微博图片
-    private var pictures: [StatusPicture]? {
+    var pictures: [StatusPicture]? {
         
         didSet {
             
@@ -114,6 +114,9 @@ class StatusPictureView: UIView {
         
         var imageUrl = [String]()
         var imageViews = [UIImageView]()
+        var selectedIdx = tap.view?.tag ?? 0
+        
+        if pictures?.count == 4 && selectedIdx > 1 { selectedIdx -= 1 }
         
         for statusPicture in pictures ?? [] {
             
@@ -129,6 +132,6 @@ class StatusPictureView: UIView {
             if !iv.isHidden { imageViews.append(iv) }
         }
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil, userInfo: ["urls" : imageUrl, "imageViews" : imageViews, "selectedIndex" : tap.view?.tag ?? 0])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil, userInfo: ["urls" : imageUrl, "imageViews" : imageViews, "selectedIndex" : selectedIdx])
     }
 }

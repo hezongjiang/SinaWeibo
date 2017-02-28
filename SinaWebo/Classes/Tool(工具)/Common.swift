@@ -25,3 +25,14 @@ let PictureViewInnerMargin = CGFloat(3)
 let PictureViewWidth = UIScreen.main.bounds.width - 2 * OutterMargin
 // item宽度
 let PictureViewItemWidth = (PictureViewWidth - 2 * PictureViewInnerMargin) / 3
+
+func Print<T>(_ messsage : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
+    
+    #if DEBUG
+        
+        let fileName = (file as NSString).lastPathComponent
+        
+        print("\(fileName):(\(lineNum))-\(messsage)")
+        
+    #endif
+}

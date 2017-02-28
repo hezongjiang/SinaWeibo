@@ -21,6 +21,11 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser), name: NSNotification.Name(rawValue: ShowPhotoBrowserNotification), object: nil)
+        
+        if #available(iOS 9.0, *), traitCollection.forceTouchCapability == .available, tableView != nil {
+            
+            registerForPreviewing(with: self, sourceView: tableView!)
+        }
     }
     
     @objc private func showPhotoBrowser(noti: Notification) {
@@ -78,6 +83,58 @@ class HomeViewController: BaseViewController {
     @objc private func showFriend() {
         tableView?.reloadData()
         
+    }
+}
+
+// MARK: - UIViewControllerPreviewingDelegate
+@available(iOS 9.0, *)
+extension HomeViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        showDetailViewController(viewControllerToCommit, sender: nil)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView?.indexPathForRow(at: location), let cell = tableView?.cellForRow(at: indexPath) as? StatusCell else { return nil }
+        
+        guard let pictureView = cell.pictureView, let point = tableView?.convert(location, to: pictureView) else { return nil }
+        
+        var urls = [String]()
+        var ivs = [UIImageView]()
+        var selectedIndex = 0
+        var shouldShow = false
+        
+        for imageView in pictureView.subviews {
+            if imageView.frame.contains(point) {
+                selectedIndex = imageView.tag
+                shouldShow = imageView.isHidden ? false : true
+                break
+            }
+        }
+        
+        if !shouldShow { return nil }
+        
+        if pictureView.pictures?.count == 4 && selectedIndex > 1 {
+            selectedIndex -= 1
+            previewingContext.sourceRect = pictureView.convert(pictureView.subviews[selectedIndex + 1].frame, to: tableView)
+        } else {
+            
+            previewingContext.sourceRect = pictureView.convert(pictureView.subviews[selectedIndex].frame, to: tableView)
+        }
+        
+        for statusPicture in pictureView.pictures ?? [] {
+            urls.append(statusPicture.large_pic ?? "")
+        }
+        
+        for iv in pictureView.subviews as! [UIImageView] {
+            if !iv.isHidden { ivs.append(iv) }
+        }
+        
+        
+        let vc = PhotoBrowserController(selectedIndex: selectedIndex, urls: urls, parentImageViews: ivs)
+        
+        return vc
     }
 }
 
